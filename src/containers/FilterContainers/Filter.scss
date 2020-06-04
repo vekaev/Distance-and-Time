@@ -1,0 +1,286 @@
+@import '/src/variable';
+
+body {
+  margin: 0;
+  background-color: #eef4fb;
+}
+
+.panel {
+  max-width: 600px;
+  display: inline-block;
+  height: calc(100vh);
+  overflow: scroll;
+  background-color: $color-white;
+}
+
+.filter {
+  animation-name: animateMain;
+  animation-duration: 400ms;
+
+  &__content {
+    display: inline-flex;
+    align-items: flex-end;
+    background: $color-blue-grey;
+    padding: 15px;
+
+    .title {
+      display: block;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 12px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      color: $color-btn-grey;
+      cursor: text;
+    }
+
+    .submit__btn {
+      cursor: pointer;
+      margin-left: 5px;
+      background-color: $color-blue;
+      background-image: url('/css/images/apps/dist-time/icon__search.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 50px;
+      width: 50px;
+      box-shadow: 0px 0px 7px rgba(69, 119, 191, 0.2);
+      border-radius: 5px;
+      padding: 11px 13px;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      transition: 0.2s ease;
+      animation-name: animatedBtnSubmit;
+      animation-duration: 200ms;
+
+      &:hover {
+        transition: 0.2s ease;
+        transform: translateY(-2px);
+      }
+
+      .spinner {
+        position: relative;
+        top: -13px;
+        left: -12px;
+        display: block;
+      }
+
+      .spinner:before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border-top: 2px solid #ffffff;
+        border-right: 2px solid transparent;
+        animation: spinner 1s linear infinite;
+      }
+
+      @keyframes spinner {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    .loading {
+      pointer-events: none;
+      background-image: none;
+      transition: 0.2 ease;
+    }
+  }
+
+  &__additional {
+    padding: 5px 15px;
+
+    .speed__input {
+      margin-right: 5px;
+      box-shadow: 0px 0px 7px rgba(69, 119, 191, 0.2);
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 10px;
+      color: $color-btn-grey;
+
+      label {
+        text-transform: uppercase;
+        transition: 0.2s ease;
+      }
+
+      input {
+        border: none;
+        outline: none;
+        text-align: center;
+        width: 32px;
+        box-sizing: border-box;
+        margin: 0 3px;
+        color: $color-btn-grey;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 10px;
+        transition: 0.2s ease;
+      }
+
+      .arrow__part {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 15px;
+
+        .arrow {
+          cursor: pointer;
+          display: block;
+          width: 10px;
+          height: 6px;
+          background-color: $color-btn-grey;
+          transition: 0.2s ease;
+
+          &:hover {
+            background-color: $color-blue;
+            transition: 0.2s ease;
+          }
+        }
+
+        .up {
+          mask: url('/css/images/apps/dist-time/icon__up.svg') no-repeat center /
+            contain;
+          -webkit-mask: url('/css/images/apps/dist-time/icon__up.svg') no-repeat
+            center / contain;
+        }
+
+        .down {
+          mask: url('/css/images/apps/dist-time/icon__down.svg') no-repeat
+            center / contain;
+          -webkit-mask: url('/css/images/apps/dist-time/icon__down.svg')
+            no-repeat center / contain;
+        }
+      }
+
+      &:hover {
+        input {
+          color: $color-blue;
+          transition: 0.2s ease;
+        }
+      }
+    }
+
+    .speed__select {
+      display: inline-block;
+      box-shadow: 0px 0px 7px rgba(69, 119, 191, 0.2);
+      border-radius: 5px;
+      position: relative;
+
+      select {
+        width: 70px;
+        height: 25px;
+        border: none;
+        padding: 5px 10px;
+        outline: none;
+        background: $color-white;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 10px;
+        text-transform: uppercase;
+        color: $color-btn-grey;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 7px;
+        mask: url('/css/images/apps/dist-time/icon__down.svg') no-repeat center /
+          contain;
+        -webkit-mask: url('/css/images/apps/dist-time/icon__down.svg') no-repeat
+          center / contain;
+        background-color: $color-btn-grey;
+        right: 8px;
+        top: 48%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: 0.2s ease;
+      }
+
+      &:hover {
+        select {
+          color: $color-blue;
+          transition: 0.2s ease;
+        }
+
+        &:before {
+          background-color: $color-blue;
+          transition: 0.2s ease;
+        }
+      }
+    }
+
+    .sea__select {
+      cursor: unset;
+      pointer-events: none;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-input-placeholder {
+  color: $color-placeholder;
+}
+
+:-moz-placeholder {
+  color: $color-placeholder;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: $color-placeholder;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $color-placeholder;
+}
+
+::-ms-input-placeholder {
+  color: $color-placeholder;
+}
+
+::placeholder {
+  color: $color-placeholder;
+}
+
+@keyframes animatedBtnSubmit {
+  from {
+    background-size: 0;
+  }
+  to {
+    background-size: unset;
+  }
+}

@@ -1,0 +1,45 @@
+@import '/src/components/variable';
+
+.no-transit-data {
+  animation-name: animateMain;
+  animation-duration: 400ms;
+  padding: 25px 15px;
+  text-align: center;
+
+  &:hover {
+    .img__part {
+      background-color: $color-blue;
+      transition: 0.5s ease;
+    }
+
+    p {
+      transition: 0.5s ease;
+      color: $color-blue;
+    }
+  }
+
+  .img__part {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    mask: url('/css/images/apps/dist-time/icon__transit.svg') no-repeat center /
+      contain;
+    -webkit-mask: url('/css/images/apps/dist-time/icon__transit.svg') no-repeat
+      center / contain;
+    background-color: #d5dee7;
+    background-size: contain;
+    margin-bottom: 8px;
+    transition: 1s ease;
+  }
+
+  p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #d5dee7;
+    cursor: default;
+    transition: 1s ease;
+  }
+}

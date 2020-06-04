@@ -1,0 +1,16 @@
+export const SHIPMENT_TYPE = 'SHIPMENT_TYPE';
+export const CHANGE_SHIPMENT_TYPE = 'CHANGE_SHIPMENT_TYPE';
+
+export const DIRECTION_FROM = 'DIRECTION_FROM';
+export const DIRECTION_TO = 'DIRECTION_TO';
+export const CHANGE_DIRECTION = 'CHANGE_DIRECTION';
+
+export const LAT_FROM = 'LAT_FROM';
+export const LNG_FROM = 'LNG_FROM';
+export const LAT_TO = 'LAT_TO';
+export const LNG_TO = 'LNG_TO';
+export const CHANGE_POSITION = 'CHANGE_POSITION';
+
+export const CHANGE_SPEED_VALUE = 'CHANGE_SPEED_VALUE';
+export const SPEED_INCREMENT = 'SPEED_INCREMENT';
+export const SPEED_DECREMENT = 'SPEED_DECREMENT';

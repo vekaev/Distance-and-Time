@@ -1,0 +1,119 @@
+@import '/src/variable';
+
+.btn {
+  font-family: 'Montserrat';
+  background-color: transparent;
+  list-style: none;
+  color: $color-btn-grey;
+  width: 50px;
+  height: 50px;
+  padding: 13px 8px 8px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+
+  label {
+    z-index: 5;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  input[type='radio'] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .icon {
+    width: 25px;
+    height: 10px;
+    background-color: $color-btn-grey;
+    position: relative;
+    z-index: 5;
+  }
+
+  &:before {
+    display: inline-block;
+    position: absolute;
+    height: 30px;
+    width: 1px;
+    border-radius: 5px;
+    background-color: $color-btn-light-grey;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  &:focus {
+    outline: red;
+  }
+}
+
+.sea {
+  border-radius: 5px 0 0 5px;
+
+  .icon {
+    mask: url('/css/images/apps/dist-time/icon__sea.svg') no-repeat center /
+      contain;
+    -webkit-mask: url('/css/images/apps/dist-time/icon__sea.svg') no-repeat
+      center / contain;
+  }
+}
+
+.land {
+  .icon {
+    mask: url('/css/images/apps/dist-time/icon__land.svg') no-repeat center /
+      contain;
+    -webkit-mask: url('/css/images/apps/dist-time/icon__land.svg') no-repeat
+      center / contain;
+  }
+
+  &:before {
+    content: '';
+    left: -1px;
+  }
+}
+
+.air {
+  border-radius: 0 5px 5px 0;
+
+  .icon {
+    mask: url('/css/images/apps/dist-time/icon__air.svg') no-repeat center /
+      contain;
+    -webkit-mask: url('/css/images/apps/dist-time/icon__air.svg') no-repeat
+      center / contain;
+  }
+
+  &:before {
+    content: '';
+    left: -1px;
+  }
+}
+
+.active {
+  color: $color-white;
+  z-index: 3;
+
+  .icon {
+    background-color: $color-white;
+  }
+
+  &:before {
+    display: none;
+  }
+}
