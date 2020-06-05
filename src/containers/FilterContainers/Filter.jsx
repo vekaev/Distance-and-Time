@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ShipmentList from '../../components/FilterComponents/ShipmentList';
 import InputList from './InputList';
-import './Filter.scss';
+import styles from './Filter.module.scss';
 import SpeedInputs from './SpeedInputs';
 
 const Filter = ({ submitForm, toggleBtnStatus, setPositionPort }) => {
@@ -25,8 +25,8 @@ const Filter = ({ submitForm, toggleBtnStatus, setPositionPort }) => {
   }, [btnActive]);
 
   return (
-    <form onSubmit={submitForm} className='filter'>
-      <div className='filter__content'>
+    <form onSubmit={submitForm} className={styles['filter']}>
+      <div className={styles['filter__content']}>
         <ShipmentList toggleActive={setBtnActive} active={btnActive} />
 
         <InputList
@@ -36,9 +36,11 @@ const Filter = ({ submitForm, toggleBtnStatus, setPositionPort }) => {
 
         <button
           type='submit'
-          className={`submit__btn ${toggleBtnStatus ? 'loading' : ''}`}
+          className={`${styles.submit__btn} ${
+            toggleBtnStatus ? styles.loading : ''
+          }`}
         >
-          {toggleBtnStatus ? <span className='spinner'></span> : ''}
+          {toggleBtnStatus ? <span className={styles.spinner}></span> : ''}
         </button>
       </div>
 

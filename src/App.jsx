@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.scss';
 import Panel from './containers/Panel';
 import axios from 'axios';
 import store from './redux/store/store';

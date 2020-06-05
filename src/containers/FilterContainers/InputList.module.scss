@@ -1,4 +1,4 @@
-@import '/src/variable';
+@import '../../variable';
 
 .input__part {
   display: flex;
@@ -78,7 +78,7 @@
     box-sizing: border-box;
     border: 1px solid $color-btn-light-grey;
     background-color: $color-white;
-    background-image: url('/css/images/apps/dist-time/icon__change.svg');
+    background-image: url('/design/images/apps/dist-time/panel/icon__change.svg');
     background-repeat: no-repeat;
     background-position: center;
     bottom: 13px;
@@ -86,7 +86,16 @@
     transform: translateX(-50%);
   }
 }
-
+.title {
+  display: block;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: $color-btn-grey;
+  cursor: text;
+}
 .autocomplete-item {
   font-size: 10px;
   color: $darkBlueColor;

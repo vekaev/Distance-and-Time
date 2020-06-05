@@ -1,21 +1,22 @@
-$color-main-text: #15354E;
-$color-blue: #0088FF;
-$color-white: #FFF;
-$color-blue-grey: #E9F0F7;
-$color-grey-sec: #CBD8E3;
+$color-main-text: #15354e;
+$color-blue: #0088ff;
+$color-white: #fff;
+$color-blue-grey: #e9f0f7;
+$color-grey-sec: #cbd8e3;
 $color-dark-grey: #607385;
-$color-light-blue: #E2F2FF;
-$color-red: #F52C5C;
-$color-btn-grey: #A1B3C8;
-$color-btn-light-grey: #EEF4FB;
-$color-placeholder: #9FB1C1;
-$color-light-bcg: #F7F9FC;
+$color-light-blue: #e2f2ff;
+$color-red: #f52c5c;
+$color-btn-grey: #a1b3c8;
+$color-btn-light-grey: #eef4fb;
+$color-placeholder: #9fb1c1;
+$color-light-bcg: #f7f9fc;
 
 * {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
 }
-
-
+.main-content {
+  padding-bottom: 0;
+}
 @keyframes animateMain {
   0% {
     opacity: 0;
@@ -27,24 +28,22 @@ $color-light-bcg: #F7F9FC;
   }
 }
 
-
-
 // Colors
-$accColor : #0088FF;
-$white : #FFFFFF;
-$greyColor: #ECF2F9;
-$textColor: #43637C;
-$lightTextColor: #A1B3C8;
-$darkBlueColor: #15354E;
-$lightBlueColor: #E2F2FF;
-$lightBorderColor: #ECF2F9;
-$redColor: #FF2B16;
-$whiteBlueColor: #F8FCFF;
-$orangeColor: #FA821B;
+$accColor: #0088ff;
+$white: #ffffff;
+$greyColor: #ecf2f9;
+$textColor: #43637c;
+$lightTextColor: #a1b3c8;
+$darkBlueColor: #15354e;
+$lightBlueColor: #e2f2ff;
+$lightBorderColor: #ecf2f9;
+$redColor: #ff2b16;
+$whiteBlueColor: #f8fcff;
+$orangeColor: #fa821b;
 
 // Shipment colors
-$truckColor: #18A759;
-$trainColor: #FF8A00;
-$portColor: #15354E;
-$seaColor: #0078E1;
+$truckColor: #18a759;
+$trainColor: #ff8a00;
+$portColor: #15354e;
+$seaColor: #0078e1;
 $airColor: #ab65c3;

@@ -1,0 +1,128 @@
+@import '../../variable';
+
+body {
+  margin: 0;
+  background-color: #eef4fb;
+}
+
+.filter {
+  animation-name: animateMain;
+  animation-duration: 400ms;
+
+  &__content {
+    display: inline-flex;
+    align-items: flex-end;
+    background: $color-blue-grey;
+    padding: 15px;
+
+    .submit__btn {
+      cursor: pointer;
+      margin-left: 5px;
+      background-color: $color-blue;
+      background-image: url('/design/images/apps/dist-time/panel/icon__search.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 50px;
+      width: 50px;
+      box-shadow: 0px 0px 7px rgba(69, 119, 191, 0.2);
+      border-radius: 5px;
+      padding: 11px 13px;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      transition: 0.2s ease;
+      animation-name: animatedBtnSubmit;
+      animation-duration: 200ms;
+
+      &:hover {
+        transition: 0.2s ease;
+        transform: translateY(-2px);
+      }
+
+      .spinner {
+        position: relative;
+        top: -13px;
+        left: -12px;
+        display: block;
+      }
+
+      .spinner:before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border-top: 2px solid #ffffff;
+        border-right: 2px solid transparent;
+        animation: spinner 1s linear infinite;
+      }
+
+      @keyframes spinner {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    .loading {
+      pointer-events: none;
+      background-image: none;
+      transition: 0.2 ease;
+    }
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-input-placeholder {
+  color: $color-placeholder;
+}
+
+:-moz-placeholder {
+  color: $color-placeholder;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: $color-placeholder;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $color-placeholder;
+}
+
+::-ms-input-placeholder {
+  color: $color-placeholder;
+}
+
+::placeholder {
+  color: $color-placeholder;
+}
+
+@keyframes animatedBtnSubmit {
+  from {
+    background-size: 0;
+  }
+  to {
+    background-size: unset;
+  }
+}

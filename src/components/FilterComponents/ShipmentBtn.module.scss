@@ -1,4 +1,4 @@
-@import '/src/variable';
+@import '../../variable';
 
 .btn {
   font-family: 'Montserrat';
@@ -68,19 +68,19 @@
   border-radius: 5px 0 0 5px;
 
   .icon {
-    mask: url('/css/images/apps/dist-time/icon__sea.svg') no-repeat center /
-      contain;
-    -webkit-mask: url('/css/images/apps/dist-time/icon__sea.svg') no-repeat
+    mask: url('/design/images/apps/dist-time/panel/icon__sea.svg') no-repeat
       center / contain;
+    -webkit-mask: url('/design/images/apps/dist-time/panel/icon__sea.svg')
+      no-repeat center / contain;
   }
 }
 
 .land {
   .icon {
-    mask: url('/css/images/apps/dist-time/icon__land.svg') no-repeat center /
-      contain;
-    -webkit-mask: url('/css/images/apps/dist-time/icon__land.svg') no-repeat
+    mask: url('/design/images/apps/dist-time/panel/icon__land.svg') no-repeat
       center / contain;
+    -webkit-mask: url('/design/images/apps/dist-time/panel/icon__land.svg')
+      no-repeat center / contain;
   }
 
   &:before {
@@ -93,10 +93,10 @@
   border-radius: 0 5px 5px 0;
 
   .icon {
-    mask: url('/css/images/apps/dist-time/icon__air.svg') no-repeat center /
-      contain;
-    -webkit-mask: url('/css/images/apps/dist-time/icon__air.svg') no-repeat
+    mask: url('/design/images/apps/dist-time/panel/icon__air.svg') no-repeat
       center / contain;
+    -webkit-mask: url('/design/images/apps/dist-time/panel/icon__air.svg')
+      no-repeat center / contain;
   }
 
   &:before {

@@ -1,4 +1,4 @@
-@import '/src/variable';
+@import '../../variable';
 
 .shipment__choose {
   .btn__list {
@@ -42,4 +42,14 @@
       left: 100px;
     }
   }
+}
+.title {
+  display: block;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: $color-btn-grey;
+  cursor: text;
 }

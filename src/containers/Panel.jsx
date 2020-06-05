@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Filter from './FilterContainers/Filter';
 import Statistic from './Statistic';
-import './Panel.scss';
+import styles from './Panel.module.scss';
 
 const Panel = ({
   submitForm,
@@ -12,7 +12,7 @@ const Panel = ({
   setPositionPort,
 }) => {
   return (
-    <aside className='panel'>
+    <aside className={styles['panel']}>
       <Filter
         toggleBtnStatus={toggleBtnStatus}
         submitForm={submitForm}

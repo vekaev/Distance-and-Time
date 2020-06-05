@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TransitTime.scss';
+import style from './TransitTime.module.scss';
 
 const TransitTime = ({ state, data }) => {
   console.log(data);
@@ -9,8 +9,8 @@ const TransitTime = ({ state, data }) => {
       {state === 'submit' ? (
         'DATA'
       ) : (
-        <div className='no-transit-data'>
-          <span className='img__part'></span>
+        <div className={style.no - transit - data}>
+          <span className={style.img__part}></span>
           <p>NO STATISTICS</p>
         </div>
       )}

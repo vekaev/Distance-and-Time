@@ -1,0 +1,140 @@
+@import '../../variable';
+
+.filter__additional {
+  padding: 5px 15px;
+
+  .speed__input {
+    margin-right: 5px;
+    box-shadow: 0px 0px 7px rgba(69, 119, 191, 0.2);
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 10px;
+    color: $color-btn-grey;
+
+    input {
+      border: none;
+      outline: none;
+      text-align: center;
+      width: 32px;
+      box-sizing: border-box;
+      margin: 0 3px;
+      color: $color-btn-grey;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 10px;
+      transition: 0.2s ease;
+    }
+
+    .arrow__part {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 15px;
+
+      .arrow {
+        cursor: pointer;
+        display: block;
+        width: 10px;
+        height: 6px;
+        background-color: $color-btn-grey;
+        transition: 0.2s ease;
+
+        &:hover {
+          background-color: $color-blue;
+          transition: 0.2s ease;
+        }
+      }
+
+      .up {
+        mask: url('/design/images/apps/dist-time/panel/icon__up.svg') no-repeat
+          center / contain;
+        -webkit-mask: url('/design/images/apps/dist-time/panel/icon__up.svg')
+          no-repeat center / contain;
+      }
+
+      .down {
+        mask: url('/design/images/apps/dist-time/panel/icon__down.svg')
+          no-repeat center / contain;
+        -webkit-mask: url('/design/images/apps/dist-time/panel/icon__down.svg')
+          no-repeat center / contain;
+      }
+    }
+
+    &:hover {
+      input {
+        color: $color-blue;
+        transition: 0.2s ease;
+      }
+    }
+  }
+
+  .speed_label {
+    text-transform: uppercase;
+    transition: 0.2s ease;
+    margin-bottom: 0;
+  }
+  .speed__select {
+    display: inline-block;
+    box-shadow: 0px 0px 7px rgba(69, 119, 191, 0.2);
+    border-radius: 5px;
+    position: relative;
+
+    select {
+      width: 70px;
+      height: 25px;
+      border: none;
+      padding: 5px 10px;
+      outline: none;
+      background: $color-white;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 10px;
+      text-transform: uppercase;
+      color: $color-btn-grey;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 7px;
+      mask: url('/design/images/apps/dist-time/panel/icon__down.svg') no-repeat
+        center / contain;
+      -webkit-mask: url('/design/images/apps/dist-time/panel/icon__down.svg')
+        no-repeat center / contain;
+      background-color: $color-btn-grey;
+      right: 8px;
+      top: 48%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: 0.2s ease;
+    }
+
+    &:hover {
+      select {
+        color: $color-blue;
+        transition: 0.2s ease;
+      }
+
+      &:before {
+        background-color: $color-blue;
+        transition: 0.2s ease;
+      }
+    }
+  }
+
+  .sea__select {
+    cursor: unset;
+    pointer-events: none;
+
+    &:before {
+      display: none;
+    }
+  }
+}

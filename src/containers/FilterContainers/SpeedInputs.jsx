@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import '/SpeedInputs.scss';
-import {
-  speedIncrement,
-  speedDecrement,
-  speedChange,
-} from '../../store/actions';
+import style from './SpeedInputs.module.scss';
+// import {
+//   speedIncrement,
+//   speedDecrement,
+//   speedChange,
+// } from '../../store/actions';
+
 import { connect } from 'react-redux';
 
 const SpeedInputs = ({
@@ -30,9 +31,9 @@ const SpeedInputs = ({
   };
 
   return (
-    <div className='filter__additional'>
-      <div className='speed__input'>
-        <label htmlFor='speed'>
+    <div className={style['filter__additional']}>
+      <div className={style['speed__input']}>
+        <label className={style.speed_label} htmlFor='speed'>
           average speed
           <input
             min={1}
@@ -43,20 +44,22 @@ const SpeedInputs = ({
             onChange={(e) => handleChange(e.target.value)}
           />
         </label>
-        <div className='arrow__part'>
+        <div className={style['arrow__part']}>
           <span
             onClick={() => speedIncrement({ speed_value: ++speed_value })}
-            className='arrow up'
+            className={`${style.arrow} ${style.up}`}
           ></span>
           <span
             onClick={() => speedDecrement({ speed_value: --speed_value })}
-            className='arrow down'
+            className={`${style.arrow} ${style.down}`}
           ></span>
         </div>
       </div>
 
       <div
-        className={`speed__select ${btnActive == 'sea' ? 'sea__select' : ''}`}
+        className={`${style.speed__select} ${
+          btnActive == 'sea' ? style.sea__select : ''
+        }`}
       >
         <select
           value={convertSpeedStatus}
@@ -93,4 +96,5 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SpeedInputs);
+// export default connect(mapStateToProps, mapDispatchToProps)(SpeedInputs);
+export default SpeedInputs;

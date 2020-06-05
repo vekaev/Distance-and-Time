@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DistanceTime.scss';
+import style from './DistanceTime.module.scss';
 
 const transfSeconds = (sec) => {
   if (isNaN(sec) === true) {

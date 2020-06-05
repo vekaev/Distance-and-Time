@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import './ShipmentBtn.scss';
+import styles from './ShipmentBtn.module.scss';
 
 const ShipmentBtn = ({ title, active, toggleActive }) => {
   return (
     <li
       onClick={() => toggleActive(title)}
-      className={`btn ${title} ${active === title ? 'active' : ''}`}
+      className={`${styles['btn']} ${styles[`${title}`]} ${
+        active === title ? styles.active : ''
+      }`}
     >
-      <span className='icon'></span>
+      <span className={styles['icon']}></span>
       <input
         type='radio'
         name='shipment'
-        autoFocus={title === 'sea' ? true : false}
+        autoFocus={title === 'sea'}
         value={title}
-        checked={active === title ? true : false}
+        checked={active === title}
         onChange={() => {}}
       />
       <label htmlFor={title}>{title}</label>

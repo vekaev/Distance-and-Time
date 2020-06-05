@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Autocomplete from 'react-autocomplete';
-import './InputList.scss';
+import style from './InputList.module.scss';
 import axios from 'axios';
 
 const CancelToken = axios.CancelToken;
@@ -143,9 +143,9 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
   };
 
   return (
-    <div className='input__part'>
-      <div data-direction='A' className={`input__wrapper`}>
-        <label className='title'>Port of origin</label>
+    <div className={style['input__part']}>
+      <div data-direction='A' className={style[`input__wrapper`]}>
+        <label className={style['title']}>Port of origin</label>
         <Autocomplete
           name='origin'
           type='text'
@@ -155,12 +155,14 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
           renderItem={(item, isHighlighted) => (
             <div
               key={item.place_id}
-              className='autocomplete-item'
+              className={style['autocomplete-item']}
               style={{ background: isHighlighted ? 'lightgray' : 'white' }}
             >
               <div>
-                <span className='city'>{getDataFromList(item, 'city')}</span>,
-                <span>{` ${getDataFromList(item, 'country')} `}</span>
+                <span className={style['city']}>
+                  {getDataFromList(item, 'city')}
+                </span>
+                ,<span>{` ${getDataFromList(item, 'country')} `}</span>
               </div>
               <i
                 className={` flag-icon flag-icon-${getDataFromList(
@@ -178,15 +180,17 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
           selectOnBlur={true}
           inputProps={{
             placeholder: 'Country, City, Port',
-            className: `input from `,
+            className: `${style.input} ${style.from}`,
             required: true,
           }}
         />
       </div>
-      <div data-direction='B' className={`input__wrapper to__wrapper`}>
-        <label className='title'>Port of Destination</label>
+      <div
+        data-direction='B'
+        className={`${style[`input__wrapper`]} ${style['to__wrapper']}`}
+      >
+        <label className={style['title']}>Port of Destination</label>
         <Autocomplete
-          className={`input from `}
           name='origin'
           type='text'
           required
@@ -195,11 +199,13 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
           renderItem={(item, isHighlighted) => (
             <div
               key={item.place_id}
-              className='autocomplete-item'
+              className={style['autocomplete-item']}
               style={{ background: isHighlighted ? 'lightgray' : 'white' }}
             >
               <div>
-                <span className='city'>{getDataFromList(item, 'city')},</span>
+                <span className={style['city']}>
+                  {getDataFromList(item, 'city')},
+                </span>
                 <span>{` ${getDataFromList(item, 'country')} `}</span>
               </div>
               <i
@@ -218,14 +224,16 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
           // selectOnBlur={true}
           inputProps={{
             placeholder: 'Country, City, Port',
-            className: `input to `,
+            className: `${style.input} ${style.to}`,
             required: true,
           }}
         />
       </div>
       <span
         onClick={exchageDirection}
-        className={`exchange__btn ${toggleBtnStatus ? 'loading' : ''}`}
+        className={`${style.exchange__btn} ${
+          toggleBtnStatus ? style.loading : ''
+        }`}
       ></span>
     </div>
   );

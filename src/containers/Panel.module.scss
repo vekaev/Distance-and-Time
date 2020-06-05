@@ -1,0 +1,9 @@
+@import '../variable';
+
+.panel {
+  max-width: 600px;
+  display: inline-block;
+  height: calc(100vh);
+  overflow: scroll;
+  background-color: $color-white;
+}

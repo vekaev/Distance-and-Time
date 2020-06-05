@@ -1,0 +1,1976 @@
+.flag-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 24px;
+  height: 24px;
+  background-image: url('../design/images/apps/dist-time/flags/flags-shine.png');
+}
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+  .flag-icon { background-image: url('../design/images/apps/dist-time/flags/flags-shine@2x.png');
+    background-size: 24px 5832px;
+  }
+}
+
+.flag-icon- {
+  background-position: 0 -0px;
+}
+
+.flag-icon-ae {
+  background-position: 0 -24px;
+}
+
+.flag-icon-bl {
+  background-position: 0 -48px;
+}
+
+.flag-icon-cg {
+  background-position: 0 -72px;
+}
+
+.flag-icon-ch {
+  background-position: 0 -96px;
+}
+
+.flag-icon-eh {
+  background-position: 0 -120px;
+}
+
+.flag-icon-es {
+  background-position: 0 -144px;
+}
+
+.flag-icon-gb {
+  background-position: 0 -168px;
+}
+
+.flag-icon-gs {
+  background-position: 0 -192px;
+}
+
+.flag-icon-kn {
+  background-position: 0 -216px;
+}
+
+.flag-icon-kr {
+  background-position: 0 -240px;
+}
+
+.flag-icon-lc {
+  background-position: 0 -264px;
+}
+
+.flag-icon-lk {
+  background-position: 0 -288px;
+}
+
+.flag-icon-mf {
+  background-position: 0 -312px;
+}
+
+.flag-icon-np {
+  background-position: 0 -336px;
+}
+
+.flag-icon-ro {
+  background-position: 0 -360px;
+}
+
+.flag-icon-rs {
+  background-position: 0 -384px;
+}
+
+.flag-icon-ru {
+  background-position: 0 -408px;
+}
+
+.flag-icon-rw {
+  background-position: 0 -432px;
+}
+
+.flag-icon-sa {
+  background-position: 0 -456px;
+}
+
+.flag-icon-sb {
+  background-position: 0 -480px;
+}
+
+.flag-icon-sc {
+  background-position: 0 -504px;
+}
+
+.flag-icon-sd {
+  background-position: 0 -528px;
+}
+
+.flag-icon-se {
+  background-position: 0 -552px;
+}
+
+.flag-icon-sg {
+  background-position: 0 -576px;
+}
+
+.flag-icon-sh {
+  background-position: 0 -600px;
+}
+
+.flag-icon-si {
+  background-position: 0 -624px;
+}
+
+.flag-icon-sk {
+  background-position: 0 -648px;
+}
+
+.flag-icon-sl {
+  background-position: 0 -672px;
+}
+
+.flag-icon-sm {
+  background-position: 0 -696px;
+}
+
+.flag-icon-sn {
+  background-position: 0 -720px;
+}
+
+.flag-icon-so {
+  background-position: 0 -744px;
+}
+
+.flag-icon-sr {
+  background-position: 0 -768px;
+}
+
+.flag-icon-ss {
+  background-position: 0 -792px;
+}
+
+.flag-icon-st {
+  background-position: 0 -816px;
+}
+
+.flag-icon-sy {
+  background-position: 0 -840px;
+}
+
+.flag-icon-sz {
+  background-position: 0 -864px;
+}
+
+.flag-icon-tc {
+  background-position: 0 -888px;
+}
+
+.flag-icon-tg {
+  background-position: 0 -912px;
+}
+
+.flag-icon-th {
+  background-position: 0 -936px;
+}
+
+.flag-icon-tj {
+  background-position: 0 -960px;
+}
+
+.flag-icon-tk {
+  background-position: 0 -984px;
+}
+
+.flag-icon-tm {
+  background-position: 0 -1008px;
+}
+
+.flag-icon-tn {
+  background-position: 0 -1032px;
+}
+
+.flag-icon-to {
+  background-position: 0 -1056px;
+}
+
+.flag-icon-tr {
+  background-position: 0 -1080px;
+}
+
+.flag-icon-tt {
+  background-position: 0 -1104px;
+}
+
+.flag-icon-tv {
+  background-position: 0 -1128px;
+}
+
+.flag-icon-tw {
+  background-position: 0 -1152px;
+}
+
+.flag-icon-tz {
+  background-position: 0 -1176px;
+}
+
+.flag-icon-ua {
+  background-position: 0 -1200px;
+}
+
+.flag-icon-ug {
+  background-position: 0 -1224px;
+}
+
+.flag-icon-us {
+  background-position: 0 -1248px;
+}
+
+.flag-icon-uy {
+  background-position: 0 -1272px;
+}
+
+.flag-icon-uz {
+  background-position: 0 -1296px;
+}
+
+.flag-icon-va {
+  background-position: 0 -1320px;
+}
+
+.flag-icon-vc {
+  background-position: 0 -1344px;
+}
+
+.flag-icon-ve {
+  background-position: 0 -1368px;
+}
+
+.flag-icon-vi {
+  background-position: 0 -1392px;
+}
+
+.flag-icon-vn {
+  background-position: 0 -1416px;
+}
+
+.flag-icon-vu {
+  background-position: 0 -1440px;
+}
+
+.flag-icon-wf {
+  background-position: 0 -1464px;
+}
+
+.flag-icon-ws {
+  background-position: 0 -1488px;
+}
+
+.flag-icon-ye {
+  background-position: 0 -1512px;
+}
+
+.flag-icon-za {
+  background-position: 0 -1536px;
+}
+
+.flag-icon-zm {
+  background-position: 0 -1560px;
+}
+
+.flag-icon-zw {
+  background-position: 0 -1584px;
+}
+
+.flag-icon-an {
+  background-position: 0 -1608px;
+}
+
+.flag-icon-fm {
+  background-position: 0 -1632px;
+}
+
+.flag-icon-kg {
+  background-position: 0 -1656px;
+}
+
+.flag-icon-ki {
+  background-position: 0 -1680px;
+}
+
+.flag-icon-kp {
+  background-position: 0 -1704px;
+}
+
+.flag-icon-kw {
+  background-position: 0 -1728px;
+}
+
+.flag-icon-la {
+  background-position: 0 -1752px;
+}
+
+.flag-icon-lb {
+  background-position: 0 -1776px;
+}
+
+.flag-icon-li {
+  background-position: 0 -1800px;
+}
+
+.flag-icon-lr {
+  background-position: 0 -1824px;
+}
+
+.flag-icon-ls {
+  background-position: 0 -1848px;
+}
+
+.flag-icon-lt {
+  background-position: 0 -1872px;
+}
+
+.flag-icon-lu {
+  background-position: 0 -1896px;
+}
+
+.flag-icon-lv {
+  background-position: 0 -1920px;
+}
+
+.flag-icon-ly {
+  background-position: 0 -1944px;
+}
+
+.flag-icon-ma {
+  background-position: 0 -1968px;
+}
+
+.flag-icon-mc {
+  background-position: 0 -1992px;
+}
+
+.flag-icon-md {
+  background-position: 0 -2016px;
+}
+
+.flag-icon-me {
+  background-position: 0 -2040px;
+}
+
+.flag-icon-mg {
+  background-position: 0 -2064px;
+}
+
+.flag-icon-mh {
+  background-position: 0 -2088px;
+}
+
+.flag-icon-mk {
+  background-position: 0 -2112px;
+}
+
+.flag-icon-ml {
+  background-position: 0 -2136px;
+}
+
+.flag-icon-mm {
+  background-position: 0 -2160px;
+}
+
+.flag-icon-mn {
+  background-position: 0 -2184px;
+}
+
+.flag-icon-mo {
+  background-position: 0 -2208px;
+}
+
+.flag-icon-mp {
+  background-position: 0 -2232px;
+}
+
+.flag-icon-mq {
+  background-position: 0 -2256px;
+}
+
+.flag-icon-mr {
+  background-position: 0 -2280px;
+}
+
+.flag-icon-ms {
+  background-position: 0 -2304px;
+}
+
+.flag-icon-mt {
+  background-position: 0 -2328px;
+}
+
+.flag-icon-mu {
+  background-position: 0 -2352px;
+}
+
+.flag-icon-mv {
+  background-position: 0 -2376px;
+}
+
+.flag-icon-mw {
+  background-position: 0 -2400px;
+}
+
+.flag-icon-mx {
+  background-position: 0 -2424px;
+}
+
+.flag-icon-my {
+  background-position: 0 -2448px;
+}
+
+.flag-icon-mz {
+  background-position: 0 -2472px;
+}
+
+.flag-icon-na {
+  background-position: 0 -2496px;
+}
+
+.flag-icon-nc {
+  background-position: 0 -2520px;
+}
+
+.flag-icon-ne {
+  background-position: 0 -2544px;
+}
+
+.flag-icon-nf {
+  background-position: 0 -2568px;
+}
+
+.flag-icon-ng {
+  background-position: 0 -2592px;
+}
+
+.flag-icon-ni {
+  background-position: 0 -2616px;
+}
+
+.flag-icon-nl {
+  background-position: 0 -2640px;
+}
+
+.flag-icon-no {
+  background-position: 0 -2664px;
+}
+
+.flag-icon-nr {
+  background-position: 0 -2688px;
+}
+
+.flag-icon-nu {
+  background-position: 0 -2712px;
+}
+
+.flag-icon-nz {
+  background-position: 0 -2736px;
+}
+
+.flag-icon-om {
+  background-position: 0 -2760px;
+}
+
+.flag-icon-pa {
+  background-position: 0 -2784px;
+}
+
+.flag-icon-pe {
+  background-position: 0 -2808px;
+}
+
+.flag-icon-pg {
+  background-position: 0 -2832px;
+}
+
+.flag-icon-ph {
+  background-position: 0 -2856px;
+}
+
+.flag-icon-pk {
+  background-position: 0 -2880px;
+}
+
+.flag-icon-pl {
+  background-position: 0 -2904px;
+}
+
+.flag-icon-pn {
+  background-position: 0 -2928px;
+}
+
+.flag-icon-pr {
+  background-position: 0 -2952px;
+}
+
+.flag-icon-ps {
+  background-position: 0 -2976px;
+}
+
+.flag-icon-pt {
+  background-position: 0 -3000px;
+}
+
+.flag-icon-pw {
+  background-position: 0 -3024px;
+}
+
+.flag-icon-py {
+  background-position: 0 -3048px;
+}
+
+.flag-icon-qa {
+  background-position: 0 -3072px;
+}
+
+.flag-icon-yt {
+  background-position: 0 -3096px;
+}
+
+.flag-icon-cd {
+  background-position: 0 -3120px;
+}
+
+.flag-icon-ci {
+  background-position: 0 -3144px;
+}
+
+.flag-icon-ck {
+  background-position: 0 -3168px;
+}
+
+.flag-icon-cr {
+  background-position: 0 -3192px;
+}
+
+.flag-icon-cu {
+  background-position: 0 -3216px;
+}
+
+.flag-icon-cw {
+  background-position: 0 -3240px;
+}
+
+.flag-icon-cy {
+  background-position: 0 -3264px;
+}
+
+.flag-icon-cz {
+  background-position: 0 -3288px;
+}
+
+.flag-icon-de {
+  background-position: 0 -3312px;
+}
+
+.flag-icon-dj {
+  background-position: 0 -3336px;
+}
+
+.flag-icon-dk {
+  background-position: 0 -3360px;
+}
+
+.flag-icon-dm {
+  background-position: 0 -3384px;
+}
+
+.flag-icon-do {
+  background-position: 0 -3408px;
+}
+
+.flag-icon-ec {
+  background-position: 0 -3432px;
+}
+
+.flag-icon-ee {
+  background-position: 0 -3456px;
+}
+
+.flag-icon-eg {
+  background-position: 0 -3480px;
+}
+
+.flag-icon-er {
+  background-position: 0 -3504px;
+}
+
+.flag-icon-et {
+  background-position: 0 -3528px;
+}
+
+.flag-icon-eu {
+  background-position: 0 -3552px;
+}
+
+.flag-icon-fi {
+  background-position: 0 -3576px;
+}
+
+.flag-icon-fj {
+  background-position: 0 -3600px;
+}
+
+.flag-icon-fk {
+  background-position: 0 -3624px;
+}
+
+.flag-icon-fo {
+  background-position: 0 -3648px;
+}
+
+.flag-icon-fr {
+  background-position: 0 -3672px;
+}
+
+.flag-icon-ga {
+  background-position: 0 -3696px;
+}
+
+.flag-icon-gd {
+  background-position: 0 -3720px;
+}
+
+.flag-icon-ge {
+  background-position: 0 -3744px;
+}
+
+.flag-icon-gg {
+  background-position: 0 -3768px;
+}
+
+.flag-icon-gh {
+  background-position: 0 -3792px;
+}
+
+.flag-icon-gi {
+  background-position: 0 -3816px;
+}
+
+.flag-icon-gl {
+  background-position: 0 -3840px;
+}
+
+.flag-icon-gm {
+  background-position: 0 -3864px;
+}
+
+.flag-icon-gn {
+  background-position: 0 -3888px;
+}
+
+.flag-icon-gr {
+  background-position: 0 -3912px;
+}
+
+.flag-icon-gq {
+  background-position: 0 -3936px;
+}
+
+.flag-icon-gt {
+  background-position: 0 -3960px;
+}
+
+.flag-icon-gu {
+  background-position: 0 -3984px;
+}
+
+.flag-icon-gw {
+  background-position: 0 -4008px;
+}
+
+.flag-icon-gy {
+  background-position: 0 -4032px;
+}
+
+.flag-icon-hk {
+  background-position: 0 -4056px;
+}
+
+.flag-icon-hn {
+  background-position: 0 -4080px;
+}
+
+.flag-icon-hr {
+  background-position: 0 -4104px;
+}
+
+.flag-icon-ht {
+  background-position: 0 -4128px;
+}
+
+.flag-icon-hu {
+  background-position: 0 -4152px;
+}
+
+.flag-icon-id {
+  background-position: 0 -4176px;
+}
+
+.flag-icon-ie {
+  background-position: 0 -4200px;
+}
+
+.flag-icon-il {
+  background-position: 0 -4224px;
+}
+
+.flag-icon-im {
+  background-position: 0 -4248px;
+}
+
+.flag-icon-in {
+  background-position: 0 -4272px;
+}
+
+.flag-icon-iq {
+  background-position: 0 -4296px;
+}
+
+.flag-icon-ir {
+  background-position: 0 -4320px;
+}
+
+.flag-icon-is {
+  background-position: 0 -4344px;
+}
+
+.flag-icon-it {
+  background-position: 0 -4368px;
+}
+
+.flag-icon-je {
+  background-position: 0 -4392px;
+}
+
+.flag-icon-jm {
+  background-position: 0 -4416px;
+}
+
+.flag-icon-jo {
+  background-position: 0 -4440px;
+}
+
+.flag-icon-jp {
+  background-position: 0 -4464px;
+}
+
+.flag-icon-ke {
+  background-position: 0 -4488px;
+}
+
+.flag-icon-km {
+  background-position: 0 -4512px;
+}
+
+.flag-icon-kz {
+  background-position: 0 -4536px;
+}
+
+.flag-icon-pf {
+  background-position: 0 -4560px;
+}
+
+.flag-icon-sv {
+  background-position: 0 -4584px;
+}
+
+.flag-icon-tf {
+  background-position: 0 -4608px;
+}
+
+.flag-icon-ab {
+  background-position: 0 -4632px;
+}
+
+.flag-icon-tl {
+  background-position: 0 -4656px;
+}
+
+.flag-icon-ad {
+  background-position: 0 -4680px;
+}
+
+.flag-icon-af {
+  background-position: 0 -4704px;
+}
+
+.flag-icon-ag {
+  background-position: 0 -4728px;
+}
+
+.flag-icon-ai {
+  background-position: 0 -4752px;
+}
+
+.flag-icon-al {
+  background-position: 0 -4776px;
+}
+
+.flag-icon-am {
+  background-position: 0 -4800px;
+}
+
+.flag-icon-ao {
+  background-position: 0 -4824px;
+}
+
+.flag-icon-aq {
+  background-position: 0 -4848px;
+}
+
+.flag-icon-ar {
+  background-position: 0 -4872px;
+}
+
+.flag-icon-as {
+  background-position: 0 -4896px;
+}
+
+.flag-icon-at {
+  background-position: 0 -4920px;
+}
+
+.flag-icon-au {
+  background-position: 0 -4944px;
+}
+
+.flag-icon-aw {
+  background-position: 0 -4968px;
+}
+
+.flag-icon-ax {
+  background-position: 0 -4992px;
+}
+
+.flag-icon-az {
+  background-position: 0 -5016px;
+}
+
+.flag-icon-ba {
+  background-position: 0 -5040px;
+}
+
+.flag-icon-bb {
+  background-position: 0 -5064px;
+}
+
+.flag-icon-bd {
+  background-position: 0 -5088px;
+}
+
+.flag-icon-be {
+  background-position: 0 -5112px;
+}
+
+.flag-icon-bf {
+  background-position: 0 -5136px;
+}
+
+.flag-icon-bg {
+  background-position: 0 -5160px;
+}
+
+.flag-icon-bh {
+  background-position: 0 -5184px;
+}
+
+.flag-icon-bi {
+  background-position: 0 -5208px;
+}
+
+.flag-icon-bj {
+  background-position: 0 -5232px;
+}
+
+.flag-icon-bm {
+  background-position: 0 -5256px;
+}
+
+.flag-icon-bn {
+  background-position: 0 -5280px;
+}
+
+.flag-icon-bo {
+  background-position: 0 -5304px;
+}
+
+.flag-icon-br {
+  background-position: 0 -5328px;
+}
+
+.flag-icon-bs {
+  background-position: 0 -5352px;
+}
+
+.flag-icon-bt {
+  background-position: 0 -5376px;
+}
+
+.flag-icon-bw {
+  background-position: 0 -5400px;
+}
+
+.flag-icon-by {
+  background-position: 0 -5424px;
+}
+
+.flag-icon-bz {
+  background-position: 0 -5448px;
+}
+
+.flag-icon-ca {
+  background-position: 0 -5472px;
+}
+
+.flag-icon-cc {
+  background-position: 0 -5496px;
+}
+
+.flag-icon-cf {
+  background-position: 0 -5520px;
+}
+
+.flag-icon-cl {
+  background-position: 0 -5544px;
+}
+
+.flag-icon-cm {
+  background-position: 0 -5568px;
+}
+
+.flag-icon-cn {
+  background-position: 0 -5592px;
+}
+
+.flag-icon-co {
+  background-position: 0 -5616px;
+}
+
+.flag-icon-cv {
+  background-position: 0 -5640px;
+}
+
+.flag-icon-cx {
+  background-position: 0 -5664px;
+}
+
+.flag-icon-dz {
+  background-position: 0 -5688px;
+}
+
+.flag-icon-ic {
+  background-position: 0 -5712px;
+}
+
+.flag-icon-kh {
+  background-position: 0 -5736px;
+}
+
+.flag-icon-ky {
+  background-position: 0 -5760px;
+}
+
+.flag-icon-td {
+  background-position: 0 -5784px;
+}
+
+.flag-icon-vg {
+  background-position: 0 -5808px;
+}
+
+
+
+.flag-icon-small {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../design/images/apps/dist-time/flags/flags-shine-sm.png');
+  margin-right: 4px;
+  top: -2px;
+  vertical-align: middle;
+}
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+  .flag-icon-small {
+    background-image: url('../design/images/apps/dist-time/flags/flags-shine-sm@2x.png');
+    background-size: 16px 3888px;
+  }
+}
+
+.flag-icon-small- {
+  background-position: 0 -0px;
+}
+
+.flag-icon-small-ad {
+  background-position: 0 -16px;
+}
+
+.flag-icon-small-ab {
+  background-position: 0 -32px;
+}
+
+.flag-icon-small-ae {
+  background-position: 0 -48px;
+}
+
+.flag-icon-small-af {
+  background-position: 0 -64px;
+}
+
+.flag-icon-small-ag {
+  background-position: 0 -80px;
+}
+
+.flag-icon-small-ai {
+  background-position: 0 -96px;
+}
+
+.flag-icon-small-am {
+  background-position: 0 -112px;
+}
+
+.flag-icon-small-an {
+  background-position: 0 -128px;
+}
+
+.flag-icon-small-al {
+  background-position: 0 -144px;
+}
+
+.flag-icon-small-ao {
+  background-position: 0 -160px;
+}
+
+.flag-icon-small-aq {
+  background-position: 0 -176px;
+}
+
+.flag-icon-small-as {
+  background-position: 0 -192px;
+}
+
+.flag-icon-small-ar {
+  background-position: 0 -208px;
+}
+
+.flag-icon-small-at {
+  background-position: 0 -224px;
+}
+
+.flag-icon-small-au {
+  background-position: 0 -240px;
+}
+
+.flag-icon-small-aw {
+  background-position: 0 -256px;
+}
+
+.flag-icon-small-ax {
+  background-position: 0 -272px;
+}
+
+.flag-icon-small-az {
+  background-position: 0 -288px;
+}
+
+.flag-icon-small-ba {
+  background-position: 0 -304px;
+}
+
+.flag-icon-small-bb {
+  background-position: 0 -320px;
+}
+
+.flag-icon-small-bd {
+  background-position: 0 -336px;
+}
+
+.flag-icon-small-be {
+  background-position: 0 -352px;
+}
+
+.flag-icon-small-bf {
+  background-position: 0 -368px;
+}
+
+.flag-icon-small-bg {
+  background-position: 0 -384px;
+}
+
+.flag-icon-small-bh {
+  background-position: 0 -400px;
+}
+
+.flag-icon-small-bi {
+  background-position: 0 -416px;
+}
+
+.flag-icon-small-bj {
+  background-position: 0 -432px;
+}
+
+.flag-icon-small-bm {
+  background-position: 0 -448px;
+}
+
+.flag-icon-small-bl {
+  background-position: 0 -464px;
+}
+
+.flag-icon-small-bn {
+  background-position: 0 -480px;
+}
+
+.flag-icon-small-bo {
+  background-position: 0 -496px;
+}
+
+.flag-icon-small-br {
+  background-position: 0 -512px;
+}
+
+.flag-icon-small-bs {
+  background-position: 0 -528px;
+}
+
+.flag-icon-small-bt {
+  background-position: 0 -544px;
+}
+
+.flag-icon-small-bw {
+  background-position: 0 -560px;
+}
+
+.flag-icon-small-by {
+  background-position: 0 -576px;
+}
+
+.flag-icon-small-bz {
+  background-position: 0 -592px;
+}
+
+.flag-icon-small-ca {
+  background-position: 0 -608px;
+}
+
+.flag-icon-small-cc {
+  background-position: 0 -624px;
+}
+
+.flag-icon-small-cd {
+  background-position: 0 -640px;
+}
+
+.flag-icon-small-cf {
+  background-position: 0 -656px;
+}
+
+.flag-icon-small-cg {
+  background-position: 0 -672px;
+}
+
+.flag-icon-small-ch {
+  background-position: 0 -688px;
+}
+
+.flag-icon-small-ci {
+  background-position: 0 -704px;
+}
+
+.flag-icon-small-ck {
+  background-position: 0 -720px;
+}
+
+.flag-icon-small-cl {
+  background-position: 0 -736px;
+}
+
+.flag-icon-small-cm {
+  background-position: 0 -752px;
+}
+
+.flag-icon-small-cn {
+  background-position: 0 -768px;
+}
+
+.flag-icon-small-co {
+  background-position: 0 -784px;
+}
+
+.flag-icon-small-cr {
+  background-position: 0 -800px;
+}
+
+.flag-icon-small-cu {
+  background-position: 0 -816px;
+}
+
+.flag-icon-small-cv {
+  background-position: 0 -832px;
+}
+
+.flag-icon-small-cw {
+  background-position: 0 -848px;
+}
+
+.flag-icon-small-cx {
+  background-position: 0 -864px;
+}
+
+.flag-icon-small-cy {
+  background-position: 0 -880px;
+}
+
+.flag-icon-small-cz {
+  background-position: 0 -896px;
+}
+
+.flag-icon-small-de {
+  background-position: 0 -912px;
+}
+
+.flag-icon-small-dj {
+  background-position: 0 -928px;
+}
+
+.flag-icon-small-dk {
+  background-position: 0 -944px;
+}
+
+.flag-icon-small-dm {
+  background-position: 0 -960px;
+}
+
+.flag-icon-small-do {
+  background-position: 0 -976px;
+}
+
+.flag-icon-small-dz {
+  background-position: 0 -992px;
+}
+
+.flag-icon-small-ec {
+  background-position: 0 -1008px;
+}
+
+.flag-icon-small-ee {
+  background-position: 0 -1024px;
+}
+
+.flag-icon-small-eg {
+  background-position: 0 -1040px;
+}
+
+.flag-icon-small-eh {
+  background-position: 0 -1056px;
+}
+
+.flag-icon-small-er {
+  background-position: 0 -1072px;
+}
+
+.flag-icon-small-es {
+  background-position: 0 -1088px;
+}
+
+.flag-icon-small-et {
+  background-position: 0 -1104px;
+}
+
+.flag-icon-small-eu {
+  background-position: 0 -1120px;
+}
+
+.flag-icon-small-fi {
+  background-position: 0 -1136px;
+}
+
+.flag-icon-small-fj {
+  background-position: 0 -1152px;
+}
+
+.flag-icon-small-fk {
+  background-position: 0 -1168px;
+}
+
+.flag-icon-small-fm {
+  background-position: 0 -1184px;
+}
+
+.flag-icon-small-fo {
+  background-position: 0 -1200px;
+}
+
+.flag-icon-small-fr {
+  background-position: 0 -1216px;
+}
+
+.flag-icon-small-ga {
+  background-position: 0 -1232px;
+}
+
+.flag-icon-small-gb {
+  background-position: 0 -1248px;
+}
+
+.flag-icon-small-gd {
+  background-position: 0 -1264px;
+}
+
+.flag-icon-small-ge {
+  background-position: 0 -1280px;
+}
+
+.flag-icon-small-gg {
+  background-position: 0 -1296px;
+}
+
+.flag-icon-small-gh {
+  background-position: 0 -1312px;
+}
+
+.flag-icon-small-gi {
+  background-position: 0 -1328px;
+}
+
+.flag-icon-small-gl {
+  background-position: 0 -1344px;
+}
+
+.flag-icon-small-gm {
+  background-position: 0 -1360px;
+}
+
+.flag-icon-small-gn {
+  background-position: 0 -1376px;
+}
+
+.flag-icon-small-gq {
+  background-position: 0 -1392px;
+}
+
+.flag-icon-small-gr {
+  background-position: 0 -1408px;
+}
+
+.flag-icon-small-gs {
+  background-position: 0 -1424px;
+}
+
+.flag-icon-small-gt {
+  background-position: 0 -1440px;
+}
+
+.flag-icon-small-gu {
+  background-position: 0 -1456px;
+}
+
+.flag-icon-small-gw {
+  background-position: 0 -1472px;
+}
+
+.flag-icon-small-gy {
+  background-position: 0 -1488px;
+}
+
+.flag-icon-small-hk {
+  background-position: 0 -1504px;
+}
+
+.flag-icon-small-hn {
+  background-position: 0 -1520px;
+}
+
+.flag-icon-small-hr {
+  background-position: 0 -1536px;
+}
+
+.flag-icon-small-ht {
+  background-position: 0 -1552px;
+}
+
+.flag-icon-small-hu {
+  background-position: 0 -1568px;
+}
+
+.flag-icon-small-ic {
+  background-position: 0 -1584px;
+}
+
+.flag-icon-small-id {
+  background-position: 0 -1600px;
+}
+
+.flag-icon-small-ie {
+  background-position: 0 -1616px;
+}
+
+.flag-icon-small-il {
+  background-position: 0 -1632px;
+}
+
+.flag-icon-small-im {
+  background-position: 0 -1648px;
+}
+
+.flag-icon-small-in {
+  background-position: 0 -1664px;
+}
+
+.flag-icon-small-iq {
+  background-position: 0 -1680px;
+}
+
+.flag-icon-small-ir {
+  background-position: 0 -1696px;
+}
+
+.flag-icon-small-is {
+  background-position: 0 -1712px;
+}
+
+.flag-icon-small-it {
+  background-position: 0 -1728px;
+}
+
+.flag-icon-small-je {
+  background-position: 0 -1744px;
+}
+
+.flag-icon-small-jm {
+  background-position: 0 -1760px;
+}
+
+.flag-icon-small-jo {
+  background-position: 0 -1776px;
+}
+
+.flag-icon-small-jp {
+  background-position: 0 -1792px;
+}
+
+.flag-icon-small-ke {
+  background-position: 0 -1808px;
+}
+
+.flag-icon-small-kg {
+  background-position: 0 -1824px;
+}
+
+.flag-icon-small-kh {
+  background-position: 0 -1840px;
+}
+
+.flag-icon-small-ki {
+  background-position: 0 -1856px;
+}
+
+.flag-icon-small-km {
+  background-position: 0 -1872px;
+}
+
+.flag-icon-small-kn {
+  background-position: 0 -1888px;
+}
+
+.flag-icon-small-kp {
+  background-position: 0 -1904px;
+}
+
+.flag-icon-small-kr {
+  background-position: 0 -1920px;
+}
+
+.flag-icon-small-kw {
+  background-position: 0 -1936px;
+}
+
+.flag-icon-small-ky {
+  background-position: 0 -1952px;
+}
+
+.flag-icon-small-kz {
+  background-position: 0 -1968px;
+}
+
+.flag-icon-small-la {
+  background-position: 0 -1984px;
+}
+
+.flag-icon-small-lb {
+  background-position: 0 -2000px;
+}
+
+.flag-icon-small-lc {
+  background-position: 0 -2016px;
+}
+
+.flag-icon-small-li {
+  background-position: 0 -2032px;
+}
+
+.flag-icon-small-lk {
+  background-position: 0 -2048px;
+}
+
+.flag-icon-small-lr {
+  background-position: 0 -2064px;
+}
+
+.flag-icon-small-ls {
+  background-position: 0 -2080px;
+}
+
+.flag-icon-small-lt {
+  background-position: 0 -2096px;
+}
+
+.flag-icon-small-lu {
+  background-position: 0 -2112px;
+}
+
+.flag-icon-small-lv {
+  background-position: 0 -2128px;
+}
+
+.flag-icon-small-ly {
+  background-position: 0 -2144px;
+}
+
+.flag-icon-small-ma {
+  background-position: 0 -2160px;
+}
+
+.flag-icon-small-mc {
+  background-position: 0 -2176px;
+}
+
+.flag-icon-small-md {
+  background-position: 0 -2192px;
+}
+
+.flag-icon-small-me {
+  background-position: 0 -2208px;
+}
+
+.flag-icon-small-mf {
+  background-position: 0 -2224px;
+}
+
+.flag-icon-small-mg {
+  background-position: 0 -2240px;
+}
+
+.flag-icon-small-mh {
+  background-position: 0 -2256px;
+}
+
+.flag-icon-small-mk {
+  background-position: 0 -2272px;
+}
+
+.flag-icon-small-ml {
+  background-position: 0 -2288px;
+}
+
+.flag-icon-small-mm {
+  background-position: 0 -2304px;
+}
+
+.flag-icon-small-mn {
+  background-position: 0 -2320px;
+}
+
+.flag-icon-small-mo {
+  background-position: 0 -2336px;
+}
+
+.flag-icon-small-mp {
+  background-position: 0 -2352px;
+}
+
+.flag-icon-small-mq {
+  background-position: 0 -2368px;
+}
+
+.flag-icon-small-mr {
+  background-position: 0 -2384px;
+}
+
+.flag-icon-small-ms {
+  background-position: 0 -2400px;
+}
+
+.flag-icon-small-mt {
+  background-position: 0 -2416px;
+}
+
+.flag-icon-small-mu {
+  background-position: 0 -2432px;
+}
+
+.flag-icon-small-mv {
+  background-position: 0 -2448px;
+}
+
+.flag-icon-small-mw {
+  background-position: 0 -2464px;
+}
+
+.flag-icon-small-mx {
+  background-position: 0 -2480px;
+}
+
+.flag-icon-small-my {
+  background-position: 0 -2496px;
+}
+
+.flag-icon-small-mz {
+  background-position: 0 -2512px;
+}
+
+.flag-icon-small-na {
+  background-position: 0 -2528px;
+}
+
+.flag-icon-small-nc {
+  background-position: 0 -2544px;
+}
+
+.flag-icon-small-ne {
+  background-position: 0 -2560px;
+}
+
+.flag-icon-small-nf {
+  background-position: 0 -2576px;
+}
+
+.flag-icon-small-ng {
+  background-position: 0 -2592px;
+}
+
+.flag-icon-small-ni {
+  background-position: 0 -2608px;
+}
+
+.flag-icon-small-nl {
+  background-position: 0 -2624px;
+}
+
+.flag-icon-small-no {
+  background-position: 0 -2640px;
+}
+
+.flag-icon-small-np {
+  background-position: 0 -2656px;
+}
+
+.flag-icon-small-nr {
+  background-position: 0 -2672px;
+}
+
+.flag-icon-small-nu {
+  background-position: 0 -2688px;
+}
+
+.flag-icon-small-nz {
+  background-position: 0 -2704px;
+}
+
+.flag-icon-small-om {
+  background-position: 0 -2720px;
+}
+
+.flag-icon-small-pa {
+  background-position: 0 -2736px;
+}
+
+.flag-icon-small-pe {
+  background-position: 0 -2752px;
+}
+
+.flag-icon-small-pf {
+  background-position: 0 -2768px;
+}
+
+.flag-icon-small-pg {
+  background-position: 0 -2784px;
+}
+
+.flag-icon-small-ph {
+  background-position: 0 -2800px;
+}
+
+.flag-icon-small-pk {
+  background-position: 0 -2816px;
+}
+
+.flag-icon-small-pl {
+  background-position: 0 -2832px;
+}
+
+.flag-icon-small-pn {
+  background-position: 0 -2848px;
+}
+
+.flag-icon-small-pr {
+  background-position: 0 -2864px;
+}
+
+.flag-icon-small-ps {
+  background-position: 0 -2880px;
+}
+
+.flag-icon-small-pt {
+  background-position: 0 -2896px;
+}
+
+.flag-icon-small-pw {
+  background-position: 0 -2912px;
+}
+
+.flag-icon-small-py {
+  background-position: 0 -2928px;
+}
+
+.flag-icon-small-qa {
+  background-position: 0 -2944px;
+}
+
+.flag-icon-small-ro {
+  background-position: 0 -2960px;
+}
+
+.flag-icon-small-rs {
+  background-position: 0 -2976px;
+}
+
+.flag-icon-small-ru {
+  background-position: 0 -2992px;
+}
+
+.flag-icon-small-rw {
+  background-position: 0 -3008px;
+}
+
+.flag-icon-small-sa {
+  background-position: 0 -3024px;
+}
+
+.flag-icon-small-sb {
+  background-position: 0 -3040px;
+}
+
+.flag-icon-small-sc {
+  background-position: 0 -3056px;
+}
+
+.flag-icon-small-sd {
+  background-position: 0 -3072px;
+}
+
+.flag-icon-small-se {
+  background-position: 0 -3088px;
+}
+
+.flag-icon-small-sg {
+  background-position: 0 -3104px;
+}
+
+.flag-icon-small-sh {
+  background-position: 0 -3120px;
+}
+
+.flag-icon-small-si {
+  background-position: 0 -3136px;
+}
+
+.flag-icon-small-sk {
+  background-position: 0 -3152px;
+}
+
+.flag-icon-small-sl {
+  background-position: 0 -3168px;
+}
+
+.flag-icon-small-sm {
+  background-position: 0 -3184px;
+}
+
+.flag-icon-small-sn {
+  background-position: 0 -3200px;
+}
+
+.flag-icon-small-so {
+  background-position: 0 -3216px;
+}
+
+.flag-icon-small-sr {
+  background-position: 0 -3232px;
+}
+
+.flag-icon-small-ss {
+  background-position: 0 -3248px;
+}
+
+.flag-icon-small-st {
+  background-position: 0 -3264px;
+}
+
+.flag-icon-small-sv {
+  background-position: 0 -3280px;
+}
+
+.flag-icon-small-sy {
+  background-position: 0 -3296px;
+}
+
+.flag-icon-small-sz {
+  background-position: 0 -3312px;
+}
+
+.flag-icon-small-tc {
+  background-position: 0 -3328px;
+}
+
+.flag-icon-small-td {
+  background-position: 0 -3344px;
+}
+
+.flag-icon-small-tf {
+  background-position: 0 -3360px;
+}
+
+.flag-icon-small-tg {
+  background-position: 0 -3376px;
+}
+
+.flag-icon-small-th {
+  background-position: 0 -3392px;
+}
+
+.flag-icon-small-tj {
+  background-position: 0 -3408px;
+}
+
+.flag-icon-small-tk {
+  background-position: 0 -3424px;
+}
+
+.flag-icon-small-tl {
+  background-position: 0 -3440px;
+}
+
+.flag-icon-small-tm {
+  background-position: 0 -3456px;
+}
+
+.flag-icon-small-tn {
+  background-position: 0 -3472px;
+}
+
+.flag-icon-small-to {
+  background-position: 0 -3488px;
+}
+
+.flag-icon-small-tr {
+  background-position: 0 -3504px;
+}
+
+.flag-icon-small-tv {
+  background-position: 0 -3520px;
+}
+
+.flag-icon-small-tw {
+  background-position: 0 -3536px;
+}
+
+.flag-icon-small-tt {
+  background-position: 0 -3552px;
+}
+
+.flag-icon-small-tz {
+  background-position: 0 -3568px;
+}
+
+.flag-icon-small-ua {
+  background-position: 0 -3584px;
+}
+
+.flag-icon-small-ug {
+  background-position: 0 -3600px;
+}
+
+.flag-icon-small-us {
+  background-position: 0 -3616px;
+}
+
+.flag-icon-small-uy {
+  background-position: 0 -3632px;
+}
+
+.flag-icon-small-uz {
+  background-position: 0 -3648px;
+}
+
+.flag-icon-small-va {
+  background-position: 0 -3664px;
+}
+
+.flag-icon-small-vc {
+  background-position: 0 -3680px;
+}
+
+.flag-icon-small-ve {
+  background-position: 0 -3696px;
+}
+
+.flag-icon-small-vg {
+  background-position: 0 -3712px;
+}
+
+.flag-icon-small-vi {
+  background-position: 0 -3728px;
+}
+
+.flag-icon-small-vn {
+  background-position: 0 -3744px;
+}
+
+.flag-icon-small-vu {
+  background-position: 0 -3760px;
+}
+
+.flag-icon-small-wf {
+  background-position: 0 -3776px;
+}
+
+.flag-icon-small-ws {
+  background-position: 0 -3792px;
+}
+
+.flag-icon-small-ye {
+  background-position: 0 -3808px;
+}
+
+.flag-icon-small-yt {
+  background-position: 0 -3824px;
+}
+
+.flag-icon-small-za {
+  background-position: 0 -3840px;
+}
+
+.flag-icon-small-zm {
+  background-position: 0 -3856px;
+}
+
+.flag-icon-small-zw {
+  background-position: 0 -3872px;
+}
