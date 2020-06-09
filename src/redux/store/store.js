@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
-import { speedReducer } from './reducer';
+import { filterReducer } from '../reducers/reducer';
 import { logger } from 'redux-logger';
 
-const store = createStore(speedReducer, applyMiddleware(logger));
+const store = createStore(filterReducer, applyMiddleware(logger));
 
 export default store;

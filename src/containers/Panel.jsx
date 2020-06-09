@@ -9,15 +9,10 @@ const Panel = ({
   statisticDataStatus,
   distAndTimeDataStatus,
   responseData,
-  setPositionPort,
 }) => {
   return (
     <aside className={styles['panel']}>
-      <Filter
-        toggleBtnStatus={toggleBtnStatus}
-        submitForm={submitForm}
-        setPositionPort={setPositionPort}
-      />
+      <Filter toggleBtnStatus={toggleBtnStatus} submitForm={submitForm} />
       <Statistic
         distAndTime={distAndTimeDataStatus}
         transitTime={statisticDataStatus}

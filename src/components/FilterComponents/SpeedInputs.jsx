@@ -1,34 +1,18 @@
 import React, { useState } from 'react';
 import style from './SpeedInputs.module.scss';
-// import {
-//   speedIncrement,
-//   speedDecrement,
-//   speedChange,
-// } from '../../store/actions';
-
-import { connect } from 'react-redux';
 
 const SpeedInputs = ({
-  setSpeedValue,
-  setConvertSpeedStatus,
-  convertSpeedStatus,
   speedValue,
   btnActive,
-  speed_value,
-  speedChange,
-  speedIncrement,
-  speedDecrement,
+  handleSpeedChange,
+  convertSpeedStatus,
+  setConvertSpeedStatus,
 }) => {
   // const changeSpeed = (status) => {
   //     if (speedValue > 1 || (status).toString() == "1") {
   //         setSpeedValue(+speedValue + status)
   //     }
   // }
-
-  const handleChange = (value) => {
-    setSpeedValue(value);
-    speedChange({ speed_value: value });
-  };
 
   return (
     <div className={style['filter__additional']}>
@@ -39,18 +23,18 @@ const SpeedInputs = ({
             min={1}
             type='number'
             name='speed'
-            value={speed_value}
+            value={speedValue}
             id='speed'
-            onChange={(e) => handleChange(e.target.value)}
+            onChange={(e) => handleSpeedChange(e.target.value)}
           />
         </label>
         <div className={style['arrow__part']}>
           <span
-            onClick={() => speedIncrement({ speed_value: ++speed_value })}
+            onClick={() => handleSpeedChange(++speedValue)}
             className={`${style.arrow} ${style.up}`}
           ></span>
           <span
-            onClick={() => speedDecrement({ speed_value: --speed_value })}
+            onClick={() => handleSpeedChange(--speedValue)}
             className={`${style.arrow} ${style.down}`}
           ></span>
         </div>
@@ -65,7 +49,7 @@ const SpeedInputs = ({
           value={convertSpeedStatus}
           onChange={(e) => {
             setConvertSpeedStatus(+e.target.value);
-            setSpeedValue(Math.round(speedValue * +e.target.value));
+            handleSpeedChange(Math.round(speedValue * +e.target.value));
           }}
         >
           {btnActive == 'sea' ? (
@@ -82,19 +66,5 @@ const SpeedInputs = ({
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    speed_value: state.speed_value,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    speedChange: (value) => dispatch(speedChange(value)),
-    speedIncrement: (value) => dispatch(speedIncrement(value)),
-    speedDecrement: (value) => dispatch(speedDecrement(value)),
-  };
-};
-
-// export default connect(mapStateToProps, mapDispatchToProps)(SpeedInputs);
 export default SpeedInputs;
+// export default SpeedInputs;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './ShipmentBtn.module.scss';
 
-const ShipmentBtn = ({ title, active, toggleActive }) => {
+const ShipmentBtn = ({ title, active, toggleActive, label }) => {
   return (
     <li
       onClick={() => toggleActive(title)}
@@ -18,7 +18,7 @@ const ShipmentBtn = ({ title, active, toggleActive }) => {
         checked={active === title}
         onChange={() => {}}
       />
-      <label htmlFor={title}>{title}</label>
+      <label htmlFor={title}>{label}</label>
     </li>
   );
 };

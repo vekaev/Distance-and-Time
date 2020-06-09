@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import Panel from './containers/Panel';
 import axios from 'axios';
-import store from './redux/store/store';
-import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
 
-const App = () => {
+const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
   const [loading, setSubmitButtonLoading] = useState(false);
   const [responseData, setResponseData] = useState();
-  const [positionPort, setPositionPort] = useState({});
 
   const onSubmit = (data) => {
     data.preventDefault();
@@ -16,10 +14,10 @@ const App = () => {
 
     let filterData = {
       params: {
-        lat_from: positionPort.lat_from,
-        lng_from: positionPort.lng_from,
-        lat_to: positionPort.lat_to,
-        lng_to: positionPort.lng_to,
+        lat_from: lat_from,
+        lng_from: lng_from,
+        lat_to: lat_to,
+        lng_to: lng_to,
         key: 'E1KN-9PFZ-BO20-PGMG',
       },
     };
@@ -39,18 +37,26 @@ const App = () => {
   };
 
   return (
-    <Provider store={store}>
-      <Panel
-        toggleBtnStatus={loading}
-        submitForm={onSubmit}
-        responseData={responseData}
-        setPositionPort={setPositionPort}
-      />
-    </Provider>
+    <Panel
+      toggleBtnStatus={loading}
+      submitForm={onSubmit}
+      responseData={responseData}
+    />
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    speed_value: state.speed_value,
+    // road_speed_value: state.road_speed_value,
+    lat_from: state.lat_from,
+    lng_from: state.lng_from,
+    lat_to: state.lat_to,
+    lng_to: state.lng_to,
+  };
+};
+
+export default connect(mapStateToProps, null)(App);
 
 // export default withData(App, (store) => {
 //     return {

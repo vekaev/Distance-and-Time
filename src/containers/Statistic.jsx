@@ -14,7 +14,7 @@ const Statistic = ({ responseData }) => {
           <DistanceTime data={responseData} />
         </>
       ) : (
-        <div className={style['no-data']}>
+        <div className={`${style['no-data']} ${style['error']}`}>
           <div className={style['search__animation']}>
             <div className={style['center-part']}>
               <span className={style['search']}></span>

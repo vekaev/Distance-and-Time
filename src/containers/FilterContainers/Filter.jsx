@@ -1,24 +1,53 @@
 import React, { useState, useEffect } from 'react';
 import ShipmentList from '../../components/FilterComponents/ShipmentList';
-import InputList from './InputList';
+import InputList from '../../components/FilterComponents/InputList';
 import styles from './Filter.module.scss';
-import SpeedInputs from './SpeedInputs';
+import SpeedInputs from '../../components/FilterComponents/SpeedInputs';
+import { connect } from 'react-redux';
 
-const Filter = ({ submitForm, toggleBtnStatus, setPositionPort }) => {
+import {
+  speedChange,
+  positionChange,
+  shimpentChange,
+} from '../../redux/actions/actions';
+
+const Filter = ({
+  submitForm,
+  toggleBtnStatus,
+  setPositionPort,
+  speed_value,
+  speedChange,
+  positionChange,
+  shimpentChange,
+}) => {
   const [btnActive, setBtnActive] = useState('sea');
-  const [speedValue, setSpeedValue] = useState(13);
   const [convertSpeedStatus, setConvertSpeedStatus] = useState(1);
+
+  const handleSpeedChange = (value) => {
+    speedChange({ speed_value: value });
+  };
+
+  const handlePositionChange = (value) => {
+    positionChange(value);
+  };
+
+  const handleShimpentChange = (value) => {
+    shimpentChange({ shipment_type: value });
+  };
 
   useEffect(() => {
     switch (btnActive) {
       case 'sea':
-        setSpeedValue(13);
+        handleSpeedChange(13);
+        handleShimpentChange('sea');
         break;
-      case 'land':
-        setSpeedValue(35);
+      case 'road':
+        handleSpeedChange(35);
+        handleShimpentChange('road');
         break;
       case 'air':
-        setSpeedValue(800);
+        handleSpeedChange(800);
+        handleShimpentChange('air');
         break;
     }
     setConvertSpeedStatus(1.6093);
@@ -30,7 +59,7 @@ const Filter = ({ submitForm, toggleBtnStatus, setPositionPort }) => {
         <ShipmentList toggleActive={setBtnActive} active={btnActive} />
 
         <InputList
-          setPositionPort={setPositionPort}
+          setPositionPort={handlePositionChange}
           toggleBtnStatus={toggleBtnStatus}
         />
 
@@ -47,12 +76,32 @@ const Filter = ({ submitForm, toggleBtnStatus, setPositionPort }) => {
       <SpeedInputs
         convertSpeedStatus={convertSpeedStatus}
         setConvertSpeedStatus={setConvertSpeedStatus}
-        speedValue={speedValue}
-        setSpeedValue={setSpeedValue}
+        speedValue={speed_value}
         btnActive={btnActive}
+        handleSpeedChange={handleSpeedChange}
       />
     </form>
   );
 };
 
-export default Filter;
+const mapStateToProps = (state) => {
+  return {
+    speed_value: state.speed_value,
+    shipment_type: state.shipment_type,
+    road_speed_value: state.road_speed_value,
+    lat_from: state.lat_from,
+    lng_from: state.lng_from,
+    lat_to: state.lat_to,
+    lng_to: state.lng_to,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    speedChange: (value) => dispatch(speedChange(value)),
+    positionChange: (value) => dispatch(positionChange(value)),
+    shimpentChange: (value) => dispatch(shimpentChange(value)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);

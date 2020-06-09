@@ -7,9 +7,24 @@ const ShipmentList = ({ toggleActive, active }) => {
     <div className={style.shipment__choose}>
       <span className={style.title}>transportation by</span>
       <ul className={`${style[`btn__list`]} ${style[`${active}__list`]}`}>
-        <ShipmentBtn toggleActive={toggleActive} active={active} title='sea' />
-        <ShipmentBtn toggleActive={toggleActive} active={active} title='land' />
-        <ShipmentBtn toggleActive={toggleActive} active={active} title='air' />
+        <ShipmentBtn
+          toggleActive={toggleActive}
+          active={active}
+          title='sea'
+          label='sea'
+        />
+        <ShipmentBtn
+          toggleActive={toggleActive}
+          active={active}
+          title='road'
+          label='land'
+        />
+        <ShipmentBtn
+          toggleActive={toggleActive}
+          active={active}
+          title='air'
+          label='air'
+        />
       </ul>
     </div>
   );

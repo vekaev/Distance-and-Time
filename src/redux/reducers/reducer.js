@@ -1,15 +1,21 @@
 import React from 'react';
 import {
-  SPEED_INCREMENT,
-  SPEED_DECREMENT,
   CHANGE_SPEED_VALUE,
-} from './actionTypes';
+  CHANGE_POSITION,
+  CHANGE_SHIPMENT_TYPE,
+} from '../actions/actionTypes';
 
-const initialState = {
+export const initialState = {
+  shipment_type: 'sea',
   speed_value: 13,
+  // road_speed_value: 0,
+  lat_from: 0,
+  lng_from: 0,
+  lat_to: 0,
+  lng_to: 0,
 };
 
-export const speedReducer = (state = initialState, action) => {
+export const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_SPEED_VALUE:
       return {
@@ -17,16 +23,16 @@ export const speedReducer = (state = initialState, action) => {
         ...action.playload,
       };
       break;
-    case SPEED_INCREMENT:
+    case CHANGE_POSITION:
       return {
         ...state,
         ...action.playload,
       };
       break;
-    case SPEED_DECREMENT:
+    case CHANGE_SHIPMENT_TYPE:
       return {
         ...state,
-        speed_value: state.speed_value - 1,
+        ...action.playload,
       };
       break;
     default:

@@ -10,8 +10,8 @@ let cancel;
 const InputList = ({ setPositionPort, toggleBtnStatus }) => {
   const [value_a, setValue_a] = useState('');
   const [value_b, setValue_b] = useState('');
-  const [positionA, setPositionA] = useState('');
-  const [positionB, setPositionB] = useState('');
+  const [positionA, setPositionA] = useState({});
+  const [positionB, setPositionB] = useState({});
   const [city_list, setCity_list] = useState([]);
 
   const onChange = (e, route = 'a') => {
@@ -84,31 +84,20 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
         const lat = response.data.results[0].geometry.location.lat;
         const lng = response.data.results[0].geometry.location.lng;
         if (route === 'a') {
-          setPositionPort((state) => ({
-            ...state,
-            lat_from: lat,
-            lng_from: lng,
-          }));
+          setPositionPort({ lat_from: lat, lng_from: lng });
           setPositionA({
             lat_from: lat,
             lng_from: lng,
           });
         } else {
-          setPositionPort((state) => ({
-            ...state,
-            lat_to: lat,
-            lng_to: lng,
-          }));
+          setPositionPort({ lat_to: lat, lng_to: lng });
           setPositionB({
             lat_to: lat,
             lng_to: lng,
           });
         }
       })
-      .catch(function (error) {
-        setStatisticStatus('no-data');
-        setdistAndTimeDataStatus('no-data');
-      });
+      .catch(function (error) {});
 
     setCity_list([]);
   };
@@ -134,12 +123,17 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
   const exchageDirection = () => {
     setValue_a(value_b);
     setValue_b(value_a);
-    setPositionPort({
+    setPositionA({
       lat_from: positionB.lat_to,
       lng_from: positionB.lng_to,
+    });
+    setPositionB({
       lat_to: positionA.lat_from,
       lng_to: positionA.lng_from,
     });
+    let newData = Object.assign(positionA, positionB);
+    console.log(newData);
+    setPositionPort(newData);
   };
 
   return (
