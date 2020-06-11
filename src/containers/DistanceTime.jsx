@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style from './DistanceTime.module.scss';
+import styles from './DistanceTime.module.scss';
 
 const transfSeconds = (sec) => {
   if (isNaN(sec) === true) {
@@ -41,10 +41,9 @@ const calcSpeed = (km) => {
   return `${miles} mp/h (${km})`;
 };
 
-const DistanceTime = ({ state, data }) => {
+const DistanceTime = ({ data }) => {
   let distData = [];
-  console.log(data.response);
-
+  console.log(data);
   distData = [
     {
       name: data.road_from.name,
@@ -83,18 +82,27 @@ const DistanceTime = ({ state, data }) => {
 
   const DistanceList = distData.map((card, index, obj) => {
     return (
-      <li key={index} className={`card ${obj.length === 1 ? 'alone' : ''}`}>
-        <span className={'card__title'}>{card.name}</span>
-        {card.distance ? <p className={'info'}>{card.distance}</p> : <></>}
+      <li
+        key={index}
+        className={`${styles['card']} ${
+          obj.length === 1 ? `${styles['alone']}` : ''
+        }`}
+      >
+        <span className={styles['card__title']}>{card.name}</span>
+        {card.distance ? (
+          <p className={styles['info']}>{card.distance}</p>
+        ) : (
+          <></>
+        )}
         {card.tr_time ? (
-          <p className={'info'}>
+          <p className={styles['info']}>
             Transit Time: <span>{card.tr_time} </span>
           </p>
         ) : (
           <></>
         )}
         {card.av_speed && (
-          <p className={'info'}>
+          <p className={styles['info']}>
             Average Speed: <span>{card.av_speed}</span>
           </p>
         )}
@@ -104,16 +112,10 @@ const DistanceTime = ({ state, data }) => {
 
   return (
     <>
-      {state === 'submit' ? (
-        <div className='distance-data'>
-          <h2 className='title'>Distances & Time</h2>
-          <ul className='distance-calculation'>{DistanceList}</ul>
-        </div>
-      ) : (
-        <div className='distance-data'>
-          <h2 className='title'>Please change city</h2>
-        </div>
-      )}
+      <div className={styles['distance-data']}>
+        <h2 className={styles['title']}>Distances & Time</h2>
+        <ul className={styles['distance-calculation']}>{DistanceList}</ul>
+      </div>
     </>
   );
 };

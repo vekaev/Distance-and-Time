@@ -131,6 +131,7 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
       lat_to: positionA.lat_from,
       lng_to: positionA.lng_from,
     });
+
     let newData = Object.assign(positionA, positionB);
     console.log(newData);
     setPositionPort(newData);

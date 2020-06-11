@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
   const [loading, setSubmitButtonLoading] = useState(false);
-  const [responseData, setResponseData] = useState();
+  const [responseData, setResponseData] = useState('');
 
   const onSubmit = (data) => {
     data.preventDefault();
@@ -22,10 +22,12 @@ const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
       },
     };
 
+    console.log(filterData);
+
     axios
       .get('https://sirius.searates.com/api/distanceandtime', filterData)
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         setResponseData(res.data);
         setSubmitButtonLoading(false);
       })
@@ -48,7 +50,6 @@ const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
 const mapStateToProps = (state) => {
   return {
     speed_value: state.speed_value,
-    // road_speed_value: state.road_speed_value,
     lat_from: state.lat_from,
     lng_from: state.lng_from,
     lat_to: state.lat_to,

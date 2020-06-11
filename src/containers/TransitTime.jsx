@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import style from './TransitTime.module.scss';
 
-const TransitTime = ({ state, data }) => {
-  console.log(data);
-
+const TransitTime = ({ data }) => {
   return (
     <>
-      {state === 'submit' ? (
+      {data === 'submit' ? (
         'DATA'
       ) : (
-        <div className={style.no - transit - data}>
-          <span className={style.img__part}></span>
+        <div className={style['no-transit-data']}>
+          <span className={style['img__part']}></span>
           <p>NO STATISTICS</p>
         </div>
       )}

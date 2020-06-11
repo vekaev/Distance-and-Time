@@ -2,25 +2,28 @@ import React from 'react';
 import ShipmentBtn from './ShipmentBtn';
 import style from './ShipmentList.module.scss';
 
-const ShipmentList = ({ toggleActive, active }) => {
+const ShipmentList = ({ toggleActive, setComponentWillUpdate, active }) => {
   return (
     <div className={style.shipment__choose}>
       <span className={style.title}>transportation by</span>
       <ul className={`${style[`btn__list`]} ${style[`${active}__list`]}`}>
         <ShipmentBtn
           toggleActive={toggleActive}
+          setComponentWillUpdate={setComponentWillUpdate}
           active={active}
           title='sea'
           label='sea'
         />
         <ShipmentBtn
           toggleActive={toggleActive}
+          setComponentWillUpdate={setComponentWillUpdate}
           active={active}
           title='road'
           label='land'
         />
         <ShipmentBtn
           toggleActive={toggleActive}
+          setComponentWillUpdate={setComponentWillUpdate}
           active={active}
           title='air'
           label='air'

@@ -22,6 +22,7 @@ const Filter = ({
 }) => {
   const [btnActive, setBtnActive] = useState('sea');
   const [convertSpeedStatus, setConvertSpeedStatus] = useState(1);
+  const [componentWillUpdate, setComponentWillUpdate] = useState(false);
 
   const handleSpeedChange = (value) => {
     speedChange({ speed_value: value });
@@ -36,27 +37,33 @@ const Filter = ({
   };
 
   useEffect(() => {
-    switch (btnActive) {
-      case 'sea':
-        handleSpeedChange(13);
-        handleShimpentChange('sea');
-        break;
-      case 'road':
-        handleSpeedChange(35);
-        handleShimpentChange('road');
-        break;
-      case 'air':
-        handleSpeedChange(800);
-        handleShimpentChange('air');
-        break;
+    if (componentWillUpdate) {
+      switch (btnActive) {
+        case 'sea':
+          handleSpeedChange(13);
+          handleShimpentChange('sea');
+          break;
+        case 'road':
+          handleSpeedChange(35);
+          handleShimpentChange('road');
+          break;
+        case 'air':
+          handleSpeedChange(800);
+          handleShimpentChange('air');
+          break;
+      }
+      setConvertSpeedStatus(1.6093);
     }
-    setConvertSpeedStatus(1.6093);
   }, [btnActive]);
 
   return (
     <form onSubmit={submitForm} className={styles['filter']}>
       <div className={styles['filter__content']}>
-        <ShipmentList toggleActive={setBtnActive} active={btnActive} />
+        <ShipmentList
+          toggleActive={setBtnActive}
+          active={btnActive}
+          setComponentWillUpdate={setComponentWillUpdate}
+        />
 
         <InputList
           setPositionPort={handlePositionChange}

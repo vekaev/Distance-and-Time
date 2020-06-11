@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import styles from './ShipmentBtn.module.scss';
 
-const ShipmentBtn = ({ title, active, toggleActive, label }) => {
+const ShipmentBtn = ({
+  title,
+  active,
+  toggleActive,
+  setComponentWillUpdate,
+  label,
+}) => {
   return (
     <li
-      onClick={() => toggleActive(title)}
+      onClick={() => {
+        toggleActive(title);
+        setComponentWillUpdate(true);
+      }}
       className={`${styles['btn']} ${styles[`${title}`]} ${
         active === title ? styles.active : ''
       }`}
