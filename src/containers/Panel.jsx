@@ -4,18 +4,23 @@ import Statistic from './Statistic';
 import styles from './Panel.module.scss';
 import AnimatedPrompt from '../components/StatisticComponents/AnimatedPrompt';
 
-const Panel = ({ submitForm, toggleBtnStatus, responseData }) => {
-  const [responseDataStatus, setResponseDataStatus] = useState('no-data');
-  useEffect(() => {
-    if (responseData) {
-      if (Object.keys(responseData).includes('response')) {
-        setResponseDataStatus('error');
-        console.log('error', responseDataStatus);
-      } else {
-        setResponseDataStatus('correct-data');
-      }
-    }
-  }, [responseData]);
+const Panel = ({
+  submitForm,
+  toggleBtnStatus,
+  responseData,
+  responseDataStatus,
+}) => {
+  console.log(responseData);
+  // useEffect(() => {
+  //   if (responseData) {
+  //     if (Object.keys(responseData).includes('response')) {
+  //       setResponseDataStatus('error');
+  //       console.log('error', responseDataStatus);
+  //     } else {
+  //       setResponseDataStatus('correct-data');
+  //     }
+  //   }
+  // }, [responseData]);
 
   return (
     <aside className={styles['panel']}>

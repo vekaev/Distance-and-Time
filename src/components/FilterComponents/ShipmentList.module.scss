@@ -33,12 +33,14 @@
 
   .road__list {
     &:before {
+      background-color: $color-land;
       left: 50px;
     }
   }
 
   .air__list {
     &:before {
+      background-color: $color-air;
       left: 100px;
     }
   }

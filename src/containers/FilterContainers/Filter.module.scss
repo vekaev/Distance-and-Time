@@ -18,7 +18,7 @@ body {
     .submit__btn {
       cursor: pointer;
       margin-left: 5px;
-      background-color: $color-blue;
+
       background-image: url('/design/images/apps/dist-time/panel/icon__search.svg');
       background-repeat: no-repeat;
       background-position: center;
@@ -64,11 +64,19 @@ body {
         }
       }
     }
-
+    .sea {
+      background-color: $color-blue;
+    }
+    .air {
+      background-color: $color-air;
+    }
+    .road {
+      background-color: $color-land;
+    }
     .loading {
       pointer-events: none;
       background-image: none;
-      transition: 0.2 ease;
+      transition: 0.2s ease;
     }
   }
 }

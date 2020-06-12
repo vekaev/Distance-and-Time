@@ -14,7 +14,6 @@ import {
 const Filter = ({
   submitForm,
   toggleBtnStatus,
-  setPositionPort,
   speed_value,
   speedChange,
   positionChange,
@@ -29,6 +28,7 @@ const Filter = ({
   };
 
   const handlePositionChange = (value) => {
+    console.log('change', value);
     positionChange(value);
   };
 
@@ -64,17 +64,18 @@ const Filter = ({
           active={btnActive}
           setComponentWillUpdate={setComponentWillUpdate}
         />
-
         <InputList
+          shipment={btnActive}
           setPositionPort={handlePositionChange}
           toggleBtnStatus={toggleBtnStatus}
         />
 
         <button
           type='submit'
-          className={`${styles.submit__btn} ${
-            toggleBtnStatus ? styles.loading : ''
-          }`}
+          className={`
+          ${styles[`${btnActive}`]}
+          ${styles.submit__btn} 
+          ${toggleBtnStatus ? styles.loading : ''}`}
         >
           {toggleBtnStatus ? <span className={styles.spinner}></span> : ''}
         </button>

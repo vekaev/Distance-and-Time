@@ -44,6 +44,7 @@ const calcSpeed = (km) => {
 const DistanceTime = ({ data }) => {
   let distData = [];
   console.log(data);
+
   distData = [
     {
       name: data.road_from.name,

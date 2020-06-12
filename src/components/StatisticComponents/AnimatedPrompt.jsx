@@ -3,10 +3,7 @@ import styles from './AnimatedPrompt.module.scss';
 
 const AnimatedPrompt = ({ state }) => {
   return (
-    <div
-      className={`${styles['animated__prompt']} 
-    state = "error" && ${styles['error']}`}
-    >
+    <div className={`${styles['animated__prompt']}   ${styles[`${state}`]}`}>
       <div className={styles['search__animation']}>
         <div className={styles['center-part']}>
           <span className={styles['search']}></span>
@@ -59,8 +56,9 @@ const AnimatedPrompt = ({ state }) => {
         ></span>
       </div>
       <p>
-        Select port (place) of origin and port (place) of destination, then time
-        interval for your schedule and hit Search button.
+        {state === 'error'
+          ? 'Sorry, but nothing matched your search terms. Please return to amend your search criteria and try again.'
+          : 'Select port (place) of origin and port (place) of destination, then time interval for your schedule and hit Search button.'}
       </p>
     </div>
   );

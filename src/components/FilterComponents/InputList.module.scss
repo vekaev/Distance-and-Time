@@ -15,7 +15,7 @@
       font-weight: 600;
       font-size: 20px;
       line-height: 24px;
-      color: $color-blue;
+
       position: absolute;
       display: inline-block;
       bottom: 27px;
@@ -61,6 +61,22 @@
       &:before {
         content: 'B';
       }
+    }
+  }
+
+  .sea {
+    &:before {
+      color: $color-blue;
+    }
+  }
+  .air {
+    &:before {
+      color: $color-air;
+    }
+  }
+  .road {
+    &:before {
+      color: $color-land;
     }
   }
 

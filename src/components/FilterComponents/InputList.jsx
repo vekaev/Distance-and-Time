@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Autocomplete from 'react-autocomplete';
 import style from './InputList.module.scss';
 import axios from 'axios';
@@ -7,12 +7,20 @@ const CancelToken = axios.CancelToken;
 
 let cancel;
 
-const InputList = ({ setPositionPort, toggleBtnStatus }) => {
+const InputList = ({ setPositionPort, toggleBtnStatus, shipment }) => {
   const [value_a, setValue_a] = useState('');
   const [value_b, setValue_b] = useState('');
   const [positionA, setPositionA] = useState({});
   const [positionB, setPositionB] = useState({});
   const [city_list, setCity_list] = useState([]);
+  const [componentWillUpdate, setComponentWillUpdate] = useState(false);
+  console.log(shipment);
+  useEffect(() => {
+    if (componentWillUpdate) {
+      let newData = Object.assign(positionA, positionB);
+      setPositionPort(newData);
+    }
+  }, [positionA, positionB]);
 
   const onChange = (e, route = 'a') => {
     const input = e.target.value;
@@ -120,26 +128,28 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
     return item_data;
   };
 
-  const exchageDirection = () => {
+  function exchageDirection() {
+    console.log('imFirst');
     setValue_a(value_b);
     setValue_b(value_a);
-    setPositionA({
-      lat_from: positionB.lat_to,
-      lng_from: positionB.lng_to,
-    });
+
     setPositionB({
       lat_to: positionA.lat_from,
       lng_to: positionA.lng_from,
     });
 
-    let newData = Object.assign(positionA, positionB);
-    console.log(newData);
-    setPositionPort(newData);
-  };
+    setPositionA({
+      lat_from: positionB.lat_to,
+      lng_from: positionB.lng_to,
+    });
+  }
 
   return (
     <div className={style['input__part']}>
-      <div data-direction='A' className={style[`input__wrapper`]}>
+      <div
+        data-direction='A'
+        className={`${style[`input__wrapper`]} ${style[`${shipment}`]}`}
+      >
         <label className={style['title']}>Port of origin</label>
         <Autocomplete
           name='origin'
@@ -175,14 +185,16 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
           selectOnBlur={true}
           inputProps={{
             placeholder: 'Country, City, Port',
-            className: `${style.input} ${style.from}`,
+            className: `${style.input}  ${style.from}`,
             required: true,
           }}
         />
       </div>
       <div
         data-direction='B'
-        className={`${style[`input__wrapper`]} ${style['to__wrapper']}`}
+        className={`${style[`input__wrapper`]} ${style[`${shipment}`]} ${
+          style['to__wrapper']
+        }`}
       >
         <label className={style['title']}>Port of Destination</label>
         <Autocomplete
@@ -219,13 +231,15 @@ const InputList = ({ setPositionPort, toggleBtnStatus }) => {
           // selectOnBlur={true}
           inputProps={{
             placeholder: 'Country, City, Port',
-            className: `${style.input} ${style.to}`,
+            className: `${style.input}  ${style.to}`,
             required: true,
           }}
         />
       </div>
       <span
-        onClick={exchageDirection}
+        onClick={() => {
+          exchageDirection();
+        }}
         className={`${style.exchange__btn} ${
           toggleBtnStatus ? style.loading : ''
         }`}

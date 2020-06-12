@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 
 const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
   const [loading, setSubmitButtonLoading] = useState(false);
-  const [responseData, setResponseData] = useState('');
+  const [responseData, setResponseData] = useState();
+  const [responseDataStatus, setResponseDataStatus] = useState('no-data');
 
   const onSubmit = (data) => {
     data.preventDefault();
@@ -14,21 +15,28 @@ const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
 
     let filterData = {
       params: {
-        lat_from: lat_from,
-        lng_from: lng_from,
-        lat_to: lat_to,
-        lng_to: lng_to,
+        lat_from,
+        lng_from,
+        lat_to,
+        lng_to,
         key: 'E1KN-9PFZ-BO20-PGMG',
       },
     };
-
-    console.log(filterData);
 
     axios
       .get('https://sirius.searates.com/api/distanceandtime', filterData)
       .then((res) => {
         console.log(res.data);
-        setResponseData(res.data);
+        if (Object.keys(res.data).includes('response')) {
+          setResponseDataStatus('error');
+          setResponseData('error');
+          console.log('error', responseDataStatus);
+        } else {
+          console.log('get data');
+          setResponseDataStatus('correct');
+          setResponseData(res.data);
+        }
+
         setSubmitButtonLoading(false);
       })
       .catch((error) => {
@@ -43,6 +51,7 @@ const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
       toggleBtnStatus={loading}
       submitForm={onSubmit}
       responseData={responseData}
+      responseDataStatus={responseDataStatus}
     />
   );
 };
