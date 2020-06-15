@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
   const [loading, setSubmitButtonLoading] = useState(false);
-  const [responseData, setResponseData] = useState();
+  const [responseData, setResponseData] = useState({});
   const [responseDataStatus, setResponseDataStatus] = useState('no-data');
 
   const onSubmit = (data) => {
@@ -27,16 +27,8 @@ const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
       .get('https://sirius.searates.com/api/distanceandtime', filterData)
       .then((res) => {
         console.log(res.data);
-        if (Object.keys(res.data).includes('response')) {
-          setResponseDataStatus('error');
-          setResponseData('error');
-          console.log('error', responseDataStatus);
-        } else {
-          console.log('get data');
-          setResponseDataStatus('correct');
-          setResponseData(res.data);
-        }
-
+        setResponseData(res.data);
+        setResponseDataStatus('succses');
         setSubmitButtonLoading(false);
       })
       .catch((error) => {
@@ -52,6 +44,7 @@ const App = ({ lat_from, lng_from, lat_to, lng_to, shipment_type }) => {
       submitForm={onSubmit}
       responseData={responseData}
       responseDataStatus={responseDataStatus}
+      setResponseDataStatus={setResponseDataStatus}
     />
   );
 };

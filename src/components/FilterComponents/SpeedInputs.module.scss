@@ -137,4 +137,82 @@
       display: none;
     }
   }
+  &-sea {
+    .speed__input {
+      &:hover {
+        input {
+          color: $color-blue;
+        }
+      }
+      .arrow__part {
+        .arrow {
+          &:hover {
+            background-color: $color-blue;
+          }
+        }
+      }
+    }
+    .speed__select {
+      &:hover {
+        select {
+          color: $color-blue;
+        }
+        &:before {
+          background-color: $color-blue;
+        }
+      }
+    }
+  }
+  &-air {
+    .speed__input {
+      &:hover {
+        input {
+          color: $color-air;
+        }
+      }
+      .arrow__part {
+        .arrow {
+          &:hover {
+            background-color: $color-air;
+          }
+        }
+      }
+    }
+    .speed__select {
+      &:hover {
+        select {
+          color: $color-air;
+        }
+        &:before {
+          background-color: $color-air;
+        }
+      }
+    }
+  }
+  &-road {
+    .speed__input {
+      &:hover {
+        input {
+          color: $color-land;
+        }
+      }
+      .arrow__part {
+        .arrow {
+          &:hover {
+            background-color: $color-land;
+          }
+        }
+      }
+    }
+    .speed__select {
+      &:hover {
+        select {
+          color: $color-land;
+        }
+        &:before {
+          background-color: $color-land;
+        }
+      }
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './DistanceTime.module.scss';
+import { connect } from 'react-redux';
 
 const transfSeconds = (sec) => {
   if (isNaN(sec) === true) {
@@ -41,46 +42,48 @@ const calcSpeed = (km) => {
   return `${miles} mp/h (${km})`;
 };
 
-const DistanceTime = ({ data }) => {
+const DistanceTime = ({ data, setResponseDataStatus, shipment_type }) => {
   let distData = [];
   console.log(data);
+  if (Object.keys(data).includes('response')) {
+    setResponseDataStatus('error');
+  } else {
+    distData = [
+      {
+        name: data.road_from.name,
+        distance: data.road_from.distance,
+        tr_time: data.road_from.transit_time_seconds,
+        av_speed: calcSpeed(data.road_from.speed),
+      },
+      {
+        name: data.sea.from_name,
+        distance: data.sea.dist,
+        tr_time: data.sea.transit_time_seconds,
+        av_speed: data.sea.speed,
+      },
+      {
+        name: data.sea.to_name,
+        distance: data.road_to.distance,
+        tr_time: data.road_to.transit_time_seconds,
+        av_speed: calcSpeed(data.road_to.speed),
+      },
+      {
+        name: data.road_to.name,
+      },
+    ];
 
-  distData = [
-    {
-      name: data.road_from.name,
-      distance: data.road_from.distance,
-      tr_time: data.road_from.transit_time_seconds,
-      av_speed: calcSpeed(data.road_from.speed),
-    },
-    {
-      name: data.sea.from_name,
-      distance: data.sea.dist,
-      tr_time: data.sea.transit_time_seconds,
-      av_speed: data.sea.speed,
-    },
-    {
-      name: data.sea.to_name,
-      distance: data.road_to.distance,
-      tr_time: data.road_to.transit_time_seconds,
-      av_speed: calcSpeed(data.road_to.speed),
-    },
-    {
-      name: data.road_to.name,
-    },
-  ];
-
-  distData.map((item, i) => {
-    let dist = calcDist(item.distance);
-    let time = transfSeconds(item.tr_time);
-    let distArray = [...distData];
-    if (item.distance !== undefined) {
-      distArray[i].distance = dist;
-    }
-    if (item.tr_time !== undefined) {
-      distArray[i].tr_time = time;
-    }
-  });
-
+    distData.map((item, i) => {
+      let dist = calcDist(item.distance);
+      let time = transfSeconds(item.tr_time);
+      let distArray = [...distData];
+      if (item.distance !== undefined) {
+        distArray[i].distance = dist;
+      }
+      if (item.tr_time !== undefined) {
+        distArray[i].tr_time = time;
+      }
+    });
+  }
   const DistanceList = distData.map((card, index, obj) => {
     return (
       <li
@@ -113,7 +116,11 @@ const DistanceTime = ({ data }) => {
 
   return (
     <>
-      <div className={styles['distance-data']}>
+      <div
+        className={`${styles['distance-data']}  ${
+          styles[`distance-data__${shipment_type}`]
+        }`}
+      >
         <h2 className={styles['title']}>Distances & Time</h2>
         <ul className={styles['distance-calculation']}>{DistanceList}</ul>
       </div>
@@ -121,4 +128,10 @@ const DistanceTime = ({ data }) => {
   );
 };
 
-export default DistanceTime;
+const mapStateToProps = (state) => {
+  return {
+    shipment_type: state.shipment_type,
+  };
+};
+
+export default connect(mapStateToProps, null)(DistanceTime);

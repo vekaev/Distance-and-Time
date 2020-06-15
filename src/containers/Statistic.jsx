@@ -4,12 +4,15 @@ import DistanceTime from './DistanceTime';
 
 import AnimatedPrompt from '../components/StatisticComponents/AnimatedPrompt';
 
-const Statistic = ({ responseData }) => {
+const Statistic = ({ responseData, setResponseDataStatus }) => {
   console.log(responseData);
   return (
     <>
       <TransitTime data={responseData} />
-      <DistanceTime data={responseData} />
+      <DistanceTime
+        setResponseDataStatus={setResponseDataStatus}
+        data={responseData}
+      />
     </>
   );
 };

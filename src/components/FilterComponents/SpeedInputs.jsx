@@ -7,6 +7,7 @@ const SpeedInputs = ({
   handleSpeedChange,
   convertSpeedStatus,
   setConvertSpeedStatus,
+  shipmentType,
 }) => {
   // const changeSpeed = (status) => {
   //     if (speedValue > 1 || (status).toString() == "1") {
@@ -15,7 +16,11 @@ const SpeedInputs = ({
   // }
 
   return (
-    <div className={style['filter__additional']}>
+    <div
+      className={`${style['filter__additional']} ${
+        style[`filter__additional-${shipmentType}`]
+      }`}
+    >
       <div className={style['speed__input']}>
         <label className={style.speed_label} htmlFor='speed'>
           average speed
@@ -25,7 +30,11 @@ const SpeedInputs = ({
             name='speed'
             value={speedValue}
             id='speed'
-            onChange={(e) => handleSpeedChange(e.target.value)}
+            onChange={(e) => {
+              e.target.value >= 1
+                ? handleSpeedChange(e.target.value)
+                : handleSpeedChange('');
+            }}
           />
         </label>
         <div className={style['arrow__part']}>
@@ -34,7 +43,9 @@ const SpeedInputs = ({
             className={`${style.arrow} ${style.up}`}
           ></span>
           <span
-            onClick={() => handleSpeedChange(--speedValue)}
+            onClick={() => {
+              speedValue >= 1 ? handleSpeedChange(--speedValue) : '';
+            }}
             className={`${style.arrow} ${style.down}`}
           ></span>
         </div>

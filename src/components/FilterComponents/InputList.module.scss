@@ -65,16 +65,31 @@
   }
 
   .sea {
+    .input {
+      &:focus {
+        border: 1px solid $color-blue;
+      }
+    }
     &:before {
       color: $color-blue;
     }
   }
   .air {
+    .input {
+      &:focus {
+        border: 1px solid $color-air;
+      }
+    }
     &:before {
       color: $color-air;
     }
   }
   .road {
+    .input {
+      &:focus {
+        border: 1px solid $color-land;
+      }
+    }
     &:before {
       color: $color-land;
     }
@@ -94,12 +109,28 @@
     box-sizing: border-box;
     border: 1px solid $color-btn-light-grey;
     background-color: $color-white;
-    background-image: url('/design/images/apps/dist-time/panel/icon__change.svg');
-    background-repeat: no-repeat;
-    background-position: center;
     bottom: 13px;
     left: 50%;
     transform: translateX(-50%);
+    span {
+      width: 100%;
+      height: 100%;
+      background-color: $color-blue;
+      display: inline-block;
+      mask: url('/design/images/apps/dist-time/panel/icon__change.svg')
+        no-repeat center;
+      -webkit-mask: url('/design/images/apps/dist-time/panel/icon__change.svg')
+        no-repeat center;
+    }
+    .sea {
+      background-color: $color-blue;
+    }
+    .road {
+      background-color: $color-land;
+    }
+    .air {
+      background-color: $color-air;
+    }
   }
 }
 .title {

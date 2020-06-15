@@ -15,6 +15,7 @@ const Filter = ({
   submitForm,
   toggleBtnStatus,
   speed_value,
+  shipment_type,
   speedChange,
   positionChange,
   shimpentChange,
@@ -87,6 +88,7 @@ const Filter = ({
         speedValue={speed_value}
         btnActive={btnActive}
         handleSpeedChange={handleSpeedChange}
+        shipmentType={shipment_type}
       />
     </form>
   );

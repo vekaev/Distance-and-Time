@@ -9,18 +9,10 @@ const Panel = ({
   toggleBtnStatus,
   responseData,
   responseDataStatus,
+  setResponseDataStatus,
 }) => {
+  console.log(responseDataStatus);
   console.log(responseData);
-  // useEffect(() => {
-  //   if (responseData) {
-  //     if (Object.keys(responseData).includes('response')) {
-  //       setResponseDataStatus('error');
-  //       console.log('error', responseDataStatus);
-  //     } else {
-  //       setResponseDataStatus('correct-data');
-  //     }
-  //   }
-  // }, [responseData]);
 
   return (
     <aside className={styles['panel']}>
@@ -28,7 +20,10 @@ const Panel = ({
       {responseDataStatus === 'no-data' || responseDataStatus === 'error' ? (
         <AnimatedPrompt state={responseDataStatus} />
       ) : (
-        <Statistic responseData={responseData} />
+        <Statistic
+          responseData={responseData}
+          setResponseDataStatus={setResponseDataStatus}
+        />
       )}
     </aside>
   );

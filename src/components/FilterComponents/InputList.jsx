@@ -13,13 +13,10 @@ const InputList = ({ setPositionPort, toggleBtnStatus, shipment }) => {
   const [positionA, setPositionA] = useState({});
   const [positionB, setPositionB] = useState({});
   const [city_list, setCity_list] = useState([]);
-  const [componentWillUpdate, setComponentWillUpdate] = useState(false);
-  console.log(shipment);
+
   useEffect(() => {
-    if (componentWillUpdate) {
-      let newData = Object.assign(positionA, positionB);
-      setPositionPort(newData);
-    }
+    let newData = Object.assign(positionA, positionB);
+    setPositionPort(newData);
   }, [positionA, positionB]);
 
   const onChange = (e, route = 'a') => {
@@ -129,7 +126,6 @@ const InputList = ({ setPositionPort, toggleBtnStatus, shipment }) => {
   };
 
   function exchageDirection() {
-    console.log('imFirst');
     setValue_a(value_b);
     setValue_b(value_a);
 
@@ -236,14 +232,17 @@ const InputList = ({ setPositionPort, toggleBtnStatus, shipment }) => {
           }}
         />
       </div>
-      <span
-        onClick={() => {
-          exchageDirection();
-        }}
+
+      <div
         className={`${style.exchange__btn} ${
           toggleBtnStatus ? style.loading : ''
         }`}
-      ></span>
+      >
+        <span
+          onClick={exchageDirection}
+          className={`${style[`${shipment}`]}`}
+        ></span>
+      </div>
     </div>
   );
 };

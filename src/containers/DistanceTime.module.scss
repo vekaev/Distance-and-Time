@@ -114,6 +114,45 @@
       margin-top: 15px;
     }
   }
+  &__sea {
+    .distance-calculation {
+      .card {
+        &:before {
+          background-color: $color-blue;
+        }
+
+        &:after {
+          background-color: $color-blue;
+        }
+      }
+    }
+  }
+  &__road {
+    .distance-calculation {
+      .card {
+        &:before {
+          background-color: $color-land;
+        }
+
+        &:after {
+          background-color: $color-land;
+        }
+      }
+    }
+  }
+  &__air {
+    .distance-calculation {
+      .card {
+        &:before {
+          background-color: $color-air;
+        }
+
+        &:after {
+          background-color: $color-air;
+        }
+      }
+    }
+  }
 }
 
 @keyframes animateIn {
