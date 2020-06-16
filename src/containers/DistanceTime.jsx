@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './DistanceTime.module.scss';
 import { connect } from 'react-redux';
 
@@ -42,10 +42,29 @@ const calcSpeed = (km) => {
   return `${miles} mp/h (${km})`;
 };
 
-const DistanceTime = ({ data, setResponseDataStatus, shipment_type }) => {
+// function useForceUpdate() {
+//   const [value, setValue] = useState(0); // integer state
+//   return () => setValue((value) => ++value); // update the state to force render
+// }
+
+const DistanceTime = ({
+  data,
+  setResponseDataStatus,
+  request_shipment_type,
+}) => {
+  // const forceUpdate = useForceUpdate();
+
+  // useEffect(() => {
+  //   forceUpdate;
+  // }, [data]);
+
   let distData = [];
   console.log(data);
-  if (Object.keys(data).includes('response')) {
+
+  if (
+    Object.keys(data).includes('response') ||
+    request_shipment_type === 'road'
+  ) {
     setResponseDataStatus('error');
   } else {
     distData = [
@@ -56,13 +75,13 @@ const DistanceTime = ({ data, setResponseDataStatus, shipment_type }) => {
         av_speed: calcSpeed(data.road_from.speed),
       },
       {
-        name: data.sea.from_name,
-        distance: data.sea.dist,
-        tr_time: data.sea.transit_time_seconds,
-        av_speed: data.sea.speed,
+        name: data[request_shipment_type].from_name,
+        distance: data[request_shipment_type].dist,
+        tr_time: data[request_shipment_type].transit_time_seconds,
+        av_speed: data[request_shipment_type].speed,
       },
       {
-        name: data.sea.to_name,
+        name: data[request_shipment_type].to_name,
         distance: data.road_to.distance,
         tr_time: data.road_to.transit_time_seconds,
         av_speed: calcSpeed(data.road_to.speed),
@@ -118,10 +137,11 @@ const DistanceTime = ({ data, setResponseDataStatus, shipment_type }) => {
     <>
       <div
         className={`${styles['distance-data']}  ${
-          styles[`distance-data__${shipment_type}`]
+          styles[`distance-data__${request_shipment_type}`]
         }`}
       >
         <h2 className={styles['title']}>Distances & Time</h2>
+
         <ul className={styles['distance-calculation']}>{DistanceList}</ul>
       </div>
     </>
@@ -130,7 +150,7 @@ const DistanceTime = ({ data, setResponseDataStatus, shipment_type }) => {
 
 const mapStateToProps = (state) => {
   return {
-    shipment_type: state.shipment_type,
+    request_shipment_type: state.request_shipment_type,
   };
 };
 

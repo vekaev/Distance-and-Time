@@ -7,17 +7,14 @@ const CancelToken = axios.CancelToken;
 
 let cancel;
 
-const InputList = ({ setPositionPort, toggleBtnStatus, shipment }) => {
+const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
   const [value_a, setValue_a] = useState('');
   const [value_b, setValue_b] = useState('');
+
   const [positionA, setPositionA] = useState({});
   const [positionB, setPositionB] = useState({});
-  const [city_list, setCity_list] = useState([]);
 
-  useEffect(() => {
-    let newData = Object.assign(positionA, positionB);
-    setPositionPort(newData);
-  }, [positionA, positionB]);
+  const [city_list, setCity_list] = useState([]);
 
   const onChange = (e, route = 'a') => {
     const input = e.target.value;
@@ -89,13 +86,25 @@ const InputList = ({ setPositionPort, toggleBtnStatus, shipment }) => {
         const lat = response.data.results[0].geometry.location.lat;
         const lng = response.data.results[0].geometry.location.lng;
         if (route === 'a') {
-          setPositionPort({ lat_from: lat, lng_from: lng });
+          setRequestData((state) => ({
+            params: {
+              ...state.params,
+              lat_from: lat,
+              lng_from: lng,
+            },
+          }));
           setPositionA({
             lat_from: lat,
             lng_from: lng,
           });
         } else {
-          setPositionPort({ lat_to: lat, lng_to: lng });
+          setRequestData((state) => ({
+            params: {
+              ...state.params,
+              lat_to: lat,
+              lng_to: lng,
+            },
+          }));
           setPositionB({
             lat_to: lat,
             lng_to: lng,
@@ -138,6 +147,16 @@ const InputList = ({ setPositionPort, toggleBtnStatus, shipment }) => {
       lat_from: positionB.lat_to,
       lng_from: positionB.lng_to,
     });
+
+    setRequestData((state) => ({
+      params: {
+        ...state.params,
+        lat_to: positionA.lat_from,
+        lng_to: positionA.lng_from,
+        lat_from: positionB.lat_to,
+        lng_from: positionB.lng_to,
+      },
+    }));
   }
 
   return (

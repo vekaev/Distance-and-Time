@@ -5,19 +5,6 @@
   animation-duration: 400ms;
   padding: 25px 15px;
   text-align: center;
-
-  &:hover {
-    .img__part {
-      background-color: $color-blue;
-      transition: 0.5s ease;
-    }
-
-    p {
-      transition: 0.5s ease;
-      color: $color-blue;
-    }
-  }
-
   .img__part {
     display: inline-block;
     width: 30px;

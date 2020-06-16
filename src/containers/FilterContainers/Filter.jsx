@@ -1,55 +1,71 @@
 import React, { useState, useEffect } from 'react';
-import ShipmentList from '../../components/FilterComponents/ShipmentList';
-import InputList from '../../components/FilterComponents/InputList';
-import styles from './Filter.module.scss';
-import SpeedInputs from '../../components/FilterComponents/SpeedInputs';
-import { connect } from 'react-redux';
 
+import { connect } from 'react-redux';
 import {
-  speedChange,
-  positionChange,
   shimpentChange,
+  sendRequest,
+  requestShimpentChange,
 } from '../../redux/actions/actions';
 
+import ShipmentList from '../../components/FilterComponents/ShipmentList';
+import InputList from '../../components/FilterComponents/InputList';
+import SpeedInputs from '../../components/FilterComponents/SpeedInputs';
+
+import styles from './Filter.module.scss';
+
 const Filter = ({
-  submitForm,
-  toggleBtnStatus,
-  speed_value,
   shipment_type,
-  speedChange,
-  positionChange,
+  request_data,
   shimpentChange,
+  sendRequest,
+  requestShimpentChange,
 }) => {
   const [btnActive, setBtnActive] = useState('sea');
   const [convertSpeedStatus, setConvertSpeedStatus] = useState(1);
   const [componentWillUpdate, setComponentWillUpdate] = useState(false);
+  const [loading, setSubmitButtonLoading] = useState(false);
+  const [speedValue, setSpeedValue] = useState(13);
 
-  const handleSpeedChange = (value) => {
-    speedChange({ speed_value: value });
-  };
-
-  const handlePositionChange = (value) => {
-    console.log('change', value);
-    positionChange(value);
-  };
+  const [requestData, setRequestData] = useState({
+    params: {
+      type: shipment_type,
+      lat_from: 0,
+      lng_from: 0,
+      lat_to: 0,
+      lng_to: 0,
+      key: 'E1KN-9PFZ-BO20-PGMG',
+    },
+  });
 
   const handleShimpentChange = (value) => {
     shimpentChange({ shipment_type: value });
   };
 
+  // AJAX REQUEST
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    sendRequest(requestData);
+    requestShimpentChange({ request_shipment_type: shipment_type });
+    setSubmitButtonLoading(true);
+  };
+  useEffect(() => {
+    setSubmitButtonLoading(false);
+  }, [request_data]);
+  // AJAX REQUEST
+
   useEffect(() => {
     if (componentWillUpdate) {
       switch (btnActive) {
         case 'sea':
-          handleSpeedChange(13);
+          setSpeedValue(13);
           handleShimpentChange('sea');
           break;
         case 'road':
-          handleSpeedChange(35);
+          setSpeedValue(35);
           handleShimpentChange('road');
           break;
         case 'air':
-          handleSpeedChange(800);
+          setSpeedValue(800);
           handleShimpentChange('air');
           break;
       }
@@ -58,7 +74,12 @@ const Filter = ({
   }, [btnActive]);
 
   return (
-    <form onSubmit={submitForm} className={styles['filter']}>
+    <form
+      onSubmit={(e) => {
+        handleSubmit(e);
+      }}
+      className={styles['filter']}
+    >
       <div className={styles['filter__content']}>
         <ShipmentList
           toggleActive={setBtnActive}
@@ -67,8 +88,8 @@ const Filter = ({
         />
         <InputList
           shipment={btnActive}
-          setPositionPort={handlePositionChange}
-          toggleBtnStatus={toggleBtnStatus}
+          setRequestData={setRequestData}
+          toggleBtnStatus={loading}
         />
 
         <button
@@ -76,18 +97,18 @@ const Filter = ({
           className={`
           ${styles[`${btnActive}`]}
           ${styles.submit__btn} 
-          ${toggleBtnStatus ? styles.loading : ''}`}
+          ${loading ? styles.loading : ''}`}
         >
-          {toggleBtnStatus ? <span className={styles.spinner}></span> : ''}
+          {loading ? <span className={styles.spinner}></span> : ''}
         </button>
       </div>
 
       <SpeedInputs
         convertSpeedStatus={convertSpeedStatus}
         setConvertSpeedStatus={setConvertSpeedStatus}
-        speedValue={speed_value}
+        speedValue={speedValue}
         btnActive={btnActive}
-        handleSpeedChange={handleSpeedChange}
+        handleSpeedChange={setSpeedValue}
         shipmentType={shipment_type}
       />
     </form>
@@ -96,21 +117,16 @@ const Filter = ({
 
 const mapStateToProps = (state) => {
   return {
-    speed_value: state.speed_value,
     shipment_type: state.shipment_type,
-    road_speed_value: state.road_speed_value,
-    lat_from: state.lat_from,
-    lng_from: state.lng_from,
-    lat_to: state.lat_to,
-    lng_to: state.lng_to,
+    request_data: state.request_data,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    speedChange: (value) => dispatch(speedChange(value)),
-    positionChange: (value) => dispatch(positionChange(value)),
     shimpentChange: (value) => dispatch(shimpentChange(value)),
+    sendRequest: (value) => dispatch(sendRequest(value)),
+    requestShimpentChange: (value) => dispatch(requestShimpentChange(value)),
   };
 };
 
