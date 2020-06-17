@@ -1,23 +1,5 @@
-import {
-  CHANGE_SHIPMENT_TYPE,
-  CHANGE_REQUEST_SHIPMENT_TYPE,
-  SEND_SEARCH_REQUEST,
-} from './actionTypes';
+import { SEND_SEARCH_REQUEST } from './actionTypes';
 import axios from 'axios';
-
-export const shimpentChange = (value) => {
-  return {
-    type: CHANGE_SHIPMENT_TYPE,
-    playload: value,
-  };
-};
-
-export const requestShimpentChange = (value) => {
-  return {
-    type: CHANGE_REQUEST_SHIPMENT_TYPE,
-    playload: value,
-  };
-};
 
 export const sendSearchRequest = (value) => {
   return {
@@ -26,13 +8,27 @@ export const sendSearchRequest = (value) => {
   };
 };
 
+let getStatus = (responce) => {
+  let array = ['response', 'sea', 'air', 'road'];
+
+  for (var i = 0; i < 4; i++) {
+    if (Object.keys(responce).includes(array[i])) {
+      return array[i];
+    }
+  }
+  return 'error';
+};
+
 export const sendRequest = (value) => (dispatch) => {
   console.log(value);
   axios
     .get('https://sirius.searates.com/api/distanceandtime', value)
     .then((res) => {
-      console.log(res.data);
-      dispatch(sendSearchRequest({ request_data: res.data }));
+      let customResponce = {
+        ...res.data,
+        status: getStatus(res.data),
+      };
+      dispatch(sendSearchRequest({ responce_data: customResponce }));
     })
     .catch((error) => {
       console.log(error);

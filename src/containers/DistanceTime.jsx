@@ -42,67 +42,64 @@ const calcSpeed = (km) => {
   return `${miles} mp/h (${km})`;
 };
 
-// function useForceUpdate() {
-//   const [value, setValue] = useState(0); // integer state
-//   return () => setValue((value) => ++value); // update the state to force render
-// }
-
-const DistanceTime = ({
-  data,
-  setResponseDataStatus,
-  request_shipment_type,
-}) => {
-  // const forceUpdate = useForceUpdate();
-
-  // useEffect(() => {
-  //   forceUpdate;
-  // }, [data]);
-
+const DistanceTime = ({ data }) => {
   let distData = [];
-  console.log(data);
+  console.log(data, data.status);
 
-  if (
-    Object.keys(data).includes('response') ||
-    request_shipment_type === 'road'
-  ) {
-    setResponseDataStatus('error');
-  } else {
-    distData = [
-      {
-        name: data.road_from.name,
-        distance: data.road_from.distance,
-        tr_time: data.road_from.transit_time_seconds,
-        av_speed: calcSpeed(data.road_from.speed),
-      },
-      {
-        name: data[request_shipment_type].from_name,
-        distance: data[request_shipment_type].dist,
-        tr_time: data[request_shipment_type].transit_time_seconds,
-        av_speed: data[request_shipment_type].speed,
-      },
-      {
-        name: data[request_shipment_type].to_name,
-        distance: data.road_to.distance,
-        tr_time: data.road_to.transit_time_seconds,
-        av_speed: calcSpeed(data.road_to.speed),
-      },
-      {
-        name: data.road_to.name,
-      },
-    ];
-
-    distData.map((item, i) => {
-      let dist = calcDist(item.distance);
-      let time = transfSeconds(item.tr_time);
-      let distArray = [...distData];
-      if (item.distance !== undefined) {
-        distArray[i].distance = dist;
-      }
-      if (item.tr_time !== undefined) {
-        distArray[i].tr_time = time;
-      }
-    });
+  if (data) {
+    if (data.status == 'sea' || data.status == 'air') {
+      distData = [
+        {
+          name: data.road_from.name,
+          distance: data.road_from.distance,
+          tr_time: data.road_from.transit_time_seconds,
+          av_speed: calcSpeed(data.road_from.speed),
+        },
+        {
+          name: data[data.status].from_name,
+          distance: data[data.status].dist,
+          tr_time: data[data.status].transit_time_seconds,
+          av_speed: data[data.status].speed,
+        },
+        {
+          name: data[data.status].to_name,
+          distance: data.road_to.distance,
+          tr_time: data.road_to.transit_time_seconds,
+          av_speed: calcSpeed(data.road_to.speed),
+        },
+        {
+          name: data.road_to.name,
+        },
+      ];
+    } else {
+      distData = [
+        {
+          name: data.road.from_name,
+          distance: data.road.distance,
+          tr_time: data.road.transit_time_seconds,
+          av_speed: calcSpeed(data.road.speed),
+        },
+        {
+          name: data.road.to_name,
+        },
+      ];
+    }
   }
+
+  distData.map((item, i) => {
+    let dist = calcDist(item.distance);
+    let time = transfSeconds(item.tr_time);
+    let distArray = [...distData];
+    if (item.distance !== undefined) {
+      distArray[i].distance = dist;
+    }
+    if (item.tr_time !== undefined) {
+      distArray[i].tr_time = time;
+    }
+  });
+
+  // }
+
   const DistanceList = distData.map((card, index, obj) => {
     return (
       <li
@@ -137,7 +134,7 @@ const DistanceTime = ({
     <>
       <div
         className={`${styles['distance-data']}  ${
-          styles[`distance-data__${request_shipment_type}`]
+          styles[`distance-data__${data.status}`]
         }`}
       >
         <h2 className={styles['title']}>Distances & Time</h2>
@@ -150,7 +147,7 @@ const DistanceTime = ({
 
 const mapStateToProps = (state) => {
   return {
-    request_shipment_type: state.request_shipment_type,
+    shimpentType: state.shimpentType,
   };
 };
 

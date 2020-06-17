@@ -9,12 +9,6 @@ const SpeedInputs = ({
   setConvertSpeedStatus,
   shipmentType,
 }) => {
-  // const changeSpeed = (status) => {
-  //     if (speedValue > 1 || (status).toString() == "1") {
-  //         setSpeedValue(+speedValue + status)
-  //     }
-  // }
-
   return (
     <div
       className={`${style['filter__additional']} ${

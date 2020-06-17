@@ -1,29 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TransitTime from './TransitTime';
 import DistanceTime from './DistanceTime';
 
 import AnimatedPrompt from '../components/StatisticComponents/AnimatedPrompt';
+import { connect } from 'react-redux';
 
-const Statistic = ({ responseData }) => {
-  const [responseDataStatus, setResponseDataStatus] = useState('no-data');
-  console.log(responseData);
+const Statistic = ({ responce_data }) => {
+  console.log(responce_data);
   return (
     <>
-      {responseDataStatus === 'no-data' ||
-      responseDataStatus === 'error' ||
-      responseDataStatus === undefined ? (
-        <AnimatedPrompt state={responseDataStatus} />
-      ) : (
+      {responce_data == false ||
+      responce_data.status == 'response' ||
+      responce_data.status == 'error' ? (
         <>
-          <TransitTime data={responseData} />
-          <DistanceTime
-            setResponseDataStatus={setResponseDataStatus}
-            data={responseData}
-          />
+          <AnimatedPrompt state={responce_data.status} />
+
+          {/*<TransitTime shimpentType={shimpentType} data={responce_data} />*/}
         </>
+      ) : (
+        <DistanceTime data={responce_data} />
       )}
     </>
   );
 };
 
-export default Statistic;
+const mapStateToProps = (state) => {
+  return {
+    responce_data: state.responce_data,
+  };
+};
+
+export default connect(mapStateToProps, null)(Statistic);

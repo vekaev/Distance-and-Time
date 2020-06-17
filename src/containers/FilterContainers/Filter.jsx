@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
 import { connect } from 'react-redux';
-import {
-  shimpentChange,
-  sendRequest,
-  requestShimpentChange,
-} from '../../redux/actions/actions';
+
+import { sendRequest } from '../../redux/actions/actions';
 
 import ShipmentList from '../../components/FilterComponents/ShipmentList';
 import InputList from '../../components/FilterComponents/InputList';
@@ -13,22 +9,16 @@ import SpeedInputs from '../../components/FilterComponents/SpeedInputs';
 
 import styles from './Filter.module.scss';
 
-const Filter = ({
-  shipment_type,
-  request_data,
-  shimpentChange,
-  sendRequest,
-  requestShimpentChange,
-}) => {
+const Filter = ({ responce_data, sendRequest }) => {
   const [btnActive, setBtnActive] = useState('sea');
   const [convertSpeedStatus, setConvertSpeedStatus] = useState(1);
-  const [componentWillUpdate, setComponentWillUpdate] = useState(false);
   const [loading, setSubmitButtonLoading] = useState(false);
   const [speedValue, setSpeedValue] = useState(13);
 
   const [requestData, setRequestData] = useState({
     params: {
-      type: shipment_type,
+      type: btnActive || 'sea',
+      speed: speedValue,
       lat_from: 0,
       lng_from: 0,
       lat_to: 0,
@@ -37,40 +27,55 @@ const Filter = ({
     },
   });
 
-  const handleShimpentChange = (value) => {
-    shimpentChange({ shipment_type: value });
+  const convertSpeed = (speed) => {
+    if (btnActive !== 'sea' && convertSpeedStatus !== 1.6093) {
+      return Math.round(speed * 1.6093);
+    } else {
+      return speed;
+    }
   };
+
+  useEffect(() => {
+    setRequestData((state) => ({
+      params: {
+        ...state.params,
+        speed: convertSpeed(speedValue),
+      },
+    }));
+  }, [speedValue]);
 
   // AJAX REQUEST
   const handleSubmit = (e) => {
     e.preventDefault();
     sendRequest(requestData);
-    requestShimpentChange({ request_shipment_type: shipment_type });
     setSubmitButtonLoading(true);
   };
+
   useEffect(() => {
     setSubmitButtonLoading(false);
-  }, [request_data]);
+  }, [responce_data]);
+
   // AJAX REQUEST
 
   useEffect(() => {
-    if (componentWillUpdate) {
-      switch (btnActive) {
-        case 'sea':
-          setSpeedValue(13);
-          handleShimpentChange('sea');
-          break;
-        case 'road':
-          setSpeedValue(35);
-          handleShimpentChange('road');
-          break;
-        case 'air':
-          setSpeedValue(800);
-          handleShimpentChange('air');
-          break;
-      }
-      setConvertSpeedStatus(1.6093);
+    switch (btnActive) {
+      case 'sea':
+        setSpeedValue(13);
+        break;
+      case 'road':
+        setSpeedValue(35);
+        break;
+      case 'air':
+        setSpeedValue(800);
+        break;
     }
+    setConvertSpeedStatus(1.6093);
+    setRequestData((state) => ({
+      params: {
+        ...state.params,
+        type: btnActive,
+      },
+    }));
   }, [btnActive]);
 
   return (
@@ -81,11 +86,7 @@ const Filter = ({
       className={styles['filter']}
     >
       <div className={styles['filter__content']}>
-        <ShipmentList
-          toggleActive={setBtnActive}
-          active={btnActive}
-          setComponentWillUpdate={setComponentWillUpdate}
-        />
+        <ShipmentList toggleActive={setBtnActive} active={btnActive} />
         <InputList
           shipment={btnActive}
           setRequestData={setRequestData}
@@ -109,7 +110,7 @@ const Filter = ({
         speedValue={speedValue}
         btnActive={btnActive}
         handleSpeedChange={setSpeedValue}
-        shipmentType={shipment_type}
+        shipmentType={btnActive}
       />
     </form>
   );
@@ -117,16 +118,13 @@ const Filter = ({
 
 const mapStateToProps = (state) => {
   return {
-    shipment_type: state.shipment_type,
-    request_data: state.request_data,
+    responce_data: state.responce_data,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    shimpentChange: (value) => dispatch(shimpentChange(value)),
     sendRequest: (value) => dispatch(sendRequest(value)),
-    requestShimpentChange: (value) => dispatch(requestShimpentChange(value)),
   };
 };
 

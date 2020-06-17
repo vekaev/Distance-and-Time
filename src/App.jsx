@@ -2,13 +2,13 @@ import React from 'react';
 import Panel from './containers/Panel';
 import { connect } from 'react-redux';
 
-const App = ({ request_data }) => {
-  return <Panel responseData={request_data} />;
+const App = ({ responce_data }) => {
+  return <Panel responseData={responce_data} />;
 };
 
 const mapStateToProps = (state) => {
   return {
-    request_data: state.request_data,
+    responce_data: state.responce_data,
   };
 };
 
