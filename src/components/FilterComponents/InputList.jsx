@@ -253,14 +253,11 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
       </div>
 
       <div
-        className={`${style.exchange__btn} ${
+        className={`${style.exchange__btn} ${style[`${shipment}`]} ${
           toggleBtnStatus ? style.loading : ''
         }`}
       >
-        <span
-          onClick={exchageDirection}
-          className={`${style[`${shipment}`]}`}
-        ></span>
+        <span onClick={exchageDirection}></span>
       </div>
     </div>
   );

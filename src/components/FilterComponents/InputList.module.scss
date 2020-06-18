@@ -70,26 +70,31 @@
         border: 1px solid $color-blue;
       }
     }
+
     &:before {
       color: $color-blue;
     }
   }
+
   .air {
     .input {
       &:focus {
         border: 1px solid $color-air;
       }
     }
+
     &:before {
       color: $color-air;
     }
   }
+
   .road {
     .input {
       &:focus {
         border: 1px solid $color-land;
       }
     }
+
     &:before {
       color: $color-land;
     }
@@ -102,6 +107,7 @@
   }
 
   .exchange__btn {
+    cursor: pointer;
     position: absolute;
     width: 25px;
     height: 25px;
@@ -112,6 +118,7 @@
     bottom: 13px;
     left: 50%;
     transform: translateX(-50%);
+    transition: 0.2s ease;
     span {
       width: 100%;
       height: 100%;
@@ -121,18 +128,50 @@
         no-repeat center;
       -webkit-mask: url('/design/images/apps/dist-time/panel/icon__change.svg')
         no-repeat center;
+      transition: 0.2s ease;
     }
-    .sea {
+  }
+
+  .exchange__btn.sea {
+    &:hover,
+    &:focus {
+      background-color: $color-blue;
+      span {
+        background-color: $color-white;
+      }
+    }
+    span {
       background-color: $color-blue;
     }
-    .road {
+  }
+
+  .exchange__btn.road {
+    &:hover,
+    &:focus {
+      background-color: $color-land;
+      span {
+        background-color: $color-white;
+      }
+    }
+    span {
       background-color: $color-land;
     }
-    .air {
+  }
+
+  .exchange__btn.air {
+    &:hover,
+    &:focus {
+      background-color: $color-air;
+      span {
+        background-color: $color-white;
+      }
+    }
+    span {
       background-color: $color-air;
     }
   }
 }
+
 .title {
   display: block;
   font-weight: 600;
@@ -143,6 +182,7 @@
   color: $color-btn-grey;
   cursor: text;
 }
+
 .autocomplete-item {
   font-size: 10px;
   color: $darkBlueColor;

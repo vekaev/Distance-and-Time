@@ -1,4 +1,4 @@
-@import '../variable';
+@import '../../variable';
 
 .distance-data {
   padding: 30px 15px;
@@ -65,7 +65,7 @@
 
       &:last-child {
         &:after {
-          top: -50%;
+          top: -65%;
           transform: translateY(0);
         }
       }
@@ -91,7 +91,7 @@
         left: -29px;
         top: 50%;
         transform: translateY(-50%);
-        height: 115%;
+        height: 145%;
         width: 3px;
         z-index: 4;
         background-color: $color-blue;
@@ -158,7 +158,7 @@
 @keyframes animateIn {
   0% {
     opacity: 0;
-    transform: scale(0.6) translateY(-8px);
+    transform: scale(0.6) translateY(-50px) translateX(-100px);
   }
 
   100% {

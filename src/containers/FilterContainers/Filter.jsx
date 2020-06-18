@@ -47,6 +47,7 @@ const Filter = ({ responce_data, sendRequest }) => {
   // AJAX REQUEST
   const handleSubmit = (e) => {
     e.preventDefault();
+
     sendRequest(requestData);
     setSubmitButtonLoading(true);
   };

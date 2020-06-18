@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Filter from './FilterContainers/Filter';
-import Statistic from './Statistic';
+import Statistic from './StatisticContainers/Statistic';
 import styles from './Panel.module.scss';
 
-const Panel = ({ responseData }) => {
+const Panel = () => {
   return (
     <aside className={styles['panel']}>
       <Filter />

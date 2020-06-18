@@ -116,7 +116,8 @@
       transition: 0.2s ease;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       select {
         color: $color-blue;
         transition: 0.2s ease;
@@ -139,21 +140,24 @@
   }
   &-sea {
     .speed__input {
-      &:hover {
+      &:hover,
+      &:focus {
         input {
           color: $color-blue;
         }
       }
       .arrow__part {
         .arrow {
-          &:hover {
+          &:hover,
+          &:focus {
             background-color: $color-blue;
           }
         }
       }
     }
     .speed__select {
-      &:hover {
+      &:hover,
+      &:focus {
         select {
           color: $color-blue;
         }
@@ -165,21 +169,24 @@
   }
   &-air {
     .speed__input {
-      &:hover {
+      &:hover,
+      &:focus {
         input {
           color: $color-air;
         }
       }
       .arrow__part {
         .arrow {
-          &:hover {
+          &:hover,
+          &:focus {
             background-color: $color-air;
           }
         }
       }
     }
     .speed__select {
-      &:hover {
+      &:hover,
+      &:focus {
         select {
           color: $color-air;
         }
@@ -191,21 +198,24 @@
   }
   &-road {
     .speed__input {
-      &:hover {
+      &:hover,
+      &:focus {
         input {
           color: $color-land;
         }
       }
       .arrow__part {
         .arrow {
-          &:hover {
+          &:hover,
+          &:focus {
             background-color: $color-land;
           }
         }
       }
     }
     .speed__select {
-      &:hover {
+      &:hover,
+      &:focus {
         select {
           color: $color-land;
         }
