@@ -257,7 +257,11 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
           toggleBtnStatus ? style.loading : ''
         }`}
       >
-        <span onClick={exchageDirection}></span>
+        <span
+          onClick={() => {
+            exchageDirection;
+          }}
+        ></span>
       </div>
     </div>
   );
