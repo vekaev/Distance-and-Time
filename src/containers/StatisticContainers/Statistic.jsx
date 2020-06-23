@@ -15,7 +15,7 @@ const Statistic = ({ responce_data }) => {
       <TransitTime data={responce_data} />
       {/*<DistanceTime data={responce_data} />*/}
       {/*</>*/}
-      {/*// )}*/}
+      {/*)}*/}
     </>
   );
 };

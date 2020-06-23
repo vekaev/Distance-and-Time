@@ -30,3 +30,64 @@
     transition: 1s ease;
   }
 }
+.main__title {
+  animation-name: animateMain;
+  animation-duration: 400ms;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 25px auto;
+  color: $color-main-text;
+}
+.graphic {
+  animation-name: animateMain;
+  animation-duration: 400ms;
+
+  padding: 8px 25px 25px;
+  overflow: hidden;
+  .numbers {
+    position: relative;
+    margin-left: 100px;
+    margin-right: 60px;
+    &__title {
+      position: absolute;
+      left: -45px;
+      margin: 0;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color-graphic;
+    }
+    &__list {
+      border-top: 1px solid $color-graphic;
+      padding: 6px 0 0;
+      display: flex;
+      justify-content: space-between;
+      li {
+        list-style: none;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 12px;
+        color: $color-graphic;
+        position: relative;
+        &:before {
+          content: '';
+          display: inline-block;
+          height: 1000px;
+          width: 2px;
+          border-right: 2px dashed #d5dee6;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 19px;
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,96 @@
 @import '../../../variable';
+
+.line__list {
+  padding-left: 0;
+  margin: 0 60px 10px 100px;
+}
+
+.line {
+  width: 100%;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0088ff;
+  margin-bottom: 20px;
+  position: relative;
+  height: 20px;
+  border-radius: 3px;
+  z-index: 5;
+  cursor: pointer;
+
+  animation-name: animateIn;
+  animation-duration: 400ms;
+  animation-fill-mode: both;
+
+  @for $i from 1 through 50 {
+    &:nth-child(#{$i}) {
+      animation-delay: 50ms * $i;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &__wrapper {
+    position: absolute;
+    width: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 35px;
+    left: -10px;
+    transition: 2s cubic-bezier(0.1, 0.84, 0.45, 0.94);
+  }
+  &__img {
+    position: absolute;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #0088ff;
+    border-radius: 50%;
+    overflow: hidden;
+
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    img {
+      object-fit: cover;
+      width: 35px;
+    }
+  }
+  &:hover {
+    .line__wrapper {
+      width: 100%;
+      left: 5px;
+    }
+  }
+  &__title {
+    position: absolute;
+    left: -120px;
+    text-align: right;
+    width: 100px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: $color-main-text;
+    word-break: break-all;
+    overflow: hidden;
+    max-height: 44px;
+    border-right: 30px solid transparent;
+    border-top: 20px solid transparent;
+    top: -15px;
+  }
+  &__time {
+    position: absolute;
+    width: 43px;
+    right: -49px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    color: $color-main-text;
+    margin: 0;
+    background: white;
+  }
+}

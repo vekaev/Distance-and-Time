@@ -243,7 +243,7 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
             onChange(e, 'b');
           }}
           onSelect={(e) => onSelect(e, 'b')}
-          // selectOnBlur={true}
+          selectOnBlur={true}
           inputProps={{
             placeholder: 'Country, City, Port',
             className: `${style.input}  ${style.to}`,
@@ -257,11 +257,7 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
           toggleBtnStatus ? style.loading : ''
         }`}
       >
-        <span
-          onClick={() => {
-            exchageDirection;
-          }}
-        ></span>
+        <span onClick={exchageDirection}></span>
       </div>
     </div>
   );

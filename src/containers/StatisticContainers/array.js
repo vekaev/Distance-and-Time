@@ -5,6 +5,7 @@ export const testResponce = {
       {
         name: 'HAMBURG SUD',
         id: 'HAMBURG SUD',
+        lineId: 4,
         data: [
           ['SEGU4197094', 25],
           ['TGHU6877000', 25],
@@ -225,6 +226,7 @@ export const testResponce = {
       {
         name: 'MAERSK',
         id: 'MAERSK',
+        lineId: 10,
         data: [
           ['MSKU8781137', 31],
           ['SEAU7838262', 32],
@@ -762,7 +764,7 @@ export const testResponce = {
           ['INKU6438974', 29],
           ['CLHU3754773', 30],
           ['TGHU9125135', 36],
-          ['INBU5263673', 34],
+          ['INBU5263673', 31],
         ],
         y: 32,
         color: {
@@ -776,6 +778,7 @@ export const testResponce = {
       {
         name: 'APL',
         id: 'APL',
+        lineId: 14,
         data: [
           ['TGHU9798223', 37],
           ['AMFU3019852', 32],
@@ -977,6 +980,7 @@ export const testResponce = {
       {
         name: 'ZIM',
         id: 'ZIM',
+        lineId: 13,
         data: [
           ['TRHU2679965', 26],
           ['EARU0000084', 25],
@@ -1095,6 +1099,7 @@ export const testResponce = {
       {
         name: '',
         id: '',
+        lineId: null,
         data: [
           ['NYKU2855998', 38],
           ['DRYU9009275', 36],
@@ -1129,6 +1134,7 @@ export const testResponce = {
       {
         name: 'OOCL',
         id: 'OOCL',
+        lineId: 17,
         data: [
           ['OOLU8501583', 37],
           ['OOLU3028755', 35],
@@ -1295,6 +1301,7 @@ export const testResponce = {
       {
         name: 'CMA CGM',
         id: 'CMA CGM',
+        lineId: 15,
         data: [
           ['TGHU7411459', 32],
           ['TCKU9939650', 46],
@@ -2011,7 +2018,7 @@ export const testResponce = {
           ['CGMU9380075', 35],
           ['TRLU9766777', 40],
           ['TRIU8431120', 35],
-          ['UNIU5028856', 30],
+          ['UNIU5028856', 35],
           ['TRLU9047048', 44],
           ['TGHU6352027', 35],
           ['CMAU1276723', 40],
@@ -2073,6 +2080,7 @@ export const testResponce = {
       {
         name: 'MSC',
         id: 'MSC',
+        lineId: 1,
         data: [
           ['MEDU3018006', 39],
           ['GLDU2210780', 33],
@@ -2467,6 +2475,7 @@ export const testResponce = {
       {
         name: 'HYUNDAI',
         id: 'HYUNDAI',
+        lineId: 104,
         data: [
           ['GATU8690426', 40],
           ['DFSU6619866', 35],
@@ -2487,6 +2496,7 @@ export const testResponce = {
       {
         name: 'YANG MING',
         id: 'YANG MING',
+        lineId: 18,
         data: [
           ['TRHU2050720', 29],
           ['YMLU8989936', 32],
@@ -2612,6 +2622,7 @@ export const testResponce = {
       {
         name: 'COSCO',
         id: 'COSCO',
+        lineId: 5,
         data: [
           ['CBHU9193772', 31],
           ['BMOU4389459', 31],
@@ -2720,6 +2731,7 @@ export const testResponce = {
       {
         name: 'HAPAG-LLOYD',
         id: 'HAPAG-LLOYD',
+        lineId: 7,
         data: [
           ['CPSU1702909', 39],
           ['FCIU8640025', 36],
@@ -2852,6 +2864,7 @@ export const testResponce = {
       {
         name: 'EVERGREEN',
         id: 'EVERGREEN',
+        lineId: 6,
         data: [
           ['142501713427', 42],
           ['142553323123', 41],
@@ -2863,7 +2876,7 @@ export const testResponce = {
           ['CARU3812454', 30],
           ['BMOU6785058', 30],
           ['TCLU2157044', 31],
-          ['TCLU7767857', 31],
+          ['TCLU7767857', 33],
           ['TCLU2741947', 30],
         ],
         y: 35,
@@ -2878,6 +2891,7 @@ export const testResponce = {
       {
         name: 'ONE',
         id: 'ONE',
+        lineId: 88,
         data: [
           ['CAIU2719823', 46],
           ['CAIU3227047', 34],

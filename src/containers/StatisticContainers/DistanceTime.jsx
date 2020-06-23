@@ -10,7 +10,7 @@ const DistanceTime = ({ data }) => {
           styles[`distance-data__${data.status}`]
         }`}
       >
-        <h2 className={styles['title']}>Distances & Time</h2>
+        <span className={styles['title']}>Distances & Time</span>
         <DistanceListCards data={data} />
       </div>
     </>

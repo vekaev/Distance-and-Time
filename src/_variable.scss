@@ -12,6 +12,7 @@ $color-placeholder: #9fb1c1;
 $color-light-bcg: #f7f9fc;
 $color-air: #ee3c40;
 $color-land: #02bcb1;
+$color-graphic: #9fb1c1;
 * {
   font-family: 'Montserrat';
 }
@@ -22,6 +23,17 @@ $color-land: #02bcb1;
   0% {
     opacity: 0;
     transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animateIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(-50px) translateX(-100px);
   }
 
   100% {
