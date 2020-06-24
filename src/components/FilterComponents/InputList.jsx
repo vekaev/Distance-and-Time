@@ -202,6 +202,7 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
             placeholder: 'Country, City, Port',
             className: `${style.input}  ${style.from}`,
             required: true,
+            autoComplete: 'chrome-off',
           }}
         />
       </div>
@@ -248,6 +249,7 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
             placeholder: 'Country, City, Port',
             className: `${style.input}  ${style.to}`,
             required: true,
+            autoComplete: 'chrome-off',
           }}
         />
       </div>

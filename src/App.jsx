@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { sendRequest } from './redux/actions/actions';
 
 const App = ({ responce_data }) => {
-  return <Panel />;
+  return <Panel data={responce_data} />;
 };
 
 const mapStateToProps = (state) => {

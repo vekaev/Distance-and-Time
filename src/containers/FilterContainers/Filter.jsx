@@ -9,11 +9,16 @@ import SpeedInputs from '../../components/FilterComponents/SpeedInputs';
 
 import styles from './Filter.module.scss';
 
-const Filter = ({ responce_data, sendRequest }) => {
+const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
   const [btnActive, setBtnActive] = useState('sea');
   const [convertSpeedStatus, setConvertSpeedStatus] = useState(1);
   const [loading, setSubmitButtonLoading] = useState(false);
   const [speedValue, setSpeedValue] = useState(13);
+
+  const handleSetBtnActive = (value) => {
+    setUploadFileVisibility(value);
+    setBtnActive(value);
+  };
 
   const [requestData, setRequestData] = useState({
     params: {
@@ -87,7 +92,7 @@ const Filter = ({ responce_data, sendRequest }) => {
       className={styles['filter']}
     >
       <div className={styles['filter__content']}>
-        <ShipmentList toggleActive={setBtnActive} active={btnActive} />
+        <ShipmentList toggleActive={handleSetBtnActive} active={btnActive} />
         <InputList
           shipment={btnActive}
           setRequestData={setRequestData}
@@ -117,16 +122,10 @@ const Filter = ({ responce_data, sendRequest }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    responce_data: state.responce_data,
-  };
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     sendRequest: (value) => dispatch(sendRequest(value)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Filter);
+export default connect(null, mapDispatchToProps)(Filter);
