@@ -30,19 +30,44 @@
     transition: 1s ease;
   }
 }
-.main__title {
-  animation-name: animateMain;
-  animation-duration: 400ms;
-  display: block;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 25px auto;
-  color: $color-main-text;
+.title__wrapper {
+  position: relative;
+  .main__title {
+    animation-name: animateMain;
+    animation-duration: 400ms;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 25px auto;
+    color: $color-main-text;
+  }
+  .btn__back {
+    animation-name: animateMain;
+    animation-duration: 400ms;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $color-light-blue;
+    padding: 6px 20px;
+    color: $color-blue;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 44px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    &:active {
+      transition: 0.2s ease;
+      transform: translateY(-50%) scale(0.93);
+    }
+  }
 }
+
 .graphic {
   animation-name: animateMain;
   animation-duration: 400ms;
@@ -67,6 +92,7 @@
     &__list {
       border-top: 1px solid $color-graphic;
       padding: 6px 0 0;
+      margin: 12px 0px;
       display: flex;
       justify-content: space-between;
       li {

@@ -8,14 +8,14 @@ import { connect } from 'react-redux';
 const Statistic = ({ responce_data }) => {
   return (
     <>
-      {/*{!responce_data || responce_data.status == 'error' ? (*/}
-      {/*  <AnimatedPrompt state={responce_data.status} />*/}
-      {/*) : (*/}
-      {/*  <>*/}
-      <TransitTime data={responce_data} />
-      {/*<DistanceTime data={responce_data} />*/}
-      {/*</>*/}
-      {/*)}*/}
+      {!responce_data || responce_data.status == 'error' ? (
+        <AnimatedPrompt state={responce_data.status} />
+      ) : (
+        <>
+          <TransitTime data={responce_data} />
+          <DistanceTime data={responce_data} />
+        </>
+      )}
     </>
   );
 };

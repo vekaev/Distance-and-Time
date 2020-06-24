@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './TransitTime.module.scss';
 import LinesList from './LinesList';
 
 let numArray = [];
-let containerList = [];
+let firstRender = true;
 
 export const TransitGraphic = ({ data }) => {
   const [containerData, setContainerList] = useState({});
-  //
-  // useEffect(() => {
-  //   setItems(props.items || []);
-  // }, [props.items]);
 
   let lineList = data.transit_time_chart.drilldown.sort((a, b) =>
     a.y > b.y ? 1 : -1,
   );
+
+  const escapedKeyPressHandle = (event) => {
+    if (event.key === 'Escape') {
+      getLineContainers('back');
+    }
+  };
+  document.addEventListener('keydown', escapedKeyPressHandle, false);
 
   const setGraphicNumber = (value) => {
     numArray = [];
@@ -35,25 +38,56 @@ export const TransitGraphic = ({ data }) => {
       numArray.push(i);
     }
   };
-  setGraphicNumber(lineList[lineList.length - 1].y);
+
+  if (firstRender) {
+    setGraphicNumber(lineList[lineList.length - 1].y);
+    firstRender = false;
+  }
 
   const getLineContainers = (index) => {
-    setContainerList({
-      mainLine: lineList[index],
-      containersList: lineList[index].length !== 0 ? lineList[index].data : [],
-      styleIndex: index,
-    });
+    if (index == 'back') {
+      setContainerList(null);
+      setGraphicNumber(lineList[lineList.length - 1].y);
+    } else {
+      let sortedContainerList = lineList[index].data.sort((a, b) =>
+        a[1] > b[1] ? 1 : -1,
+      );
+
+      setContainerList({
+        mainLine: lineList[index],
+        containersList: lineList[index].length !== 0 ? sortedContainerList : [],
+        styleIndex: index,
+      });
+
+      setGraphicNumber(sortedContainerList[sortedContainerList.length - 1][1]);
+    }
   };
-  console.log(containerData);
 
   return (
     <>
-      <span className={styles['main__title']}>Transit Time</span>
+      <div className={styles['title__wrapper']}>
+        <span className={styles['main__title']}>Transit Time</span>
+
+        {containerData &&
+        containerData.containersList !== undefined &&
+        containerData.containersList.length !== 0 ? (
+          <span
+            className={styles['btn__back']}
+            onClick={() => getLineContainers('back')}
+          >
+            Back
+          </span>
+        ) : (
+          <></>
+        )}
+      </div>
+
       <div className={styles['graphic']}>
         <LinesList
           data={lineList}
           getLineContainers={getLineContainers}
           containers={containerData}
+          setGraphicNumber={setGraphicNumber}
         />
         <div className={styles['numbers']}>
           <p className={styles['numbers__title']}>Days</p>

@@ -30,13 +30,12 @@ body {
       box-sizing: border-box;
       outline: none;
       border: none;
-      transition: 0.2s ease;
+      transition: 0.3s ease;
       animation-name: animatedBtnSubmit;
       animation-duration: 200ms;
-
-      &:hover {
-        transition: 0.2s ease;
-        transform: translateY(-2px);
+      &:active {
+        transition: 0.3s ease;
+        transform: scale(0.93);
       }
 
       .spinner {

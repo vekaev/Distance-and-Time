@@ -1,11 +1,17 @@
 @import '../../../variable';
 
 .line__list {
-  padding-left: 0;
-  margin: 0 60px 10px 100px;
+  padding: 10px 60px 10px 100px;
+  position: relative;
+  margin: 0;
 }
-
+.container__list {
+  max-height: 600px;
+  overflow: scroll;
+  overflow-x: visible;
+}
 .line {
+  max-width: 100%;
   width: 100%;
   min-width: 21px;
   display: flex;
@@ -23,7 +29,7 @@
   animation-duration: 400ms;
   animation-fill-mode: both;
 
-  @for $i from 1 through 50 {
+  @for $i from 1 through 500 {
     &:nth-child(#{$i}) {
       animation-delay: 50ms * $i;
     }
@@ -92,5 +98,19 @@
     color: $color-main-text;
     margin: 0;
     background: white;
+  }
+}
+.container {
+  cursor: default;
+  @for $i from 1 through 1000 {
+    &:nth-child(#{$i}) {
+      animation-delay: 20ms * $i;
+    }
+  }
+  &:hover {
+    .line__wrapper {
+      width: 35px;
+      left: -10px;
+    }
   }
 }

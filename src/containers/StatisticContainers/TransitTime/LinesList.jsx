@@ -2,32 +2,40 @@ import React, { useEffect, useState } from 'react';
 import styles from './LinesList.module.scss';
 
 const listColors = [
-  '#C1DAFE',
-  '#B7D2FC',
-  '#ACCBFA',
-  '#A3C5F8',
-  '#9ABFF6',
-  '#90B8F4',
-  '#86B1F3',
-  '#7BAAF0',
-  '#72A3EF',
-  '#679CED',
-  '#5C95EA',
-  '#528EE9',
-  '#4988E7',
-  '#3E80E5',
-  '#3E80E5',
-  '#347AE3',
-  '#347AE3',
-  '#2A73E1',
-  '#2A73E1',
-  '#206CDF',
-  '#206CDF',
-  '#1766DD',
-  '#1766DD',
-  '#0B5EDB',
-  '#0B5EDB',
-  '#0B5EDB',
+  '#DEECFF',
+  '#CFE4FF',
+  '#C4DDFF',
+  '#B7D6FF',
+  '#ACD0FF',
+  '#9FC9FF',
+  '#94C2FF',
+  '#89BCFF',
+  '#7AB4FF',
+  '#70AEFF',
+  '#70AEFF',
+  '#62A6FF',
+  '#62A6FF',
+  '#569FFF',
+  '#569FFF',
+  '#4C9AFF',
+  '#4C9AFF',
+  '#4C9AFF',
+  '#3E92FF',
+  '#3E92FF',
+  '#3E92FF',
+  '#338CFF',
+  '#338CFF',
+  '#338CFF',
+  '#2784FF',
+  '#2784FF',
+  '#2784FF',
+  '#1B7DFF',
+  '#1B7DFF',
+  '#1B7DFF',
+  '#0E76FF',
+  '#0E76FF',
+  '#0E76FF',
+  '#016FFF',
 ];
 
 const LinesList = ({ data, getLineContainers, containers }) => {
@@ -43,36 +51,82 @@ const LinesList = ({ data, getLineContainers, containers }) => {
     return () => clearTimeout(setDataTime);
   }, [data]);
 
-  data.sort((a, b) => (a.y > b.y ? 1 : -1));
-
   let maxValue = Math.ceil(data[data.length - 1].y / 10) * 10;
 
-  // let getContainerList = (array, id) => {
-  //   let containerList = array[id].data;
-  //   // console.log(array[id].name, containerList);
-  // };
-  // for (let i = 0; i < data.length; i++) {
-  //   getContainerList(data, i);
-  // }
-
-  // const handle
-  //
-  // const onMouseEnter = (index) => (event) => {
-  //   const arr = Array.from(translate);
-  //   arr[index] = ;
-  //   setTranslate(arr);
-  // };
-  //
-  // const onMouseLeave = (index) => () => {
-  //   const arr = Array.from(translate);
-  //   arr[index] = 0;
-  //   setTranslate(arr);
-  // };
   if (
+    containers &&
     containers.containersList !== undefined &&
     containers.containersList.length !== 0
   ) {
-    return <ul className={styles['line__list']}></ul>;
+    let card = containers.mainLine,
+      containerList = containers.containersList,
+      maxContainerDeliveryTime = containers.containersList.length - 1;
+
+    let maxValue =
+      Math.ceil(containerList[maxContainerDeliveryTime][1] / 10) * 10;
+    return (
+      <>
+        <ul className={`${styles['line__list']} ${styles['container__list']}`}>
+          <li
+            key={0}
+            style={{
+              width: `0%`,
+              background: `${listColors[containers.styleIndex]}`,
+            }}
+            className={`${styles['line']} ${styles['container']}`}
+          >
+            <span className={styles['line__title']}>{card.name}</span>
+
+            <span className={styles['line__wrapper']}>
+              <span
+                className={styles['line__img']}
+                style={{
+                  borderColor: `${listColors[containers.styleIndex]}`,
+                }}
+              >
+                <img
+                  onError={(e) => {
+                    e.target.src =
+                      '/design/images/apps/dist-time/icon__sea-line.svg';
+                  }}
+                  className={styles['line__logo']}
+                  alt={`${card.name.toLowerCase()} company logo`}
+                  src={`https://www.searates.com/design/images/freight/sealine/${card.lineId}.jpg`}
+                />
+              </span>
+            </span>
+
+            {card.y ? (
+              <p className={styles['line__time']}>
+                {card.y} {card.y > 1 ? ' days' : ' day'}
+              </p>
+            ) : (
+              <></>
+            )}
+          </li>
+          {containerList.map((card, index, obj) => {
+            if (card && card[0] && card[1]) {
+              return (
+                <li
+                  key={index + 1}
+                  style={{
+                    width: `${(card[1] * 100) / maxValue}%`,
+                    background: `${listColors[containers.styleIndex]}`,
+                  }}
+                  className={`${styles['line']} ${styles['container']}`}
+                >
+                  <span className={styles['line__title']}>{card[0]}</span>
+
+                  <p className={styles['line__time']}>
+                    {card[1]} {card[1] > 1 ? ' days' : ' day'}
+                  </p>
+                </li>
+              );
+            }
+          })}
+        </ul>
+      </>
+    );
   } else {
     return (
       <ul className={styles['line__list']}>
@@ -84,11 +138,13 @@ const LinesList = ({ data, getLineContainers, containers }) => {
                 onClick={() => getLineContainers(index)}
                 style={{
                   width: `${(card.y * 100) / maxValue}%`,
-                  background: `${listColors[index]}`,
+                  background: `${
+                    listColors[index]
+                      ? listColors[index]
+                      : listColors.length - 1
+                  }`,
                 }}
-                className={`${styles['line']} ${
-                  obj.length === 1 ? `${styles['alone']}` : ''
-                }`}
+                className={`${styles['line']} `}
               >
                 <span className={styles['line__title']}>{card.name}</span>
 
@@ -96,7 +152,11 @@ const LinesList = ({ data, getLineContainers, containers }) => {
                   <span
                     className={styles['line__img']}
                     style={{
-                      borderColor: `${listColors[index]}`,
+                      borderColor: `${
+                        listColors[index]
+                          ? listColors[index]
+                          : listColors.length - 1
+                      }`,
                     }}
                   >
                     <img

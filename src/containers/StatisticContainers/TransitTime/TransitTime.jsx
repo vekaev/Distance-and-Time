@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import styles from './TransitTime.module.scss';
-import { testResponce } from '../array';
-
 import { TransitGraphic } from './TransitGraphic';
 
 const TransitTime = ({ data }) => {
@@ -13,8 +11,8 @@ const TransitTime = ({ data }) => {
 
   return (
     <>
-      {!isDataContains ? (
-        <TransitGraphic data={testResponce} />
+      {isDataContains ? (
+        <TransitGraphic data={data} />
       ) : (
         <div className={styles['no-transit-data']}>
           <span className={styles['img__part']}></span>
