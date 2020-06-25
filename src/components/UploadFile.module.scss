@@ -1,4 +1,93 @@
 @import '../variable';
 
+.upload__wrapper {
+  animation-name: animateMain;
+  animation-duration: 200ms;
+  display: flex;
+  justify-self: flex-end;
+  justify-content: center;
+  margin-top: auto;
+  padding: 20px 15px;
+  position: relative;
+  .prompt {
+    display: none;
+    bottom: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    background-color: $color-white;
+    max-width: 430px;
+    margin: 0 20px;
+    width: 100%;
+    box-shadow: 0px 0px 7px rgba(69, 119, 191, 0.2);
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    &:after {
+      position: absolute;
+      content: '';
+      display: block;
+      bottom: -47px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150%;
+      height: 50px;
+    }
+    b {
+      font-weight: 600;
+    }
+    p,
+    b {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    a {
+      display: block;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 18px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      text-decoration: none;
+      color: $color-white;
+      padding: 16px 20px;
+      max-width: 280px;
+      width: 100%;
+      margin: 20px auto 0;
+      background-color: $color-land;
+      transition: 0.2s ease;
+      box-sizing: border-box;
+      &:active {
+        transform: scale(0.97);
+        transition: 0.2s ease;
+      }
+    }
+    &:hover {
+      display: inline-block;
+    }
+  }
+  .prompt__icon {
+    display: inline-block;
+    min-width: 20px;
+    max-width: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $color-land;
+    cursor: help;
+    mask: url("data:image/svg+xml,%3Csvg fill='none' height='21' viewBox='0 0 21 21' width='21' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m10.2464 2.12455c4.7831 0 8.7097 3.87399 8.7097 8.70965 0 4.8101-3.8956 8.7097-8.7097 8.7097-4.80823 0-8.70968-3.8936-8.70968-8.7097 0-4.80654 3.89524-8.70965 8.70968-8.70965zm0-1.290321c-5.52246 0-10.000001 4.479151-10.000001 9.999971 0 5.5241 4.477541 10 10.000001 10 5.5225 0 10-4.4759 10-10 0-5.52082-4.4775-9.999971-10-9.999971zm-1.45161 13.870971h.48387v-4.83871h-.48387c-.26722 0-.48388-.21666-.48388-.48387v-.32259c0-.26721.21666-.48387.48388-.48387h1.93551c.2672 0 .4838.21666.4838.48387v5.64517h.4839c.2672 0 .4839.2166.4839.4839v.3225c0 .2673-.2167.4839-.4839.4839h-2.90321c-.26722 0-.48388-.2166-.48388-.4839v-.3225c0-.2673.21666-.4839.48388-.4839zm1.45161-9.67742c-.71262 0-1.29032.5777-1.29032 1.29032s.5777 1.29032 1.29032 1.29032c.7126 0 1.2903-.5777 1.2903-1.29032s-.5777-1.29032-1.2903-1.29032z' fill='%2308f'/%3E%3C/svg%3E")
+      no-repeat center / contain;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg fill='none' height='21' viewBox='0 0 21 21' width='21' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m10.2464 2.12455c4.7831 0 8.7097 3.87399 8.7097 8.70965 0 4.8101-3.8956 8.7097-8.7097 8.7097-4.80823 0-8.70968-3.8936-8.70968-8.7097 0-4.80654 3.89524-8.70965 8.70968-8.70965zm0-1.290321c-5.52246 0-10.000001 4.479151-10.000001 9.999971 0 5.5241 4.477541 10 10.000001 10 5.5225 0 10-4.4759 10-10 0-5.52082-4.4775-9.999971-10-9.999971zm-1.45161 13.870971h.48387v-4.83871h-.48387c-.26722 0-.48388-.21666-.48388-.48387v-.32259c0-.26721.21666-.48387.48388-.48387h1.93551c.2672 0 .4838.21666.4838.48387v5.64517h.4839c.2672 0 .4839.2166.4839.4839v.3225c0 .2673-.2167.4839-.4839.4839h-2.90321c-.26722 0-.48388-.2166-.48388-.4839v-.3225c0-.2673.21666-.4839.48388-.4839zm1.45161-9.67742c-.71262 0-1.29032.5777-1.29032 1.29032s.5777 1.29032 1.29032 1.29032c.7126 0 1.2903-.5777 1.2903-1.29032s-.5777-1.29032-1.2903-1.29032z' fill='%2308f'/%3E%3C/svg%3E")
+      no-repeat center / contain;
+    &:hover + .prompt {
+      display: inline-block;
+    }
+  }
+  .input__wrapper {
+  }
+}
+
 .upload__file {
 }

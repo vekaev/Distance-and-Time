@@ -52,8 +52,41 @@ export const UploadFile = () => {
   };
 
   return (
-    <div>
+    <div className={styles['upload__wrapper']}>
       <span className={styles['prompt__icon']}></span>
+      <div className={styles['prompt']}>
+        <b>The first 4 columns of your file should be headed:</b>
+        <p>
+          Country from
+          <br />
+          City from
+          <br />
+          Country to
+          <br />
+          City to
+          <br />
+          <br />
+          ...Empty cells will be skipped
+          <br />
+          Other filled cells around will be skipped
+          <br />
+          <br />
+          You can also download the template to use it for filling cities and
+          avoid any mistake.
+          <br />
+          <br />
+          Once you upload the file - click "Start", wait for some time depending
+          the size of your file, and your browser will download the table with
+          filled distances
+          <br />
+        </p>
+        <a
+          href='https://searates.com/downloads/Template_Road_Distance.xls'
+          target='_blank'
+        >
+          Download template
+        </a>
+      </div>
       <label className={styles['upload__lablel']} htmlFor='file__input'>
         <span>{renderSwitch(btnStatus, 'text')}</span>
         <div className={styles['input__wrapper']}>
@@ -71,7 +104,6 @@ export const UploadFile = () => {
           )}
         </div>
       </label>
-      <div className={styles['prompt']}></div>
     </div>
   );
 };

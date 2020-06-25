@@ -1,10 +1,16 @@
-import { SEND_SEARCH_REQUEST } from './actionTypes';
+import { SEND_SEARCH_REQUEST, SET_TRANSPORTATION_STATUS } from './actionTypes';
 import axios from 'axios';
 import { getStatus } from '../../utils';
 
 export const sendSearchRequest = (value) => {
   return {
     type: SEND_SEARCH_REQUEST,
+    playload: value,
+  };
+};
+export const setTransportationStatus = (value) => {
+  return {
+    type: SET_TRANSPORTATION_STATUS,
     playload: value,
   };
 };

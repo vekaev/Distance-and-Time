@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './TransitTime.module.scss';
 import { TransitGraphic } from './TransitGraphic';
+import { connect } from 'react-redux';
 
 const TransitTime = ({ data }) => {
   const isDataContains =
@@ -23,4 +24,4 @@ const TransitTime = ({ data }) => {
   );
 };
 
-export default TransitTime;
+export default React.memo(TransitTime);

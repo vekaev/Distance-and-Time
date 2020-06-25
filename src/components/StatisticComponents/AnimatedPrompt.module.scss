@@ -40,6 +40,7 @@
         //animation: wiggle 3s infinite;
         //animation-delay: 1s;
         transform-origin: 100% 100%;
+        transition: 0.1s ease;
         //animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
       }
       .location {
@@ -50,6 +51,7 @@
         width: 28px;
         height: 28px;
         background-color: rgba(37, 164, 129, 0.5);
+        transition: 0.1s ease;
         mask: url("data:image/svg+xml,%3Csvg fill='none' height='25' viewBox='0 0 19 25' width='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m9.73612.905762c2.36688 0 4.63688.953248 6.31058 2.650038s2.6139 3.99813 2.6139 6.39775c0 4.03995-5.8328 11.40305-8.0674 14.07435-.1049.1271-.236.2294-.3841.2996-.148.0702-.30952.1066-.47298.1066-.16347 0-.32495-.0364-.47303-.1066-.14809-.0702-.27918-.1725-.38401-.2996-2.23467-2.6713-8.067492-10.0344-8.067492-14.07435 0-2.39962.940262-4.70096 2.613932-6.39775 1.67368-1.69679 3.94366-2.650038 6.3106-2.650038zm0 12.063738c.58838 0 1.16348-.1769 1.65278-.5083.4892-.3314.8705-.8024 1.0956-1.3535.2252-.5511.2841-1.1575.1693-1.74253s-.3981-1.12242-.8142-1.54421c-.416-.42178-.9461-.70902-1.5231-.82539-.57708-.11637-1.17522-.05665-1.71881.17162-.54358.22827-1.00818.61483-1.33506 1.1108s-.50136 1.07906-.50136 1.67556c0 .79985.31342 1.56695.87132 2.13255.55789.5656 1.31455.8834 2.10353.8834z' fill='%2325a481' opacity='.3'/%3E%3C/svg%3E")
           no-repeat center / contain;
         -webkit-mask: url("data:image/svg+xml,%3Csvg fill='none' height='25' viewBox='0 0 19 25' width='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m9.73612.905762c2.36688 0 4.63688.953248 6.31058 2.650038s2.6139 3.99813 2.6139 6.39775c0 4.03995-5.8328 11.40305-8.0674 14.07435-.1049.1271-.236.2294-.3841.2996-.148.0702-.30952.1066-.47298.1066-.16347 0-.32495-.0364-.47303-.1066-.14809-.0702-.27918-.1725-.38401-.2996-2.23467-2.6713-8.067492-10.0344-8.067492-14.07435 0-2.39962.940262-4.70096 2.613932-6.39775 1.67368-1.69679 3.94366-2.650038 6.3106-2.650038zm0 12.063738c.58838 0 1.16348-.1769 1.65278-.5083.4892-.3314.8705-.8024 1.0956-1.3535.2252-.5511.2841-1.1575.1693-1.74253s-.3981-1.12242-.8142-1.54421c-.416-.42178-.9461-.70902-1.5231-.82539-.57708-.11637-1.17522-.05665-1.71881.17162-.54358.22827-1.00818.61483-1.33506 1.1108s-.50136 1.07906-.50136 1.67556c0 .79985.31342 1.56695.87132 2.13255.55789.5656 1.31455.8834 2.10353.8834z' fill='%2325a481' opacity='.3'/%3E%3C/svg%3E")
@@ -64,6 +66,7 @@
       position: absolute;
       width: 20px;
       height: 20px;
+      transition: 0.1s ease;
       animation: shoot 5s ease infinite;
       animation-name: shoot, fade;
       @for $i from 0 to 20 {
@@ -114,23 +117,7 @@
         opacity: 0;
       }
     }
-    //@keyframes wiggle {
-    //  0% {
-    //    transform: rotate(0deg);
-    //  }
-    //  80% {
-    //    transform: rotate(0deg);
-    //  }
-    //  85% {
-    //    transform: rotate(5deg);
-    //  }
-    //  95% {
-    //    transform: rotate(-5deg);
-    //  }
-    //  100% {
-    //    transform: rotate(0deg);
-    //  }
-    //}
+
     @keyframes bounce {
       0% {
         transform: scale(1, 1) translateY(0);
@@ -155,7 +142,51 @@
       }
     }
   }
-
+  &__sea {
+    .search__animation {
+      .center-part {
+        .search {
+          background-color: $color-blue;
+        }
+        .location {
+          background-color: $color-blue;
+        }
+      }
+      .particle {
+        background: $color-blue;
+      }
+    }
+  }
+  &__air {
+    .search__animation {
+      .center-part {
+        .search {
+          background-color: $color-air;
+        }
+        .location {
+          background-color: $color-air;
+        }
+      }
+      .particle {
+        background: $color-air !important;
+      }
+    }
+  }
+  &__road {
+    .search__animation {
+      .center-part {
+        .search {
+          background-color: #25a481;
+        }
+        .location {
+          background-color: rgba(37, 164, 129, 0.8);
+        }
+      }
+      .particle {
+        background: $color-land !important;
+      }
+    }
+  }
   p {
     max-width: 320px;
     margin: 0 auto;

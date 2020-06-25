@@ -6,6 +6,7 @@ let numArray = [];
 let firstRender = true;
 
 export const TransitGraphic = ({ data }) => {
+  console.log('TransitGraphic');
   const [containerData, setContainerList] = useState({});
 
   let lineList = data.transit_time_chart.drilldown.sort((a, b) =>

@@ -110,4 +110,4 @@ const DistanceListCards = ({ data }) => {
   );
 };
 
-export default DistanceListCards;
+export default React.memo(DistanceListCards);

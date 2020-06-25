@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './AnimatedPrompt.module.scss';
 
-const AnimatedPrompt = ({ state }) => {
+const AnimatedPrompt = ({ state, transportStatus }) => {
   return (
-    <div className={`${styles['animated__prompt']}   ${styles[`${state}`]}`}>
-      <div className={styles['search__animation']}>
+    <div
+      className={`${styles['animated__prompt']}  
+                  ${styles[`${state}`]}
+                  ${styles[`animated__prompt__${transportStatus}`]}`}
+    >
+      <div className={`${styles['search__animation']}`}>
         <div className={styles['center-part']}>
           <span className={styles['search']}></span>
           <span className={styles['location']}></span>

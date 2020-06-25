@@ -1,26 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
 import Filter from './FilterContainers/Filter';
 import Statistic from './StatisticContainers/Statistic';
-import styles from './Panel.module.scss';
-import { UploadFile } from '../components/UploadFile';
 
-const Panel = ({ data }) => {
-  const [uploadFileVisibility, setUploadFileVisibility] = useState('sea');
+import styles from './Panel.module.scss';
+
+const Panel = ({ data, transportationStatus }) => {
+  console.log('panel');
   return (
     <aside className={styles['panel']}>
-      <Filter
-        setUploadFileVisibility={setUploadFileVisibility}
-        responce_data={data}
-      />
-      <Statistic />
-      {(data == false && uploadFileVisibility === 'road') ||
-      data.status == 'error' ? (
-        <UploadFile />
-      ) : (
-        ''
-      )}
+      <Filter responce_data={data} />
+      <Statistic responce_data={data} transportStatus={transportationStatus} />
     </aside>
   );
 };
 
-export default Panel;
+export default React.memo(Panel);

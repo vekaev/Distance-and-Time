@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { sendRequest } from '../../redux/actions/actions';
+import {
+  sendRequest,
+  setTransportationStatus,
+} from '../../redux/actions/actions';
 
 import ShipmentList from '../../components/FilterComponents/ShipmentList';
 import InputList from '../../components/FilterComponents/InputList';
@@ -9,20 +12,18 @@ import SpeedInputs from '../../components/FilterComponents/SpeedInputs';
 
 import styles from './Filter.module.scss';
 
-const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
-  const [btnActive, setBtnActive] = useState('sea');
+const Filter = ({
+  responce_data,
+  sendRequest,
+  setTransportationStatus,
+  transportation_status,
+}) => {
   const [convertSpeedStatus, setConvertSpeedStatus] = useState(1);
   const [loading, setSubmitButtonLoading] = useState(false);
   const [speedValue, setSpeedValue] = useState(13);
-
-  const handleSetBtnActive = (value) => {
-    setUploadFileVisibility(value);
-    setBtnActive(value);
-  };
-
   const [requestData, setRequestData] = useState({
     params: {
-      type: btnActive || 'sea',
+      type: transportation_status || 'sea',
       speed: speedValue,
       lat_from: 0,
       lng_from: 0,
@@ -32,8 +33,12 @@ const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
     },
   });
 
+  const handleSetBtnActive = (value) => {
+    setTransportationStatus({ transportation_status: value });
+  };
+
   const convertSpeed = (speed) => {
-    if (btnActive !== 'sea' && convertSpeedStatus !== 1.6093) {
+    if (transportation_status !== 'sea' && convertSpeedStatus !== 1.6093) {
       return Math.round(speed * 1.6093);
     } else {
       return speed;
@@ -52,7 +57,6 @@ const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
   // AJAX REQUEST
   const handleSubmit = (e) => {
     e.preventDefault();
-
     sendRequest(requestData);
     setSubmitButtonLoading(true);
   };
@@ -64,7 +68,7 @@ const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
   // AJAX REQUEST
 
   useEffect(() => {
-    switch (btnActive) {
+    switch (transportation_status) {
       case 'sea':
         setSpeedValue(13);
         break;
@@ -79,10 +83,10 @@ const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
     setRequestData((state) => ({
       params: {
         ...state.params,
-        type: btnActive,
+        type: transportation_status,
       },
     }));
-  }, [btnActive]);
+  }, [transportation_status]);
 
   return (
     <form
@@ -92,9 +96,12 @@ const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
       className={styles['filter']}
     >
       <div className={styles['filter__content']}>
-        <ShipmentList toggleActive={handleSetBtnActive} active={btnActive} />
+        <ShipmentList
+          toggleActive={handleSetBtnActive}
+          active={transportation_status}
+        />
         <InputList
-          shipment={btnActive}
+          shipment={transportation_status}
           setRequestData={setRequestData}
           toggleBtnStatus={loading}
         />
@@ -102,7 +109,7 @@ const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
         <button
           type='submit'
           className={`
-          ${styles[`${btnActive}`]}
+          ${styles[`${transportation_status}`]}
           ${styles.submit__btn} 
           ${loading ? styles.loading : ''}`}
         >
@@ -114,9 +121,9 @@ const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
         convertSpeedStatus={convertSpeedStatus}
         setConvertSpeedStatus={setConvertSpeedStatus}
         speedValue={speedValue}
-        btnActive={btnActive}
+        btnActive={transportation_status}
         handleSpeedChange={setSpeedValue}
-        shipmentType={btnActive}
+        shipmentType={transportation_status}
       />
     </form>
   );
@@ -125,7 +132,16 @@ const Filter = ({ responce_data, sendRequest, setUploadFileVisibility }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     sendRequest: (value) => dispatch(sendRequest(value)),
+    setTransportationStatus: (value) =>
+      dispatch(setTransportationStatus(value)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(Filter);
+const mapStateToProps = (state) => {
+  return {
+    responce_data: state.responce_data,
+    transportation_status: state.transportation_status,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);
