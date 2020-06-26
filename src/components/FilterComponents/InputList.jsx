@@ -199,7 +199,9 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
           onSelect={(e) => onSelect(e, 'a')}
           selectOnBlur={true}
           inputProps={{
-            placeholder: 'Country, City, Port',
+            placeholder: `${
+              window.innerWidth > 520 ? 'Country, City, Port' : 'Port of origin'
+            }`,
             className: `${style.input}  ${style.from}`,
             required: true,
             autoComplete: 'chrome-off',
@@ -246,7 +248,11 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
           onSelect={(e) => onSelect(e, 'b')}
           selectOnBlur={true}
           inputProps={{
-            placeholder: 'Country, City, Port',
+            placeholder: `${
+              window.innerWidth > 520
+                ? 'Country, City, Port'
+                : 'Port of Destination'
+            }`,
             className: `${style.input}  ${style.to}`,
             required: true,
             autoComplete: 'chrome-off',

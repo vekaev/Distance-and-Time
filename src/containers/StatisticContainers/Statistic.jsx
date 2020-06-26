@@ -4,11 +4,12 @@ import DistanceTime from './DistanceTime';
 
 import AnimatedPrompt from '../../components/StatisticComponents/AnimatedPrompt';
 import { UploadFile } from '../../components/UploadFile';
+import styles from '../Panel.module.scss';
 
 const Statistic = ({ responce_data, transportStatus }) => {
   console.log('statistic');
   return (
-    <>
+    <aside className={styles['panel']}>
       {!responce_data || responce_data.status == 'error' ? (
         <div
           style={{
@@ -27,9 +28,12 @@ const Statistic = ({ responce_data, transportStatus }) => {
         <>
           <TransitTime data={responce_data} />
           <DistanceTime data={responce_data} />
+          <button onClick={() => toggleShowMap((state) => !state)}>
+            Exchange
+          </button>
         </>
       )}
-    </>
+    </aside>
   );
 };
 

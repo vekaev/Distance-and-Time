@@ -1,3 +1,9 @@
 .main_wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 600px 1fr;
+  grid-template-rows: 132px 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100vh;
+  overflow: hidden;
 }

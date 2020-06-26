@@ -50,3 +50,7 @@ export const calcSpeed = (km) => {
 
   return `${miles} mp/h (${km})`;
 };
+
+export const openInNewTab = (url) => {
+  window.open(url, '_blank');
+};
