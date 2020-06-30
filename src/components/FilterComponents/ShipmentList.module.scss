@@ -10,7 +10,9 @@
     margin-right: 5px;
     position: relative;
     background-color: white;
-
+    @media (max-width: 520px) {
+      margin-bottom: 5px;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -54,4 +56,7 @@
   margin-bottom: 4px;
   color: $color-btn-grey;
   cursor: text;
+  @media (max-width: 520px) {
+    display: none;
+  }
 }

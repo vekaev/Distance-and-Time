@@ -7,21 +7,38 @@ body {
 
 .filter {
   grid-area: 1 / 1 / 2 / 2;
-  animation-name: animateMain;
-  animation-duration: 400ms;
-  max-width: 600px;
   overflow: hidden;
   z-index: 2;
+  @media (max-width: 768px) {
+    grid-area: unset;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+  @media (max-width: 520px) {
+    padding: 0;
+  }
   &__content {
     display: inline-flex;
     align-items: flex-end;
     background: $color-blue-grey;
     padding: 15px;
-
+    @media (max-width: 768px) {
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    @media (max-width: 520px) {
+      margin-top: 0;
+      width: 100%;
+      padding: 10px 15px;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
     .submit__btn {
       cursor: pointer;
-      margin-left: 5px;
-
       background-image: url('/design/images/apps/dist-time/panel/icon__search.svg');
       background-repeat: no-repeat;
       background-position: center;
@@ -36,16 +53,37 @@ body {
       transition: 0.3s ease;
       animation-name: animatedBtnSubmit;
       animation-duration: 200ms;
+      margin-left: 5px;
       &:active {
         transition: 0.3s ease;
         transform: scale(0.93);
       }
-
+      &-text {
+        display: none;
+        margin: 0;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ffffff;
+      }
+      @media (max-width: 520px) {
+        margin-left: 0;
+        width: 100%;
+        background-position: calc(50% - 50px);
+        &-text {
+          display: inline-block;
+        }
+      }
       .spinner {
         position: relative;
         top: -13px;
         left: -12px;
         display: block;
+        @media (max-width: 520px) {
+          left: -63px;
+          top: -22px;
+        }
       }
 
       .spinner:before {

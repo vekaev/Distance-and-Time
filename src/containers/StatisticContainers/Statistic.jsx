@@ -3,37 +3,57 @@ import TransitTime from './TransitTime/TransitTime';
 import DistanceTime from './DistanceTime';
 
 import AnimatedPrompt from '../../components/StatisticComponents/AnimatedPrompt';
+import { Switcher } from '../../components/StatisticComponents/Switcher';
 import { UploadFile } from '../../components/UploadFile';
-import styles from '../Panel.module.scss';
 
-const Statistic = ({ responce_data, transportStatus }) => {
-  console.log('statistic');
+import styles from './Statistic.module.scss';
+
+const Statistic = ({
+  responce_data,
+  transportStatus,
+  changeDisplayedInfoBlock,
+  displayedInfoBlock,
+}) => {
   return (
-    <aside className={styles['panel']}>
-      {!responce_data || responce_data.status == 'error' ? (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            height: 'calc(100vh - 140px)',
-          }}
-        >
-          <AnimatedPrompt
-            transportStatus={transportStatus}
-            state={responce_data.status}
-          />
-          {transportStatus === 'road' ? <UploadFile /> : ''}
-        </div>
+    <>
+      <aside
+        className={`${styles['panel']} 
+    ${
+      styles[
+        `${
+          displayedInfoBlock !== 'duo' && displayedInfoBlock == 'map'
+            ? 'hide'
+            : ''
+        }`
+      ]
+    }`}
+      >
+        {!responce_data || responce_data.status == 'error' ? (
+          <div className={styles['panel__wrapper']}>
+            <AnimatedPrompt
+              transportStatus={transportStatus}
+              state={responce_data.status}
+            />
+            {transportStatus === 'road' ? <UploadFile /> : ''}
+          </div>
+        ) : (
+          <>
+            <TransitTime data={responce_data} />
+            <DistanceTime data={responce_data} />
+          </>
+        )}
+      </aside>
+
+      {responce_data && displayedInfoBlock !== 'duo' ? (
+        <Switcher
+          status={transportStatus}
+          displayedInfoBlock={displayedInfoBlock}
+          changeDisplayedInfoBlock={changeDisplayedInfoBlock}
+        />
       ) : (
-        <>
-          <TransitTime data={responce_data} />
-          <DistanceTime data={responce_data} />
-          <button onClick={() => toggleShowMap((state) => !state)}>
-            Exchange
-          </button>
-        </>
+        ''
       )}
-    </aside>
+    </>
   );
 };
 

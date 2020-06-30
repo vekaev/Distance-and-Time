@@ -61,6 +61,11 @@
     border-radius: 44px;
     cursor: pointer;
     transition: 0.2s ease;
+    @media (max-width: 520px) {
+      right: 12px;
+      font-size: 12px;
+      line-height: 12px;
+    }
     &:active {
       transition: 0.2s ease;
       transform: translateY(-50%) scale(0.93);
@@ -78,6 +83,10 @@
     position: relative;
     margin-left: 100px;
     margin-right: 60px;
+    @media (max-width: 520px) {
+      margin-right: 20px;
+      margin-left: 60px;
+    }
     &__title {
       position: absolute;
       left: -45px;

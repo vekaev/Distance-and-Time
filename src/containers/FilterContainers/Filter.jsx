@@ -113,6 +113,7 @@ const Filter = ({
           ${styles.submit__btn} 
           ${loading ? styles.loading : ''}`}
         >
+          <p className={styles['submit__btn-text']}>SEARCH</p>
           {loading ? <span className={styles.spinner}></span> : ''}
         </button>
       </div>

@@ -1,9 +1,14 @@
 .main_wrapper {
   display: grid;
   grid-template-columns: 600px 1fr;
-  grid-template-rows: 132px 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-rows: minmax(131px, max-content) 1fr;
   height: 100vh;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: unset;
+    min-height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: minmax(131px, max-content) auto;
+  }
 }

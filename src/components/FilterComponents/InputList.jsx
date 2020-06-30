@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Autocomplete from 'react-autocomplete';
-import style from './InputList.module.scss';
+import styles from './InputList.module.scss';
 import axios from 'axios';
 
 const CancelToken = axios.CancelToken;
@@ -160,12 +160,12 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
   }
 
   return (
-    <div className={style['input__part']}>
+    <div className={styles['input__part']}>
       <div
         data-direction='A'
-        className={`${style[`input__wrapper`]} ${style[`${shipment}`]}`}
+        className={`${styles[`input__wrapper`]} ${styles[`${shipment}`]}`}
       >
-        <label className={style['title']}>Port of origin</label>
+        <label className={styles['title']}>Port of origin</label>
         <Autocomplete
           name='origin'
           type='text'
@@ -175,11 +175,11 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
           renderItem={(item, isHighlighted) => (
             <div
               key={item.place_id}
-              className={style['autocomplete-item']}
-              style={{ background: isHighlighted ? 'lightgray' : 'white' }}
+              className={styles['autocomplete-item']}
+              styles={{ background: isHighlighted ? 'lightgray' : 'white' }}
             >
               <div>
-                <span className={style['city']}>
+                <span className={styles['city']}>
                   {getDataFromList(item, 'city')}
                 </span>
                 ,<span>{` ${getDataFromList(item, 'country')} `}</span>
@@ -202,7 +202,7 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
             placeholder: `${
               window.innerWidth > 520 ? 'Country, City, Port' : 'Port of origin'
             }`,
-            className: `${style.input}  ${style.from}`,
+            className: `${styles.input}  ${styles.from}`,
             required: true,
             autoComplete: 'chrome-off',
           }}
@@ -210,11 +210,11 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
       </div>
       <div
         data-direction='B'
-        className={`${style[`input__wrapper`]} ${style[`${shipment}`]} ${
-          style['to__wrapper']
+        className={`${styles[`input__wrapper`]} ${styles[`${shipment}`]} ${
+          styles['to__wrapper']
         }`}
       >
-        <label className={style['title']}>Port of Destination</label>
+        <label className={styles['title']}>Port of Destination</label>
         <Autocomplete
           name='origin'
           type='text'
@@ -224,11 +224,11 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
           renderItem={(item, isHighlighted) => (
             <div
               key={item.place_id}
-              className={style['autocomplete-item']}
-              style={{ background: isHighlighted ? 'lightgray' : 'white' }}
+              className={styles['autocomplete-item']}
+              styles={{ background: isHighlighted ? 'lightgray' : 'white' }}
             >
               <div>
-                <span className={style['city']}>
+                <span className={styles['city']}>
                   {getDataFromList(item, 'city')},
                 </span>
                 <span>{` ${getDataFromList(item, 'country')} `}</span>
@@ -253,7 +253,7 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
                 ? 'Country, City, Port'
                 : 'Port of Destination'
             }`,
-            className: `${style.input}  ${style.to}`,
+            className: `${styles.input}  ${styles.to}`,
             required: true,
             autoComplete: 'chrome-off',
           }}
@@ -261,8 +261,8 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
       </div>
 
       <div
-        className={`${style.exchange__btn} ${style[`${shipment}`]} ${
-          toggleBtnStatus ? style.loading : ''
+        className={`${styles.exchange__btn} ${styles[`${shipment}`]} ${
+          toggleBtnStatus ? styles.loading : ''
         }`}
       >
         <span onClick={exchageDirection}></span>

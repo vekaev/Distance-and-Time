@@ -5,17 +5,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PrettierPlugin = require('prettier-webpack-plugin');
 
 module.exports = function({
-  entry,
-  output,
-  resolve,
-  publicPath
-}) {
+                            entry,
+                            output,
+                            resolve,
+                            publicPath
+                          }) {
   return {
     mode: 'development',
     entry,
     output,
     resolve,
     devtool: 'inline-source-map',
+    // for windows and WSL
+    // watchOptions: {
+    //   poll: true
+    // },
     devServer: {
       contentBase: publicPath,
       compress: true,

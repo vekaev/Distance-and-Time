@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { Map } from './containers/Map';
@@ -7,18 +7,36 @@ import Filter from './containers/FilterContainers/Filter';
 import Statistic from './containers/StatisticContainers/Statistic';
 
 const App = ({ responce_data, transportation_status }) => {
-  const [isShowMap, toggleShowMap] = useState(true);
+  const [displayedInfoBlock, changeDisplayedInfoBlock] = useState('duo');
 
-  console.log('app');
+  useEffect(() => {
+    let windowWidth = window.matchMedia('(max-width: 768px)');
+    windowWidthChecker(windowWidth);
+    windowWidth.addEventListener('change', windowWidthChecker);
+    return () => {
+      windowWidth.removeEventListener('change', windowWidthChecker);
+    };
+  }, [displayedInfoBlock]);
+
+  function windowWidthChecker(width) {
+    if (displayedInfoBlock === 'duo' && width.matches) {
+      changeDisplayedInfoBlock('statistic');
+    } else if (displayedInfoBlock !== 'duo' && !width.matches) {
+      changeDisplayedInfoBlock('duo');
+    }
+  }
+
+  console.log(displayedInfoBlock);
   return (
     <div className={styles['main_wrapper']}>
       <Filter responce_data={responce_data} />
       <Statistic
-        toggleShowMap={toggleShowMap}
+        displayedInfoBlock={displayedInfoBlock}
+        changeDisplayedInfoBlock={changeDisplayedInfoBlock}
         responce_data={responce_data}
         transportStatus={transportation_status}
       />
-      <Map />
+      <Map displayedInfoBlock={displayedInfoBlock} />
     </div>
   );
 };

@@ -1,8 +1,14 @@
 .map {
   grid-area: 1 / 2 / 3 / 3;
-  background-image: url('/design/images/apps/map.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
   background-color: #f0f5fa;
+  box-sizing: border-box;
+  @media (max-width: 768px) {
+    display: none;
+    grid-area: unset;
+    border-top: 2px solid #e9f0f7;
+  }
+}
+.hide {
+  display: none;
 }

@@ -13,13 +13,6 @@ export const TransitGraphic = ({ data }) => {
     a.y > b.y ? 1 : -1,
   );
 
-  const escapedKeyPressHandle = (event) => {
-    if (event.key === 'Escape') {
-      getLineContainers('back');
-    }
-  };
-  document.addEventListener('keydown', escapedKeyPressHandle, false);
-
   const setGraphicNumber = (value) => {
     numArray = [];
     const roundedValue = Math.ceil(value / 10) * 10;
