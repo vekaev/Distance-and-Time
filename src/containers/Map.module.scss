@@ -4,9 +4,12 @@
   background-color: #f0f5fa;
   box-sizing: border-box;
   @media (max-width: 768px) {
-    display: none;
+    height: calc(100vh - 160px);
     grid-area: unset;
     border-top: 2px solid #e9f0f7;
+  }
+  @media (max-width: 520px) {
+    height: calc(100vh - 280px);
   }
 }
 .hide {

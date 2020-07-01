@@ -48,7 +48,7 @@
     top: 50%;
     transform: translateY(-50%);
     height: 35px;
-    left: -10px;
+    left: -13px;
     transition: 2s cubic-bezier(0.1, 0.84, 0.45, 0.94);
   }
   &__img {
@@ -78,7 +78,7 @@
   }
   &__title {
     position: absolute;
-    left: -120px;
+    left: -122px;
     text-align: right;
     width: 100px;
     font-weight: 500;
@@ -92,7 +92,7 @@
     border-top: 20px solid transparent;
     top: -15px;
     @media (max-width: 520px) {
-      left: -61px;
+      left: -63px;
       width: 45px;
     }
   }

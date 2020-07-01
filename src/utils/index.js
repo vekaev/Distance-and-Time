@@ -46,8 +46,7 @@ export const calcSpeed = (km) => {
   if (isNaN(corKm) === true) {
     return 'Not correct data';
   }
-  let miles = Math.round(corKm * fromKmToMiles * 100) / 100;
-
+  let miles = Math.round(corKm * fromKmToMiles);
   return `${miles} mp/h (${km})`;
 };
 

@@ -26,7 +26,6 @@ const App = ({ responce_data, transportation_status }) => {
     }
   }
 
-  console.log(displayedInfoBlock);
   return (
     <div className={styles['main_wrapper']}>
       <Filter responce_data={responce_data} />

@@ -11,17 +11,26 @@
   .input__wrapper {
     position: relative;
     transition: 0.2s ease;
+    @media (max-width: 520px) {
+      margin-bottom: 5px;
+    }
     &:first-child {
       div {
         @media (max-width: 520px) {
-          display: block !important;
+          width: calc(100vw - 30px);
+          background-color: white;
+          border-radius: 5px;
+          opacity: 1;
         }
       }
     }
     &:nth-child(2) {
       div {
         @media (max-width: 520px) {
-          display: block !important;
+          width: calc(100vw - 30px);
+          background-color: white;
+          border-radius: 5px;
+          opacity: 1;
         }
       }
     }
@@ -43,9 +52,6 @@
       left: 10px;
       pointer-events: none;
       transition: 0.2s ease;
-      @media (max-width: 520px) {
-        bottom: 31px;
-      }
     }
 
     .input {
@@ -74,7 +80,6 @@
       box-shadow: 1px 0px 7px rgba(69, 119, 191, 0.2);
       @media (max-width: 520px) {
         border-radius: 5px;
-        margin-bottom: 5px;
         box-shadow: 0px 0px 7px rgba(69, 119, 191, 0.2);
       }
     }
@@ -144,6 +149,7 @@
       @media (max-width: 520px) {
         left: 11px;
         bottom: 27px;
+        margin-bottom: 0;
       }
     }
   }
@@ -164,7 +170,7 @@
     @media (max-width: 520px) {
       left: unset;
       right: 15px;
-      top: 50%;
+      top: 47%;
       transform: translateY(-50%) rotate(90deg);
       width: 30px;
       height: 30px;
