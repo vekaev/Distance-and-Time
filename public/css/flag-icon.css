@@ -6,6 +6,15 @@
   height: 24px;
   background-image: url('../design/images/apps/dist-time/flags/flags-shine.png');
 }
+
+
+@media (max-width: 768px) {
+  .flag-icon {
+    width: 29px;
+    background-repeat: no-repeat;
+  }
+}
+
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .flag-icon { background-image: url('../design/images/apps/dist-time/flags/flags-shine@2x.png');
     background-size: 24px 5832px;

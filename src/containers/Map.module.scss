@@ -1,8 +1,11 @@
-.map {
+.map_wrapper {
   grid-area: 1 / 2 / 3 / 3;
   overflow: hidden;
-  background-color: #f0f5fa;
   box-sizing: border-box;
+  height: 100vh;
+  background-color: white;
+  position: relative;
+  z-index: -1;
   @media (max-width: 768px) {
     height: calc(100vh - 160px);
     grid-area: unset;
@@ -13,5 +16,7 @@
   }
 }
 .hide {
-  display: none;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
 }

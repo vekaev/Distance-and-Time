@@ -34,7 +34,8 @@ const Statistic = ({
               transportStatus={transportStatus}
               state={responce_data.status}
             />
-            {transportStatus === 'road' ? <UploadFile /> : ''}
+            {/*WHEN BACK END WILL COMPLETE SHOULD TO REPAIR*/}
+            {/*{transportStatus === 'road' ? <UploadFile /> : ''}*/}
           </div>
         ) : (
           <>
@@ -44,7 +45,9 @@ const Statistic = ({
         )}
       </aside>
 
-      {responce_data && displayedInfoBlock !== 'duo' ? (
+      {responce_data &&
+      responce_data.status !== 'error' &&
+      displayedInfoBlock !== 'duo' ? (
         <Switcher
           status={transportStatus}
           displayedInfoBlock={displayedInfoBlock}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { connect } from 'react-redux';
-import { Map } from './containers/Map';
+import Map from './containers/Map';
 import styles from './App.module.scss';
 import Filter from './containers/FilterContainers/Filter';
 import Statistic from './containers/StatisticContainers/Statistic';

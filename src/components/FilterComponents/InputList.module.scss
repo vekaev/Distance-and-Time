@@ -18,7 +18,6 @@
       div {
         @media (max-width: 520px) {
           width: calc(100vw - 30px);
-          background-color: white;
           border-radius: 5px;
           opacity: 1;
         }
@@ -28,7 +27,6 @@
       div {
         @media (max-width: 520px) {
           width: calc(100vw - 30px);
-          background-color: white;
           border-radius: 5px;
           opacity: 1;
         }
@@ -259,6 +257,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  opacity: 1;
+  background: white;
   @media (max-width: 520px) {
     display: flex !important;
   }
@@ -288,8 +288,13 @@
     border-bottom: none;
   }
 
-  &:hover {
-    background-color: $whiteBlueColor !important;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #f0f5fa !important;
+    div {
+      background-color: #f0f5fa !important;
+    }
   }
 }
 
@@ -299,4 +304,10 @@ input + div {
   border: none !important;
   z-index: 100 !important;
   width: auto;
+  @media (min-width: 768px) {
+    max-width: 235px;
+  }
+  @media (max-width: 768px) and (min-width: 520px) {
+    max-width: 200px;
+  }
 }
