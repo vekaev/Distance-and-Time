@@ -2,17 +2,17 @@
   grid-area: 1 / 2 / 3 / 3;
   overflow: hidden;
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
   background-color: white;
   position: relative;
 
   @media (max-width: 768px) {
-    height: calc(100vh - 160px);
+    min-height: calc(100vh - 160px);
     grid-area: unset;
     border-top: 2px solid #e9f0f7;
   }
   @media (max-width: 520px) {
-    height: calc(100vh - 280px);
+    min-height: calc(100vh - 280px);
   }
 }
 .hide {

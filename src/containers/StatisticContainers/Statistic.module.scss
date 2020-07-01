@@ -22,7 +22,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 140px);
+    min-height: calc(100vh - 140px);
     @media (max-width: 768px) {
       height: 100%;
     }
