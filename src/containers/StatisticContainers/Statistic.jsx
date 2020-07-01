@@ -34,7 +34,7 @@ const Statistic = ({
               transportStatus={transportStatus}
               state={responce_data.status}
             />
-            {/*WHEN BACK END WILL COMPLETE SHOULD TO REPAIR*/}
+            {/*WHEN BACK END DEV WILL COMPLETE SHOULD TO REPAIR*/}
             {/*{transportStatus === 'road' ? <UploadFile /> : ''}*/}
           </div>
         ) : (
