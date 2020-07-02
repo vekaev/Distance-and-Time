@@ -5,12 +5,12 @@
     display: grid;
     grid-template-columns: 600px 1fr;
     grid-template-rows: minmax(131px, max-content) 1fr;
-    min-height: calc(100vh - 80vh);
+    min-height: calc(100vh - 80px);
     overflow: hidden;
 
     @media (max-width: 768px) {
       height: unset;
-      min-height: 100vh;
+      min-height: calc(100vh - 80px);
       grid-template-columns: 100%;
       grid-template-rows: minmax(131px, max-content) auto 1px;
       background: white;

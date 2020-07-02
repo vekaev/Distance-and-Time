@@ -15,7 +15,7 @@
   z-index: 2;
 
   //ONLY FOR SEARATES
-  height: calc(100vh - 123px);
+  height: calc(100vh - 220px);
   //ONLY FOR SEARATES
 
   @media (max-width: 768px) {
@@ -27,7 +27,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 140px);
+    min-height: calc(100vh - 220px);
     @media (max-width: 768px) {
       min-height: unset;
       height: 100%;
