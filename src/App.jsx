@@ -5,6 +5,7 @@ import Map from './containers/Map';
 import styles from './App.module.scss';
 import Filter from './containers/FilterContainers/Filter';
 import Statistic from './containers/StatisticContainers/Statistic';
+import { Switcher } from './components/StatisticComponents/Switcher';
 
 const App = ({ responce_data, transportation_status }) => {
   const [displayedInfoBlock, changeDisplayedInfoBlock] = useState('duo');
@@ -27,16 +28,31 @@ const App = ({ responce_data, transportation_status }) => {
   }
 
   return (
-    <div className={styles['main_wrapper']}>
-      <Filter responce_data={responce_data} />
-      <Statistic
-        displayedInfoBlock={displayedInfoBlock}
-        changeDisplayedInfoBlock={changeDisplayedInfoBlock}
-        responce_data={responce_data}
-        transportStatus={transportation_status}
-      />
-      <Map displayedInfoBlock={displayedInfoBlock} />
-    </div>
+    <>
+      <div className={styles['main']}>
+        <div className={styles['main_wrapper']}>
+          <Filter responce_data={responce_data} />
+          <Statistic
+            displayedInfoBlock={displayedInfoBlock}
+            // changeDisplayedInfoBlock={changeDisplayedInfoBlock}
+            responce_data={responce_data}
+            transportStatus={transportation_status}
+          />
+          <Map displayedInfoBlock={displayedInfoBlock} />
+        </div>
+        {responce_data &&
+        responce_data.status !== 'error' &&
+        displayedInfoBlock !== 'duo' ? (
+          <Switcher
+            status={transportation_status}
+            displayedInfoBlock={displayedInfoBlock}
+            changeDisplayedInfoBlock={changeDisplayedInfoBlock}
+          />
+        ) : (
+          ''
+        )}
+      </div>
+    </>
   );
 };
 

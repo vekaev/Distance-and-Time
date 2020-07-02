@@ -17,7 +17,7 @@ export const setTransportationStatus = (value) => {
 
 export const sendRequest = (value) => (dispatch) => {
   axios
-    .get('https://sirius.searates.com/api/distanceandtime', value)
+    .get('https://sirius.searates.com/distance-and-time/search', value)
     .then((res) => {
       let customResponce = {
         ...res.data,

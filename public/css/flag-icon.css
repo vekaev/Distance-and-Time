@@ -2,9 +2,11 @@
   position: relative;
   display: inline-block;
   vertical-align: bottom;
-  width: 24px;
+  width: 28px;
+
   height: 24px;
   background-image: url('../design/images/apps/dist-time/flags/flags-shine.png');
+  background-repeat: no-repeat;
 }
 
 

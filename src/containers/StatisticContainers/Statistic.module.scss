@@ -11,10 +11,15 @@
   overflow: scroll;
   background-color: #fff;
   box-shadow: 0px 4px 20px rgba(33, 115, 187, 0.05);
-
   position: relative;
+  z-index: 2;
+
+  //ONLY FOR SEARATES
+  height: calc(100vh - 123px);
+  //ONLY FOR SEARATES
 
   @media (max-width: 768px) {
+    height: unset;
     grid-area: unset;
     box-shadow: none;
     z-index: unset;
@@ -24,6 +29,7 @@
     flex-direction: column;
     min-height: calc(100vh - 140px);
     @media (max-width: 768px) {
+      min-height: unset;
       height: 100%;
     }
   }

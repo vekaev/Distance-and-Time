@@ -29,7 +29,6 @@ const Filter = ({
       lng_from: 0,
       lat_to: 0,
       lng_to: 0,
-      key: 'E1KN-9PFZ-BO20-PGMG',
     },
   });
 

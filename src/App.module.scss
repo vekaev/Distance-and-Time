@@ -1,15 +1,19 @@
-.main_wrapper {
-  display: grid;
-  grid-template-columns: 600px 1fr;
-  grid-template-rows: minmax(131px, max-content) 1fr;
-  min-height: 100vh;
-  overflow: hidden;
+.main {
+  background-color: white;
+  padding-bottom: 1px;
+  &_wrapper {
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    grid-template-rows: minmax(131px, max-content) 1fr;
+    min-height: calc(100vh - 80vh);
+    overflow: hidden;
 
-  @media (max-width: 768px) {
-    height: unset;
-    min-height: 100vh;
-    grid-template-columns: 100%;
-    grid-template-rows: minmax(131px, max-content) auto;
-    background: white;
+    @media (max-width: 768px) {
+      height: unset;
+      min-height: 100vh;
+      grid-template-columns: 100%;
+      grid-template-rows: minmax(131px, max-content) auto 1px;
+      background: white;
+    }
   }
 }

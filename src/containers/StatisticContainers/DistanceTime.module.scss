@@ -1,9 +1,11 @@
 @import '../../variable';
 
 .distance-data {
-  padding: 30px 15px 80px;
+  padding: 30px 15px 40px;
   color: $color-main-text;
-
+  @media (max-width: 768px) {
+    padding-bottom: 0;
+  }
   .title {
     display: block;
     font-weight: bold;
@@ -46,17 +48,28 @@
         line-height: 14px;
       }
 
+      //&:first-child,
+      //&:last-child {
+      //  &:before {
+      //    left: -40px;
+      //    width: 19px;
+      //    height: 19px;
+      //    border: 3px solid $color-white;
+      //    box-shadow: 0px 0px 5px rgba(94, 107, 118, 0.25);
+      //  }
+      //}
+      //ONLY FOR SEARATES
       &:first-child,
       &:last-child {
         &:before {
-          left: -40px;
+          left: -37px;
           width: 19px;
           height: 19px;
           border: 3px solid $color-white;
           box-shadow: 0px 0px 5px rgba(94, 107, 118, 0.25);
         }
       }
-
+      //ONLY FOR SEARATES
       &:first-child {
         &:after {
           transform: translateY(0);
@@ -64,13 +77,20 @@
         }
       }
 
+      //&:last-child {
+      //  &:after {
+      //    top: -65%;
+      //    transform: translateY(0);
+      //  }
+      //}
+      //ONLY FOR SEARATES
       &:last-child {
         &:after {
-          top: -65%;
+          top: -75%;
           transform: translateY(0);
         }
       }
-
+      //ONLY FOR SEARATES
       &:before {
         content: '';
         position: absolute;

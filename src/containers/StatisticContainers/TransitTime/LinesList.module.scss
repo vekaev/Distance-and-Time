@@ -5,7 +5,7 @@
   position: relative;
   margin: 0;
   @media (max-width: 520px) {
-    padding-right: 20px;
+    padding-right: 50px;
     padding-left: 60px;
   }
 }
@@ -33,7 +33,7 @@
   animation-duration: 400ms;
   animation-fill-mode: both;
 
-  @for $i from 1 through 500 {
+  @for $i from 1 through 100 {
     &:nth-child(#{$i}) {
       animation-delay: 50ms * $i;
     }
@@ -76,11 +76,32 @@
       left: 5px;
     }
   }
+  //&__title {
+  //  position: absolute;
+  //  left: -122px;
+  //  text-align: right;
+  //  width: 100px;
+  //  font-weight: 500;
+  //  font-size: 10px;
+  //  line-height: 12px;
+  //  color: $color-main-text;
+  //  word-break: break-all;
+  //  overflow: hidden;
+  //  max-height: 44px;
+  //  border-right: 30px solid transparent;
+  //  border-top: 20px solid transparent;
+  //  top: -15px;
+  //  @media (max-width: 520px) {
+  //    left: -63px;
+  //    width: 45px;
+  //  }
+  //}
+  //ONLY FOR SEARATES
   &__title {
     position: absolute;
-    left: -122px;
+    left: -100px;
     text-align: right;
-    width: 100px;
+    width: 111px;
     font-weight: 500;
     font-size: 10px;
     line-height: 12px;
@@ -91,11 +112,18 @@
     border-right: 30px solid transparent;
     border-top: 20px solid transparent;
     top: -15px;
+    //@media (max-width: 520px) {
+    //  left: -63px;
+    //  width: 45px;
+    //}
+    //ONLY FOR SEARATES
     @media (max-width: 520px) {
-      left: -63px;
-      width: 45px;
+      left: -62px;
+      width: 75px;
     }
+    //ONLY FOR SEARATES
   }
+  //ONLY FOR SEARATES
   &__time {
     position: absolute;
     width: 43px;
@@ -109,8 +137,8 @@
   }
 }
 .container {
-  cursor: default;
-  @for $i from 1 through 1000 {
+  cursor: alias;
+  @for $i from 1 through 100 {
     &:nth-child(#{$i}) {
       animation-delay: 20ms * $i;
     }

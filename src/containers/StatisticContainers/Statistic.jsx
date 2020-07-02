@@ -8,15 +8,11 @@ import { UploadFile } from '../../components/UploadFile';
 
 import styles from './Statistic.module.scss';
 
-const Statistic = ({
-  responce_data,
-  transportStatus,
-  changeDisplayedInfoBlock,
-  displayedInfoBlock,
-}) => {
+const Statistic = ({ responce_data, transportStatus, displayedInfoBlock }) => {
   return (
     <>
       <aside
+        id='panel'
         className={`${styles['panel']} 
     ${
       styles[
@@ -44,18 +40,6 @@ const Statistic = ({
           </>
         )}
       </aside>
-
-      {responce_data &&
-      responce_data.status !== 'error' &&
-      displayedInfoBlock !== 'duo' ? (
-        <Switcher
-          status={transportStatus}
-          displayedInfoBlock={displayedInfoBlock}
-          changeDisplayedInfoBlock={changeDisplayedInfoBlock}
-        />
-      ) : (
-        ''
-      )}
     </>
   );
 };

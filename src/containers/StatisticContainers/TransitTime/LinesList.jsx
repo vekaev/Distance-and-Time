@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './LinesList.module.scss';
+import { openInNewTab } from '../../../utils';
 
 const listColors = [
   '#DEECFF',
@@ -72,6 +73,7 @@ const LinesList = ({ data, getLineContainers, containers }) => {
             style={{
               width: `0%`,
               background: `${listColors[containers.styleIndex]}`,
+              cursor: 'unset',
             }}
             className={`${styles['line']} ${styles['container']}`}
           >
@@ -109,6 +111,11 @@ const LinesList = ({ data, getLineContainers, containers }) => {
               return (
                 <li
                   key={index + 1}
+                  onClick={() =>
+                    openInNewTab(
+                      `https://www.searates.com/container/tracking/?container=${card[0]}`,
+                    )
+                  }
                   style={{
                     width: `${(card[1] * 100) / maxValue}%`,
                     background: `${listColors[containers.styleIndex]}`,
