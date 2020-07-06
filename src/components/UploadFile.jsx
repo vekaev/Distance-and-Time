@@ -28,6 +28,7 @@ export const UploadFile = () => {
         .then((res) => {
           if (res.data && res.data.status && res.data.status == 'success') {
             openInNewTab(res.data.link);
+            document.getElementById('file__input').value = '';
             setBtnStatus('no-data');
           } else {
             setBtnStatus('error');
