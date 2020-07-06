@@ -9,6 +9,7 @@ import {
 import ShipmentList from '../../components/FilterComponents/ShipmentList';
 import InputList from '../../components/FilterComponents/InputList';
 import SpeedInputs from '../../components/FilterComponents/SpeedInputs';
+import SubmitBtn from '../../components/FilterComponents/SubmitBtn';
 
 import styles from './Filter.module.scss';
 
@@ -105,16 +106,10 @@ const Filter = ({
           toggleBtnStatus={loading}
         />
 
-        <button
-          type='submit'
-          className={`
-          ${styles[`${transportation_status}`]}
-          ${styles.submit__btn} 
-          ${loading ? styles.loading : ''}`}
-        >
-          <p className={styles['submit__btn-text']}>SEARCH</p>
-          {loading ? <span className={styles.spinner}></span> : ''}
-        </button>
+        <SubmitBtn
+          transportation_status={transportation_status}
+          loading={loading}
+        />
       </div>
 
       <SpeedInputs

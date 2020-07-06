@@ -68,4 +68,4 @@ const AnimatedPrompt = ({ state, transportStatus }) => {
   );
 };
 
-export default AnimatedPrompt;
+export default React.memo(AnimatedPrompt);

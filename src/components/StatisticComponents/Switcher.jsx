@@ -13,7 +13,9 @@ export const Switcher = ({
       ${displayedInfoBlock == 'statistic' ? styles['switcher_left'] : ''} `}
     >
       <li
-        onClick={() => changeDisplayedInfoBlock('statistic')}
+        onClick={() => {
+          changeDisplayedInfoBlock('statistic'), window.scrollTo(0, 0);
+        }}
         className={`${
           displayedInfoBlock == 'statistic' ? styles['active'] : ''
         }`}
@@ -21,7 +23,9 @@ export const Switcher = ({
         Distances & time
       </li>
       <li
-        onClick={() => changeDisplayedInfoBlock('map')}
+        onClick={() => {
+          changeDisplayedInfoBlock('map'), window.scrollTo(0, 0);
+        }}
         className={`${displayedInfoBlock == 'map' ? styles['active'] : ''}`}
       >
         Map

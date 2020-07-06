@@ -72,4 +72,3 @@ const SpeedInputs = ({
 };
 
 export default SpeedInputs;
-// export default SpeedInputs;

@@ -9,13 +9,13 @@ import { Switcher } from './components/StatisticComponents/Switcher';
 
 const App = ({ responce_data, transportation_status }) => {
   const [displayedInfoBlock, changeDisplayedInfoBlock] = useState('duo');
+  let windowWidth = window.matchMedia('(max-width: 768px)');
 
   useEffect(() => {
-    let windowWidth = window.matchMedia('(max-width: 768px)');
     windowWidthChecker(windowWidth);
-    windowWidth.addEventListener('change', windowWidthChecker);
+    windowWidth.addListener(windowWidthChecker);
     return () => {
-      windowWidth.removeEventListener('change', windowWidthChecker);
+      windowWidth.removeListener(windowWidthChecker);
     };
   }, [displayedInfoBlock]);
 
@@ -29,7 +29,7 @@ const App = ({ responce_data, transportation_status }) => {
 
   return (
     <>
-      <div className={styles['main']}>
+      <div id='distance__time-app' className={styles['main']}>
         <div className={styles['main_wrapper']}>
           <Filter responce_data={responce_data} />
           <Statistic

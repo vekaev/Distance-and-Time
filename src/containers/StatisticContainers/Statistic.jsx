@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import TransitTime from './TransitTime/TransitTime';
 import DistanceTime from './DistanceTime';
 
 import AnimatedPrompt from '../../components/StatisticComponents/AnimatedPrompt';
-import { Switcher } from '../../components/StatisticComponents/Switcher';
 import { UploadFile } from '../../components/UploadFile';
 
 import styles from './Statistic.module.scss';
@@ -30,8 +29,8 @@ const Statistic = ({ responce_data, transportStatus, displayedInfoBlock }) => {
               transportStatus={transportStatus}
               state={responce_data.status}
             />
-            {/*WHEN BACK END DEV WILL COMPLETE SHOULD TO REPAIR*/}
-            {/*{transportStatus === 'road' ? <UploadFile /> : ''}*/}
+
+            {transportStatus === 'road' ? <UploadFile /> : ''}
           </div>
         ) : (
           <>

@@ -14,10 +14,11 @@
   position: relative;
   z-index: 2;
 
-  //ONLY FOR SEARATES
-  height: calc(100vh - 220px);
-  //ONLY FOR SEARATES
+  ////ONLY FOR SEARATES
+  height: calc(100vh - 215px);
+  ////ONLY FOR SEARATES
 
+  //height: calc(100vh);
   @media (max-width: 768px) {
     height: unset;
     grid-area: unset;
@@ -27,7 +28,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 220px);
+    min-height: calc(100vh - 215px);
     @media (max-width: 768px) {
       min-height: unset;
       height: 100%;

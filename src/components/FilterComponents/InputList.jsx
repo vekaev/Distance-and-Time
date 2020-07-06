@@ -176,7 +176,7 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
             <div
               key={item.place_id}
               className={styles['autocomplete-item']}
-              styles={{ background: isHighlighted ? 'lightgray' : 'white' }}
+              style={{ background: isHighlighted ? '#f0f5fa' : 'white' }}
             >
               <div>
                 <span className={styles['city']}>
@@ -185,7 +185,7 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
                 ,<span>{` ${getDataFromList(item, 'country')} `}</span>
               </div>
               <i
-                className={` flag-icon flag-icon-${getDataFromList(
+                className={`flag-icon flag-icon-${getDataFromList(
                   item,
                   'code',
                 ).toLowerCase()} `}
@@ -225,7 +225,7 @@ const InputList = ({ setRequestData, toggleBtnStatus, shipment }) => {
             <div
               key={item.place_id}
               className={styles['autocomplete-item']}
-              styles={{ background: isHighlighted ? 'lightgray' : 'white' }}
+              style={{ background: isHighlighted ? '#f0f5fa' : 'white' }}
             >
               <div>
                 <span className={styles['city']}>

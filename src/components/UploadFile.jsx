@@ -20,14 +20,23 @@ export const UploadFile = () => {
     setBtnStatus('loading');
     setTimeout(() => {
       axios
-        .post('exemple', formData, config)
+        .post(
+          'https://www.searates.com/services/load-excel-distances-time',
+          formData,
+          config,
+        )
         .then((res) => {
-          openInNewTab(res);
+          if (res.data && res.data.status && res.data.status == 'success') {
+            openInNewTab(res.data.link);
+            setBtnStatus('no-data');
+          } else {
+            setBtnStatus('error');
+          }
         })
         .catch((error) => {
           setBtnStatus('error');
         });
-    }, 2000);
+    }, 1000);
   };
 
   const renderSwitch = (status, type) => {

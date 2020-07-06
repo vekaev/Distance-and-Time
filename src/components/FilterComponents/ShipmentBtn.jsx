@@ -15,6 +15,7 @@ const ShipmentBtn = ({ title, active, toggleActive, label }) => {
       <input
         type='radio'
         name='shipment'
+        autoFocus={title === 'sea' ? true : false}
         value={title}
         checked={active === title}
         onChange={() => {}}
